@@ -1,0 +1,1411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YUSR AI · AI WhatsApp Assistants for Businesses</title>
+  <meta name="description" content="YUSR AI is the WhatsApp CRM for Indian business. Team inbox, bulk broadcasts from Google Sheets, and an AI assistant trained on your catalog. Official WhatsApp Business API." />
+  <link rel="canonical" href="https://yusr.co.in/" />
+  <meta property="og:site_name" content="YUSR AI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yusr.co.in/" />
+  <meta property="og:title" content="YUSR AI · AI WhatsApp Assistants for Businesses" />
+  <meta property="og:description" content="YUSR AI is the WhatsApp CRM for Indian business. Team inbox, bulk broadcasts from Google Sheets, and an AI assistant trained on your catalog. Official WhatsApp Business API." />
+  <meta property="og:image" content="https://yusr.co.in/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="YUSR AI. Every chat. Every order. Nothing missed." />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="YUSR AI · AI WhatsApp Assistants for Businesses" />
+  <meta name="twitter:description" content="YUSR AI is the WhatsApp CRM for Indian business. Team inbox, bulk broadcasts from Google Sheets, and an AI assistant trained on your catalog. Official WhatsApp Business API." />
+  <meta name="twitter:image" content="https://yusr.co.in/og-image.png" />
+  <meta name="twitter:image:alt" content="YUSR AI. Every chat. Every order. Nothing missed." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://yusr.co.in/#organization",
+        "name": "YUSR AI",
+        "url": "https://yusr.co.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yusr.co.in/favicon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "YUSR AI is a WhatsApp CRM for Indian business: a shared team inbox, bulk broadcasts from Google Sheets, and an AI assistant trained on your catalog.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+919286046420",
+          "availableLanguage": [
+            "en",
+            "hi"
+          ],
+          "areaServed": "IN"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://yusr.co.in/#website",
+        "name": "YUSR AI",
+        "url": "https://yusr.co.in/",
+        "publisher": {
+          "@id": "https://yusr.co.in/#organization"
+        },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://yusr.co.in/#software",
+        "name": "YUSR AI",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "CRM",
+        "operatingSystem": "Web",
+        "url": "https://yusr.co.in/",
+        "publisher": {
+          "@id": "https://yusr.co.in/#organization"
+        },
+        "description": "WhatsApp Business CRM with a shared team inbox, Google Sheets broadcasts, an AI assistant trained on your catalog, analytics and custom tags, and QR entry points.",
+        "featureList": [
+          "Shared team inbox",
+          "Bulk broadcasts from Google Sheets",
+          "AI assistant trained on your catalog",
+          "Analytics and custom tags",
+          "QR entry points"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "name": "Free trial, 7 days",
+          "description": "The full product free for 7 days, no card required. Paid plans are quoted to your volume and team.",
+          "url": "https://yusr.co.in/pricing"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='%230A0A0A'/%3E%3Cg transform='translate(58,44)'%3E%3Cpath d='M0 0 L42 62 L84 0' stroke='%23F4EEE2' stroke-width='14' fill='none' stroke-linecap='square'/%3E%3Cline x1='42' y1='62' x2='42' y2='118' stroke='%23F4EEE2' stroke-width='14' stroke-linecap='square'/%3E%3Ccircle cx='42' cy='30' r='10' fill='%23D85A30'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="yusr.css?v=3" />
+  <style>
+    /* ═══ Homepage additions · Switch · Pipeline · Floor ═══ */
+    .adds-head { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:8px; }
+    .adds-folio { font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); white-space:nowrap; }
+
+    /* ── THE SWITCH (before / after) ─────────────────────── */
+    .switch-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:26px; align-items:stretch; margin-top:44px; }
+    .switch-card { background:var(--paper); border:1.5px solid var(--ink); border-radius:12px; padding:24px 26px 26px; position:relative; box-shadow:var(--stamp); transition:opacity .4s ease, box-shadow .3s ease; }
+    .switch-card.bad { transform:rotate(-0.5deg); }
+    .switch-card.good { transform:rotate(0.5deg); }
+    .switch-card .tag { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:6px 11px; border-radius:5px; border:1.5px solid; margin-bottom:16px; }
+    .switch-card.bad .tag { color:var(--orange-deep); border-color:var(--orange-deep); background:var(--orange-soft); }
+    .switch-card.good .tag { color:var(--green); border-color:var(--green); background:var(--green-soft); }
+    .switch-list { list-style:none; display:grid; gap:0; }
+    .switch-list li { display:grid; grid-template-columns:22px 1fr; gap:10px; padding:12px 0; border-top:1px dashed var(--bone-2); font-size:15px; align-items:start; line-height:1.45; }
+    .switch-list li:first-child { border-top:none; }
+    .switch-card .mk { font-family:var(--font-mono); flex:none; font-size:13px; letter-spacing:-0.08em; }
+    .switch-card.bad .mk { color:var(--orange-deep); }
+    .switch-card.good .mk { color:var(--green); font-weight:700; }
+
+    .switch-mid { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-width:118px; }
+    .switch-arrow { font-family:var(--font-mono); color:var(--bone-2); font-size:22px; line-height:1; }
+    .toggle { width:92px; height:46px; border-radius:999px; border:2px solid var(--ink); background:var(--green); position:relative; box-shadow:var(--stamp-sm); cursor:pointer; padding:0; transition:background .35s ease; }
+    .toggle .knob { position:absolute; top:4px; left:52px; width:34px; height:34px; border-radius:50%; background:var(--sand); border:2px solid var(--ink); transition:left .45s cubic-bezier(.2,.8,.2,1); }
+    .toggle.off { background:var(--bone); }
+    .toggle.off .knob { left:4px; }
+    .mid-lbl { font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); text-align:center; }
+    .mid-lbl b { color:var(--green); font-weight:400; }
+    .switch-block.off .switch-card.good { opacity:.4; box-shadow:none; }
+    .switch-block.off .switch-card.bad { box-shadow:6px 6px 0 var(--orange-deep); }
+    .switch-block.off .mid-lbl b { color:var(--stone-2); }
+
+    /* ── THE PIPELINE ────────────────────────────────────── */
+    .pipe-frame { margin-top:34px; background:var(--paper); border:1.5px solid var(--ink); border-radius:12px; box-shadow:var(--stamp); padding:clamp(16px,3vw,34px); }
+    .pipe { width:100%; height:auto; display:block; }
+    .pipe .lane { fill:none; stroke:var(--bone-2); stroke-width:1.5; }
+    .pipe .lane.hot { stroke:var(--orange); stroke-dasharray:2 7; animation:laneflow 1.4s linear infinite; }
+    @keyframes laneflow { to { stroke-dashoffset:-9; } }
+    .pipe .node { fill:var(--paper); stroke:var(--ink); stroke-width:1.5; }
+    .pipe .node.core { fill:var(--ink); stroke:var(--orange); stroke-width:2.5; }
+    .pipe text { font-family:var(--font-mono); fill:var(--stone); font-size:10px; letter-spacing:0.07em; text-transform:uppercase; }
+    .pipe text.hd { fill:var(--ink); }
+    .pipe text.or { fill:var(--orange-deep); }
+    .pipe text.gr { fill:var(--green); }
+    .pipe .dot { fill:var(--orange); }
+    .pipe .dot.g { fill:var(--green); }
+    .pipe .ring { fill:none; stroke:var(--orange); stroke-width:1.5; opacity:.5; transform-box:fill-box; transform-origin:center; animation:ringpulse 2.4s ease-out infinite; }
+    @keyframes ringpulse { from { transform:scale(.55); opacity:.7; } to { transform:scale(1.75); opacity:0; } }
+    .pipe-hud { display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center; justify-content:center; margin-top:22px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--stone); }
+    .pipe-hud .live { color:var(--green); display:inline-flex; align-items:center; gap:8px; }
+    .pipe-hud .live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); animation:beat 1.8s infinite; }
+    @keyframes beat { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .pipe-hud b { color:var(--orange-deep); font-weight:400; }
+
+    /* ── THE FLOOR (interactive inbox) ───────────────────── */
+    .floor-top { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin:26px 0 20px; }
+    .floor-tabs { display:flex; gap:9px; flex-wrap:wrap; }
+    .floor-tab { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--stone); background:var(--paper); border:1.5px solid var(--bone-2); border-radius:8px; padding:9px 15px; cursor:pointer; transition:transform .13s ease, box-shadow .13s ease, background .13s, color .13s, border-color .13s; }
+    .floor-tab:hover { color:var(--ink); border-color:var(--ink); transform:translate(-1px,-1px); }
+    .floor-tab.active { background:var(--ink); color:var(--sand); border-color:var(--ink); box-shadow:3px 3px 0 var(--orange); }
+    .floor-stats { display:flex; gap:10px; flex-wrap:wrap; }
+    .floor-stat { font-family:var(--font-mono); font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:var(--stone); border:1px solid var(--bone-2); background:var(--paper); border-radius:6px; padding:7px 11px; }
+    .floor-stat b { font-family:var(--font-display); font-size:14px; font-weight:800; color:var(--ink); margin-right:5px; }
+
+    .floor-window { background:var(--paper); border:1.5px solid var(--ink); border-radius:12px; box-shadow:var(--stamp); overflow:hidden; }
+    .floor-bar { display:flex; align-items:center; gap:12px; padding:11px 16px; background:var(--ink); color:var(--sand); font-family:var(--font-mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; }
+    .floor-bar .dots { display:inline-flex; gap:5px; }
+    .floor-bar .dots i { width:9px; height:9px; border-radius:50%; background:var(--stone); }
+    .floor-bar .dots i.o { background:var(--orange); }
+    .floor-bar .ctx { color:var(--bone-2); }
+    .floor-bar .ctx b { color:var(--sand); font-weight:400; }
+    .floor-bar .rt { margin-left:auto; color:var(--green); display:inline-flex; align-items:center; gap:6px; position:relative; padding-left:14px; }
+    .floor-bar .rt::before { content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:7px; height:7px; border-radius:50%; background:var(--green); animation:beat 1.8s infinite; }
+    .tick { transition:color .3s ease; }
+    .tick.tick-sent, .tick.tick-delivered { color:var(--stone-2); }
+    .tick.tick-read { color:var(--orange-deep); }
+    .floor-body { display:grid; grid-template-columns:242px 1fr; height:480px; }
+    .floor-side { border-right:1px solid var(--bone-2); background:var(--sand); }
+    .floor-conv { display:flex; gap:11px; align-items:center; padding:13px 14px; border-bottom:1px dashed var(--bone-2); border-left:3px solid transparent;
+      cursor:pointer; background:none; width:100%; text-align:left; font:inherit; color:inherit; transition:background .15s ease, border-color .15s ease; }
+    .floor-conv:hover:not(.on) { background:rgba(216,90,48,0.06); }
+    .floor-conv.on { background:var(--paper); border-left-color:var(--orange); }
+    .floor-conv .av { width:34px; height:34px; border-radius:8px; border:1.5px solid var(--ink); display:grid; place-items:center; font-family:var(--font-mono); font-size:11px; color:var(--ink); flex:none; }
+    .floor-conv .cm { min-width:0; flex:1; }
+    .floor-conv .cm b { display:block; font-size:13.5px; font-weight:600; font-family:var(--font-body); }
+    .floor-conv .cm span.pv { display:block; font-size:12px; color:var(--stone); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .floor-conv .ct { font-family:var(--font-mono); font-size:8.5px; letter-spacing:0.07em; text-transform:uppercase; padding:2px 6px; border-radius:3px; margin-top:4px; display:inline-block; border:1px solid; }
+    .ct.sales { color:var(--orange-deep); border-color:var(--orange); background:var(--orange-soft); }
+    .ct.ai { color:var(--green); border-color:var(--green); background:var(--green-soft); }
+    .ct.b2b { color:var(--ink); border-color:var(--bone-2); background:var(--sand); }
+    .ct.sup { color:#2A6FA8; border-color:#9CC4E0; background:#E7F0F8; }
+    .floor-conv .un { flex:none; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--green); color:#fff; font-size:11px; font-weight:700; display:grid; place-items:center; }
+    .floor-thread { display:flex; flex-direction:column; background:var(--sand); }
+    .thread-variant { display:none; flex-direction:column; flex:1; min-height:0; }
+    .thread-variant.on { display:flex; }
+    .thread-variant.on .floor-thread-head { animation:threadSwap .32s ease both; }
+    .thread-variant.on .floor-msgs { animation:threadSwap .32s ease both; }
+    @keyframes threadSwap { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:none; } }
+    .floor-thread-head { display:flex; align-items:center; gap:11px; padding:12px 16px; border-bottom:1px solid var(--bone-2); background:var(--paper); }
+    .floor-thread-head .nm b { display:block; font-size:13.5px; font-weight:600; }
+    .floor-thread-head .nm span { font-family:var(--font-mono); font-size:10.5px; color:var(--green); }
+    .floor-thread-head .av { width:32px; height:32px; border-radius:8px; border:1.5px solid var(--ink); display:grid; place-items:center; font-family:var(--font-mono); font-size:11px; flex:none; }
+    .floor-msgs { flex:1; display:flex; flex-direction:column; gap:11px; padding:20px 18px; min-height:0; overflow-y:auto; }
+    .fmsg { max-width:80%; padding:11px 14px; border-radius:12px; font-size:14px; line-height:1.5; border:1px solid var(--bone-2); }
+    .fmsg.in { align-self:flex-start; background:var(--paper); border-bottom-left-radius:3px; }
+    .fmsg.out { align-self:flex-end; background:var(--green-soft); border-color:#C4DFD2; border-bottom-right-radius:3px; }
+    .fmsg .who { display:block; font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); margin-bottom:5px; }
+    .fmsg .who::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--green); margin-right:5px; vertical-align:middle; }
+    .fmsg .src { display:inline-block; font-family:var(--font-mono); font-size:9.5px; color:var(--orange-deep); border:1px dashed var(--orange); border-radius:4px; padding:2px 6px; margin-top:8px; }
+    .fmsg .mt { display:flex; justify-content:flex-end; gap:6px; font-family:var(--font-mono); font-size:9.5px; color:var(--stone-2); text-transform:uppercase; letter-spacing:0.06em; margin-top:7px; }
+    .floor-input { display:flex; gap:9px; padding:12px 15px; border-top:1px solid var(--bone-2); background:var(--paper); }
+    .floor-input .fld { flex:1; border:1.5px solid var(--bone-2); border-radius:8px; padding:10px 14px; font-family:var(--font-mono); font-size:12px; color:var(--stone-2); background:var(--sand); }
+    .floor-input .snd { width:40px; height:40px; border-radius:8px; background:var(--ink); color:var(--sand); display:grid; place-items:center; border:1.5px solid var(--ink); flex:none; }
+    .floor-panel { display:none; }
+    .floor-panel.active { display:block; animation:floorIn .4s ease both; }
+    @keyframes floorIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+    @media (max-width:900px){
+      .switch-grid { grid-template-columns:1fr; gap:20px; }
+      .switch-card.bad, .switch-card.good { transform:none; }
+      .switch-mid { flex-direction:row; gap:18px; min-width:0; padding:4px 0; }
+      .switch-arrow { transform:rotate(90deg); }
+    }
+    @media (max-width:640px){
+      .floor-body { grid-template-columns:1fr; }
+      .floor-side { display:none; }
+      .floor-top { flex-direction:column; align-items:flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .pipe .lane.hot, .pipe .ring, .pipe-hud .live::before, .floor-panel.active { animation:none; }
+    }
+
+    /* ── heading line-hold (keep two words together) ─────── */
+    .keep { white-space:nowrap; }
+
+    /* ── live "recording" dot, reused by Problem + Broadcasts ─ */
+    .rec-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--orange-deep); margin-right:8px; animation:recblink 1.4s infinite; vertical-align:middle; }
+    .rec-dot.sm { width:6px; height:6px; }
+    @keyframes recblink { 0%,100%{opacity:1} 50%{opacity:.22} }
+
+    /* ── THE LEAK (problem ledger) · dynamic reveal + live meter ─ */
+    .ledger-row[data-row] { opacity:0; transform:translateX(10px); transition:opacity .5s ease, transform .5s ease, background .3s ease; }
+    .ledger.in-view .ledger-row[data-row] { opacity:1; transform:none; }
+    .ledger-row[data-row].flag { background:var(--orange-soft); }
+    .ledger-meter b { font-family:var(--font-display); font-weight:800; color:var(--orange-deep); font-size:15px; }
+    .meter-live { color:var(--stone); display:inline-flex; align-items:center; gap:2px; }
+    .meter-wrap { position:relative; display:inline-flex; align-items:baseline; gap:6px; }
+    .meter-pop { position:absolute; left:100%; top:-4px; margin-left:6px; font-style:normal; font-weight:700;
+      font-family:var(--font-mono); font-size:11px; color:var(--green);
+      opacity:0; transform:translateY(0) scale(0.9); white-space:nowrap; pointer-events:none; }
+    .meter-pop.pop { animation:meterPop 1.1s ease-out forwards; }
+    @keyframes meterPop {
+      0% { opacity:0; transform:translateY(4px) scale(0.85); }
+      18% { opacity:1; transform:translateY(-2px) scale(1); }
+      100% { opacity:0; transform:translateY(-20px) scale(1); }
+    }
+
+    /* ── shared typing indicator + message reveal (Floor + Memory) ─ */
+    .fmsg, .bubble { opacity:0; transform:translateY(10px); transition:opacity .45s ease, transform .45s ease; position:relative; z-index:1; }
+    .fmsg.show, .bubble.show { opacity:1; transform:none; }
+    .ftyping { display:inline-flex; visibility:hidden; opacity:0; align-self:flex-start; align-items:center; gap:7px; padding:10px 14px; border-radius:12px; background:var(--paper); border:1px solid var(--bone-2); position:relative; z-index:1; transition:opacity .2s ease, visibility .2s; }
+    .ftyping.show { visibility:visible; opacity:1; }
+    .ftyping::before { content:"AI is typing"; font-family:var(--font-mono); font-size:10px; letter-spacing:0.04em; text-transform:uppercase; color:var(--stone); }
+    .ftyping i { width:5px; height:5px; border-radius:50%; background:var(--stone); animation:ftbounce 1s infinite; }
+    .ftyping i:nth-child(2){ animation-delay:.15s; } .ftyping i:nth-child(3){ animation-delay:.3s; }
+    @keyframes ftbounce { 0%,100%{ transform:translateY(0); opacity:.4; } 50%{ transform:translateY(-4px); opacity:1; } }
+
+    /* an always-on ambient pulse, so the message area never reads as dead/static */
+    .floor-msgs, .chat-body { position:relative; }
+    .floor-msgs::before, .chat-body::before {
+      content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+      background: radial-gradient(220px 160px at 32% 66%, rgba(216,90,48,0.07), transparent 72%);
+      animation: msgsBreathe 4.4s ease-in-out infinite;
+    }
+    @keyframes msgsBreathe {
+      0%,100% { opacity:.5; transform:scale(1); }
+      50% { opacity:1; transform:scale(1.08); }
+    }
+
+    /* ── Broadcasts ledger · live status cycling ─────────── */
+    .b-status { display:inline-flex; min-width:64px; justify-content:flex-end; }
+
+    /* ── Features grid · live status line + cursor spotlight ─ */
+    .card.lift { position:relative; overflow:hidden; }
+    .card.lift::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .3s ease; z-index:0;
+      background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), rgba(216,90,48,0.11), transparent 62%); }
+    .card.lift:hover::before { opacity:1; }
+    .card.lift > * { position:relative; z-index:1; }
+    .card-live { display:flex; align-items:center; gap:8px; margin-top:16px; padding-top:14px; border-top:1px dashed var(--bone-2);
+      font-family:var(--font-mono); font-size:11px; color:var(--stone); }
+    .card-live .cdot { width:7px; height:7px; border-radius:50%; background:var(--green); flex:none; animation:beat 1.8s infinite; }
+    .card-live .txt { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; transition:opacity .22s ease; }
+
+    @media (prefers-reduced-motion: reduce){
+      .fmsg, .bubble { opacity:1; transform:none; }
+      .ledger-row[data-row] { opacity:1; transform:none; }
+      .rec-dot, .card-live .cdot, .ftyping i { animation:none; }
+    }
+  </style>
+  <script defer src="yusr.js?v=3"></script>
+</head>
+<body>
+<div class="margin-rule" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg width="30" height="30" viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#0A0A0A"/><g transform="translate(58,44)"><path d="M0 0 L42 62 L84 0" stroke="#F4EEE2" stroke-width="14" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><line x1="42" y1="62" x2="42" y2="118" stroke="#F4EEE2" stroke-width="14" stroke-linecap="square"/><circle cx="42" cy="30" r="10" fill="#D85A30"/></g></svg>
+     <span style="display:inline-block;width:1px;height:28px;background:#D8D4C8;" aria-hidden="true"></span><svg width="60" height="24" viewBox="0 0 164 66" role="img" aria-label="YUSR, built for business"><g transform="translate(2,2)" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter"><g stroke="#0A0A0A"><path d="M 0 0 L 13 20 L 26 0"/><line x1="13" y1="20" x2="13" y2="42"/></g><g stroke="#D85A30"><path d="M 42 0 L 42 32 Q 42 42 52 42 L 64 42 Q 74 42 74 32 L 74 0"/></g><g stroke="#0A0A0A"><path d="M 116 6 Q 116 0 108 0 L 96 0 Q 88 0 88 9 Q 88 18 96 20 L 108 22 Q 116 24 116 32 Q 116 42 108 42 L 94 42 Q 88 42 88 36"/></g><g stroke="#D85A30"><line x1="130" y1="0" x2="130" y2="42"/><path d="M 130 0 L 148 0 Q 158 0 158 11 Q 158 22 148 22 L 130 22"/><line x1="146" y1="22" x2="160" y2="42"/></g></g><text x="2" y="60" font-family="'Hanken Grotesk',Arial,sans-serif" font-size="10" font-weight="800" fill="#D85A30" textLength="160" lengthAdjust="spacingAndGlyphs">BUILT FOR BUSINESS</text></svg>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/broadcasts">Broadcasts</a>
+      <a href="/memory">AI Memory</a>
+      <a href="/analytics">Analytics</a>
+      <a href="/qr">QR Codes</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
+      <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<!-- ═══ HERO ═══ -->
+<section id="top" style="padding-top:76px;">
+  <span class="folio" aria-hidden="true"><b>FOLIO 01</b> · THE COUNTER</span>
+  <div class="wrap">
+    <div class="split" style="align-items:start; gap:56px;">
+      <div>
+        <div class="hero-cred">
+          <span class="eyebrow" style="margin-bottom:0;">Official WhatsApp Business API<span class="eb-tail"> · Made in India</span></span>
+          <div class="cred-badges">
+            <div class="meta-badge" role="img" aria-label="Meta Tech Provider, verified">
+              <svg width="26" height="17" viewBox="0 0 48 32" aria-hidden="true"><path d="M12 4 C4 4 2 12 2 16 C2 24 6 28 11 28 C16 28 19 22 24 16 C29 10 32 4 37 4 C42 4 46 8 46 16 C46 24 42 28 37 28 C32 28 29 22 24 16 C19 10 16 4 11 4 Z" fill="none" stroke="#0866FF" stroke-width="4"/></svg>
+              <span class="mb-name">Tech Provider</span>
+              <span class="mb-verified">Verified</span>
+            </div>
+            <span class="made-in-india">Made in India</span>
+          </div>
+        </div>
+        <h1 class="display">Every chat.<br>Every order.<br><span class="u">Nothing missed.</span></h1>
+        <p class="lede">YUSR AI is the WhatsApp CRM for Indian business. A <b>shared team inbox</b>, <b>bulk broadcasts from Google Sheets</b>, and an <b>AI assistant trained on your catalog</b>. Every conversation entered, answered, and accounted for.</p>
+        <div class="hero-actions" style="display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;">
+          <a class="btn btn-orange" href="/pricing#trial">Start free · 7 days</a>
+          <a class="btn btn-ghost" href="#features">See it work ↓</a>
+        </div>
+        <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); margin-top:20px;">No credit card · Cancel with one message</p>
+        <p style="margin-top:16px; font-size:15px; color:var(--stone);">Rather not take our word for it? <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20try%20the%20live%20demo" target="_blank" rel="noopener" data-cta="hero-live-demo" style="color:var(--orange-deep); font-weight:600;">Message our live bot on WhatsApp</a> and try to catch it out. Ask it prices, send a voice note in Hinglish. That is the same product you would be buying.</p>
+      </div>
+      <div class="visual rv">
+        <div class="tape" role="img" aria-label="A live feed of WhatsApp business events, printed like a receipt">
+          <div class="tape-head"><span>YUSR · Counter tape</span><b>● LIVE <span data-tape-count>0</span> logged today</b></div>
+          <div class="tape-lines" data-tape></div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:26px; flex-wrap:wrap;">
+          <span class="chip green">✓✓ delivered</span>
+          <span class="chip orange">hot lead</span>
+          <span class="chip tilt">cod</span>
+          <span class="chip">repeat buyer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row rv" style="margin-top:72px;">
+      <div class="stat"><div class="num"><span data-count="2.4">0</span><small>s</small></div><div class="lbl">Median first reply</div></div>
+      <div class="stat"><div class="num"><span data-count="81">0</span><small>%</small></div><div class="lbl">Answered by AI</div></div>
+      <div class="stat"><div class="num"><span data-count="2500">0</span><small>+</small></div><div class="lbl">Broadcasts in minutes</div></div>
+      <div class="stat"><div class="num">₹0</div><div class="lbl">For your first 7 days</div></div>
+    </div>
+    <p class="rv stat-note">Measured on our own live demo number, not an industry average. <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20try%20the%20live%20demo" target="_blank" rel="noopener" data-cta="stats-live-demo" style="color:var(--orange-deep); font-weight:600;">Message it yourself</a> and check the reply time on your own watch.</p>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Footwear</span><span class="o">·</span><span>Fashion</span><span class="o">·</span><span>Electronics</span><span class="o">·</span><span>Clinics</span><span class="o">·</span><span>Coaching institutes</span><span class="o">·</span><span>Restaurants</span><span class="o">·</span><span>Jewellery</span><span class="o">·</span><span>Logistics</span><span class="o">·</span>
+    <span>Footwear</span><span class="o">·</span><span>Fashion</span><span class="o">·</span><span>Electronics</span><span class="o">·</span><span>Clinics</span><span class="o">·</span><span>Coaching institutes</span><span class="o">·</span><span>Restaurants</span><span class="o">·</span><span>Jewellery</span><span class="o">·</span><span>Logistics</span><span class="o">·</span>
+  </div>
+</div>
+
+<!-- ═══ PROBLEM ═══ -->
+<section id="problem">
+  <span class="folio" aria-hidden="true"><b>FOLIO 02</b> · THE LEAK</span>
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">The problem</span>
+        <h2 class="sec">Still running lakhs a month through one phone?</h2>
+        <p class="lede">Your customers live on WhatsApp. Your business should not live on a single handset that everyone at the counter fights over. Every missed reply is a customer walking to the next shop, and right now nobody is keeping count.</p>
+        <div style="margin-top:26px;">
+          <a class="btn btn-ink btn-sm" href="#features">Here is the fix ↓</a>
+        </div>
+      </div>
+      <div class="visual rv">
+        <div class="ledger" role="table" aria-label="Daily losses that go unrecorded, tallying live">
+          <div class="ledger-head"><span><i class="rec-dot" aria-hidden="true"></i>Daily losses <span class="dot">·</span> unrecorded</span><span>DEBIT</span></div>
+          <div class="ledger-row" data-row style="transition-delay:.05s"><span class="mono">08:10</span><div class="grow"><div class="name">14 chats waiting since last night</div><div class="sub">One phone, five people, no owner</div></div><span class="chip orange">missed</span></div>
+          <div class="ledger-row" data-row style="transition-delay:.18s"><span class="mono">11:30</span><div class="grow"><div class="name">"What's the price?" typed for the 40th time</div><div class="sub">Same answers, every single day</div></div><span class="chip orange">manual</span></div>
+          <div class="ledger-row" data-row style="transition-delay:.31s"><span class="mono">14:05</span><div class="grow"><div class="name">Broadcast copied and pasted to 800 numbers</div><div class="sub">No idea who received it</div></div><span class="chip orange">blind</span></div>
+          <div class="ledger-row" data-row style="transition-delay:.44s"><span class="mono">19:45</span><div class="grow"><div class="name">Customer data in 3 sheets + 2 notebooks</div><div class="sub">That is not a CRM</div></div><span class="chip orange">scattered</span></div>
+          <div class="ledger-row ledger-meter" style="justify-content:space-between; font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em;">
+            <span class="meter-wrap">Unrecorded today <b data-meter>₹0</b><i class="meter-pop" data-meter-pop aria-hidden="true"></i></span>
+            <span class="meter-live">tallying <i class="rec-dot sm" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE SWITCH (before / after) ═══ -->
+<section id="switch">
+  <span class="folio" aria-hidden="true"><b>FOLIO 03</b> · THE SWITCH</span>
+  <div class="wrap">
+    <div class="adds-head rv">
+      <div>
+        <span class="eyebrow">The switch</span>
+        <h2 class="sec">One number. Two very <span class="keep">different days.</span></h2>
+      </div>
+      <span class="adds-folio">00 / Before &amp; after</span>
+    </div>
+    <div class="switch-block rv">
+      <div class="switch-grid">
+        <div class="switch-card bad">
+          <span class="tag">✕ Without YUSR</span>
+          <ul class="switch-list">
+            <li><span class="mk">✕</span><span>"What's the price?" asked 40 times, answered 12</span></li>
+            <li><span class="mk">✕</span><span>The owner's phone is the entire sales team</span></li>
+            <li><span class="mk">✕</span><span>Enquiries at 11:48 PM answered next afternoon</span></li>
+            <li><span class="mk">✕</span><span>Broadcasts by copy and paste, numbers get banned</span></li>
+            <li><span class="mk">✕</span><span>No record of who bought and who walked away</span></li>
+          </ul>
+        </div>
+        <div class="switch-mid">
+          <span class="switch-arrow" aria-hidden="true">→</span>
+          <button class="toggle" data-toggle role="switch" aria-checked="true" aria-label="Autopilot toggle"><span class="knob"></span></button>
+          <span class="mid-lbl">Autopilot · <b class="tg-state">ON</b></span>
+        </div>
+        <div class="switch-card good">
+          <span class="tag">✓✓ With YUSR</span>
+          <ul class="switch-list">
+            <li><span class="mk">✓✓</span><span>AI answers price, stock and COD in 2.4 seconds</span></li>
+            <li><span class="mk">✓✓</span><span>The whole team on one number, every chat assigned</span></li>
+            <li><span class="mk">✓✓</span><span>Midnight enquiries answered at midnight</span></li>
+            <li><span class="mk">✓✓</span><span>Broadcasts from a Google Sheet, template safe</span></li>
+            <li><span class="mk">✓✓</span><span>Every lead tagged: hot, repeat, wholesale, VIP</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE PIPELINE ═══ -->
+<section id="pipeline">
+  <span class="folio" aria-hidden="true"><b>FOLIO 04</b> · THE PIPELINE</span>
+  <div class="wrap">
+    <div class="adds-head rv">
+      <div>
+        <span class="eyebrow">The pipeline</span>
+        <h2 class="sec">Watch where every <span class="keep">message goes.</span></h2>
+      </div>
+      <span class="adds-folio">Live routing</span>
+    </div>
+    <p class="lede rv">Every incoming chat runs through the YUSR core. Most are answered by the AI in seconds. The rest are handed to your team with full context, tagged and saved. Nothing sits unread overnight.</p>
+    <div class="pipe-frame rv">
+      <svg class="pipe" viewBox="0 0 1040 380" role="img" aria-label="Diagram: incoming WhatsApp messages flow through the YUSR core and are answered by AI, assigned to the team, or tagged and saved.">
+        <defs>
+          <path id="pin" d="M208,190 L422,190"/>
+          <path id="pa" d="M518,190 C650,190 680,71 812,71"/>
+          <path id="pb" d="M518,190 L812,190"/>
+          <path id="pc" d="M518,190 C650,190 680,309 812,309"/>
+        </defs>
+        <use href="#pin" class="lane hot"/>
+        <use href="#pa" class="lane hot"/>
+        <use href="#pb" class="lane hot"/>
+        <use href="#pc" class="lane hot"/>
+
+        <rect class="node" x="8" y="158" width="200" height="64" rx="10"/>
+        <text class="hd" x="108" y="186" text-anchor="middle">Incoming</text>
+        <text class="gr" x="108" y="204" text-anchor="middle">WhatsApp · 24/7</text>
+
+        <circle class="ring" cx="470" cy="190" r="48"/>
+        <circle class="node core" cx="470" cy="190" r="48"/>
+        <g transform="translate(451,163) scale(0.45)">
+          <path d="M0 0 L42 62 L84 0" stroke="#F4EEE2" stroke-width="14" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+          <line x1="42" y1="62" x2="42" y2="118" stroke="#F4EEE2" stroke-width="14" stroke-linecap="square"/>
+          <circle cx="42" cy="30" r="10" fill="#D85A30"/>
+        </g>
+        <text class="or" x="470" y="264" text-anchor="middle">YUSR core</text>
+        <text x="470" y="281" text-anchor="middle">reads · decides · replies</text>
+
+        <rect class="node" x="812" y="42" width="220" height="58" rx="10"/>
+        <text class="gr" x="922" y="67" text-anchor="middle">Answered by AI</text>
+        <text x="922" y="85" text-anchor="middle">81% of chats · in 2.4s</text>
+
+        <rect class="node" x="812" y="161" width="220" height="58" rx="10"/>
+        <text class="or" x="922" y="186" text-anchor="middle">Assigned to team</text>
+        <text x="922" y="204" text-anchor="middle">discounts · complaints · bulk</text>
+
+        <rect class="node" x="812" y="280" width="220" height="58" rx="10"/>
+        <text class="or" x="922" y="305" text-anchor="middle">Tagged &amp; saved</text>
+        <text x="922" y="323" text-anchor="middle">hot lead · repeat · wholesale</text>
+
+        <circle class="dot" r="4.5"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#pin"/></animateMotion></circle>
+        <circle class="dot" r="4.5"><animateMotion dur="2.2s" begin="1.1s" repeatCount="indefinite"><mpath href="#pin"/></animateMotion></circle>
+        <circle class="dot g" r="4.5"><animateMotion dur="2.6s" begin="0.3s" repeatCount="indefinite"><mpath href="#pa"/></animateMotion></circle>
+        <circle class="dot g" r="4.5"><animateMotion dur="2.6s" begin="1.6s" repeatCount="indefinite"><mpath href="#pa"/></animateMotion></circle>
+        <circle class="dot" r="4.5"><animateMotion dur="3s" begin="0.9s" repeatCount="indefinite"><mpath href="#pb"/></animateMotion></circle>
+        <circle class="dot" r="4.5"><animateMotion dur="3.2s" begin="1.9s" repeatCount="indefinite"><mpath href="#pc"/></animateMotion></circle>
+      </svg>
+      <div class="pipe-hud">
+        <span class="live">Running now</span>
+        <span><b>81%</b> answered by AI</span>
+        <span><b>19%</b> human, with full context</span>
+        <span><b>0</b> chats unread overnight</span>
+      </div>
+      <p class="stat-note">Figures from our own live demo number, not an industry average.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE FLOOR (interactive inbox) ═══ -->
+<section id="floor">
+  <span class="folio" aria-hidden="true"><b>FOLIO 05</b> · THE FLOOR</span>
+  <div class="wrap">
+    <div class="adds-head rv">
+      <div>
+        <span class="eyebrow">The floor</span>
+        <h2 class="sec">See it work. Pick a counter.</h2>
+      </div>
+      <span class="adds-folio">Tap a tab</span>
+    </div>
+    <div class="floor-top rv">
+      <div class="floor-tabs" role="tablist" aria-label="Conversation type">
+        <button class="floor-tab active" data-floor="footwear" role="tab" aria-selected="true">👟 Footwear</button>
+        <button class="floor-tab" data-floor="fashion" role="tab" aria-selected="false">👗 Fashion</button>
+        <button class="floor-tab" data-floor="orders" role="tab" aria-selected="false">📦 Orders</button>
+        <button class="floor-tab" data-floor="faqs" role="tab" aria-selected="false">💬 FAQs</button>
+      </div>
+      <div class="floor-stats">
+        <span class="floor-stat"><b>81%</b> answered by AI</span>
+        <span class="floor-stat"><b>2.4s</b> median reply</span>
+      </div>
+    </div>
+
+    <div class="floor-stage rv">
+      <!-- FOOTWEAR -->
+      <div class="floor-panel active" data-floor="footwear" role="tabpanel">
+        <div class="floor-window">
+          <div class="floor-bar">
+            <span class="dots"><i class="o"></i><i></i><i></i></span>
+            <span class="ctx">Y · <b>Sole &amp; Stride</b> · Footwear</span>
+            <span class="rt">AI online</span>
+          </div>
+          <div class="floor-body">
+            <aside class="floor-side">
+              <div class="floor-conv on" data-contact="0" role="button" tabindex="0">
+                <span class="av" style="background:#DDE7F0;">AM</span>
+                <div class="cm"><b>Arjun Mehta</b><span class="pv">Size 9 in the running shoe?</span><span class="ct sales">Sales</span></div>
+                <span class="un">1</span>
+              </div>
+              <div class="floor-conv" data-contact="1" role="button" tabindex="0">
+                <span class="av" style="background:#E2F0E9;">NR</span>
+                <div class="cm"><b>Neha R.</b><span class="pv">Delivered, thank you!</span><span class="ct ai">AI handled</span></div>
+              </div>
+              <div class="floor-conv" data-contact="2" role="button" tabindex="0">
+                <span class="av" style="background:#F3D9CD;">KS</span>
+                <div class="cm"><b>Kabir Singh</b><span class="pv">Bulk order for a team</span><span class="ct b2b">Wholesale</span></div>
+              </div>
+            </aside>
+            <div class="floor-thread">
+              <div class="thread-variant on" data-contact="0">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#DDE7F0;">AM</span>
+                  <div class="nm"><b>Arjun Mehta</b><span>online</span></div>
+                  <span class="chip orange" style="margin-left:auto;">Assigned · Rahul</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Do you have the grey running shoe in size 9?<div class="mt">11:04 AM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Yes! The Aero Run in grey is in stock in size 9, ₹3,499 (₹2,799 this week). Free delivery above ₹999. ✅<span class="src">catalog.xlsx · row 22</span><div class="mt">From your catalog <span class="tick">✓✓</span></div></div>
+                  <div class="fmsg in" data-m>Great. Is cash on delivery available?<div class="mt">11:05 AM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Cash on delivery is available across India on this order. Shall I place it for you? 🛍️<div class="mt">From your FAQ <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Sole &amp; Stride…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="1">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#E2F0E9;">NR</span>
+                  <div class="nm"><b>Neha R.</b><span>online</span></div>
+                  <span class="chip green" style="margin-left:auto;">AI handled</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Just wanted to say the shoes arrived today, thank you!<div class="mt">4:41 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>So glad they arrived safely, Neha! Let us know if you need a different size down the line. 👟<div class="mt">From your catalog <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Sole &amp; Stride…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="2">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#F3D9CD;">KS</span>
+                  <div class="nm"><b>Kabir Singh</b><span>online</span></div>
+                  <span class="chip orange" style="margin-left:auto;">Wholesale</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>We need 40 pairs for our staff uniform, what's the best rate?<div class="mt">2:18 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>For 40+ pairs I can do ₹2,899 per pair with free delivery. Connecting you with Rahul to confirm sizes. 🤝<div class="mt">From your catalog <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Sole &amp; Stride…</span><span class="snd">→</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FASHION -->
+      <div class="floor-panel" data-floor="fashion" role="tabpanel">
+        <div class="floor-window">
+          <div class="floor-bar">
+            <span class="dots"><i class="o"></i><i></i><i></i></span>
+            <span class="ctx">Y · <b>Mira Boutique</b> · Fashion</span>
+            <span class="rt">AI online</span>
+          </div>
+          <div class="floor-body">
+            <aside class="floor-side">
+              <div class="floor-conv on" data-contact="0" role="button" tabindex="0">
+                <span class="av" style="background:#F0D8E4;">AV</span>
+                <div class="cm"><b>Anjali Verma</b><span class="pv">Is the kurta set in XL?</span><span class="ct sales">Sales</span></div>
+                <span class="un">1</span>
+              </div>
+              <div class="floor-conv" data-contact="1" role="button" tabindex="0">
+                <span class="av" style="background:#E2F0E9;">RS</span>
+                <div class="cm"><b>Ritu S.</b><span class="pv">Saree fall and pico?</span><span class="ct ai">AI handled</span></div>
+              </div>
+              <div class="floor-conv" data-contact="2" role="button" tabindex="0">
+                <span class="av" style="background:#F3D9CD;">KD</span>
+                <div class="cm"><b>Kavya D.</b><span class="pv">Wedding collection</span><span class="ct sales">Hot lead</span></div>
+                <span class="un">3</span>
+              </div>
+            </aside>
+            <div class="floor-thread">
+              <div class="thread-variant on" data-contact="0">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#F0D8E4;">AV</span>
+                  <div class="nm"><b>Anjali Verma</b><span>online</span></div>
+                  <span class="chip orange" style="margin-left:auto;">Assigned · Sana</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Is the Chikankari kurta set available in XL?<div class="mt">1:06 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Yes! The powder blue Chikankari set is in XL, ₹2,499 (₹1,999 this week). Free shipping above ₹999. ✅<span class="src">catalog.xlsx · row 58</span><div class="mt">From your catalog <span class="tick">✓✓</span></div></div>
+                  <div class="fmsg in" data-m>Does the colour run in the wash?<div class="mt">1:07 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>It is pure cotton, colourfast tested and machine wash safe. A care card comes in the box. 🧺<div class="mt">From your FAQ <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Mira Boutique…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="1">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#E2F0E9;">RS</span>
+                  <div class="nm"><b>Ritu S.</b><span>online</span></div>
+                  <span class="chip green" style="margin-left:auto;">AI handled</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Do you also do saree fall and pico stitching?<div class="mt">3:22 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Yes! Fall and pico is ₹149, ready in 2 days. Want me to book a slot? ✅<div class="mt">From your FAQ <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Mira Boutique…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="2">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#F3D9CD;">KD</span>
+                  <div class="nm"><b>Kavya D.</b><span>online</span></div>
+                  <span class="chip orange" style="margin-left:auto;">Hot lead</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Can I see your wedding lehenga collection?<div class="mt">5:50 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Absolutely! Our bridal collection starts at ₹8,999. Connecting you with Sana for a personal shopping session. 👰<div class="mt">From your catalog <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Mira Boutique…</span><span class="snd">→</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="floor-panel" data-floor="orders" role="tabpanel">
+        <div class="floor-window">
+          <div class="floor-bar">
+            <span class="dots"><i class="o"></i><i></i><i></i></span>
+            <span class="ctx">Y · <b>Urban Kart</b> · Orders</span>
+            <span class="rt">AI online</span>
+          </div>
+          <div class="floor-body">
+            <aside class="floor-side">
+              <div class="floor-conv on" data-contact="0" role="button" tabindex="0">
+                <span class="av" style="background:#DDE7F0;">SY</span>
+                <div class="cm"><b>Sandeep Yadav</b><span class="pv">Where is order #2231?</span><span class="ct sup">Orders</span></div>
+                <span class="un">1</span>
+              </div>
+              <div class="floor-conv" data-contact="1" role="button" tabindex="0">
+                <span class="av" style="background:#E2F0E9;">FA</span>
+                <div class="cm"><b>Farah A.</b><span class="pv">Delivered, thank you!</span><span class="ct ai">AI handled</span></div>
+              </div>
+              <div class="floor-conv" data-contact="2" role="button" tabindex="0">
+                <span class="av" style="background:#F3D9CD;">GT</span>
+                <div class="cm"><b>Gupta Traders</b><span class="pv">Invoice copy needed</span><span class="ct b2b">B2B</span></div>
+              </div>
+            </aside>
+            <div class="floor-thread">
+              <div class="thread-variant on" data-contact="0">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#DDE7F0;">SY</span>
+                  <div class="nm"><b>Sandeep Yadav</b><span>online</span></div>
+                  <span class="chip green" style="margin-left:auto;">AI handled</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Where is order #2231? It has been three days.<div class="mt">11:20 AM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Checking… 📦 Order #2231 is out for delivery today. Courier: Ekart, expected by 6 PM. Tracking: EK88··42.<span class="src">orders · #2231</span><div class="mt">From your order sheet <span class="tick">✓✓</span></div></div>
+                  <div class="fmsg in" data-m>Perfect, thank you!<div class="mt">11:21 AM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>You are welcome! I will send the delivery confirmation here the moment it is completed. ✅<div class="mt">Auto follow up <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Urban Kart…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="1">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#E2F0E9;">FA</span>
+                  <div class="nm"><b>Farah A.</b><span>online</span></div>
+                  <span class="chip green" style="margin-left:auto;">AI handled</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>My order just arrived, everything's perfect, thanks!<div class="mt">9:04 AM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Wonderful to hear, Farah! Thank you for shopping with us. 🎉<div class="mt">Auto follow up <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Urban Kart…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="2">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#F3D9CD;">GT</span>
+                  <div class="nm"><b>Gupta Traders</b><span>online</span></div>
+                  <span class="chip" style="margin-left:auto;">B2B</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Can you resend the invoice for order #2198?<div class="mt">12:35 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Sending it right now. Check your email in a moment. Let me know if anything doesn't add up. 🧾<div class="mt">From your order sheet <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Urban Kart…</span><span class="snd">→</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="floor-panel" data-floor="faqs" role="tabpanel">
+        <div class="floor-window">
+          <div class="floor-bar">
+            <span class="dots"><i class="o"></i><i></i><i></i></span>
+            <span class="ctx">Y · <b>Sole &amp; Stride</b> · Front desk</span>
+            <span class="rt">AI online</span>
+          </div>
+          <div class="floor-body">
+            <aside class="floor-side">
+              <div class="floor-conv on" data-contact="0" role="button" tabindex="0">
+                <span class="av" style="background:#E2F0E9;">PN</span>
+                <div class="cm"><b>Priya N.</b><span class="pv">Are you open on Sunday?</span><span class="ct ai">AI handled</span></div>
+              </div>
+              <div class="floor-conv" data-contact="1" role="button" tabindex="0">
+                <span class="av" style="background:#F0E2CD;">IK</span>
+                <div class="cm"><b>Imran K.</b><span class="pv">What is the return window?</span><span class="ct sup">Support</span></div>
+              </div>
+              <div class="floor-conv" data-contact="2" role="button" tabindex="0">
+                <span class="av" style="background:#DDE7F0;">RT</span>
+                <div class="cm"><b>Rohit T.</b><span class="pv">Do you ship across India?</span><span class="ct ai">AI handled</span></div>
+              </div>
+            </aside>
+            <div class="floor-thread">
+              <div class="thread-variant on" data-contact="0">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#E2F0E9;">PN</span>
+                  <div class="nm"><b>Priya N.</b><span>online</span></div>
+                  <span class="chip green" style="margin-left:auto;">AI handled</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Are you open on Sunday?<div class="mt">6:12 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Yes, we are open Sunday 11 AM to 6 PM. You are welcome to visit! 🙏<span class="src">faq.pdf · p2</span><div class="mt">From your FAQ <span class="tick">✓✓</span></div></div>
+                  <div class="fmsg in" data-m>And what is the return window?<div class="mt">6:13 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Easy 7 day returns with free pickup, and size exchange is instant. 👍<span class="src">policy.pdf · p1</span><div class="mt">From your policy <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Sole &amp; Stride…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="1">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#F0E2CD;">IK</span>
+                  <div class="nm"><b>Imran K.</b><span>online</span></div>
+                  <span class="chip" style="margin-left:auto;">Support</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>What's your return window?<div class="mt">10:47 AM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>7 day easy returns with free pickup, no questions asked. 👍<span class="src">policy.pdf · p1</span><div class="mt">From your policy <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Sole &amp; Stride…</span><span class="snd">→</span></div>
+              </div>
+              <div class="thread-variant" data-contact="2">
+                <div class="floor-thread-head">
+                  <span class="av" style="background:#DDE7F0;">RT</span>
+                  <div class="nm"><b>Rohit T.</b><span>online</span></div>
+                  <span class="chip green" style="margin-left:auto;">AI handled</span>
+                </div>
+                <div class="floor-msgs" data-msgs>
+                  <div class="fmsg in" data-m>Do you ship across India?<div class="mt">8:29 PM</div></div>
+                  <div class="ftyping" data-t><i></i><i></i><i></i></div>
+                  <div class="fmsg out" data-m><span class="who">AI · YUSR</span>Yes, we ship across India, 3 to 5 business days depending on your pincode. 📦<span class="src">faq.pdf · p2</span><div class="mt">From your FAQ <span class="tick">✓✓</span></div></div>
+                </div>
+                <div class="floor-input"><span class="fld">Reply as Sole &amp; Stride…</span><span class="snd">→</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES GRID ═══ -->
+<section id="features">
+  <span class="folio" aria-hidden="true"><b>FOLIO 06</b> · THE SYSTEM</span>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Everything in one place</span>
+      <h2 class="sec">The whole counter, on one screen</h2>
+      <p class="lede">Six tools that work as one system. Each one has its own page, so open whichever your business needs first.</p>
+    </div>
+    <div class="grid-3">
+      <a class="card lift rv" href="/features" style="text-decoration:none; color:inherit;">
+        <span class="chip">01 · Inbox</span>
+        <h3 style="margin-top:14px;">Team Inbox</h3>
+        <p>Every WhatsApp chat in one shared screen. Assign to agents, track status from open to closed, stop passing the phone around.</p>
+        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Team Inbox ↗</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Rahul replied 6s ago|3 chats waiting|Sana just closed #2231"></span></div>
+      </a>
+      <a class="card lift rv" href="/broadcasts" style="text-decoration:none; color:inherit;">
+        <span class="chip">02 · Reach</span>
+        <h3 style="margin-top:14px;">Broadcasts</h3>
+        <p>Your Google Sheet becomes the audience. Meta approved templates, per row personalization, delivery tracked in real time.</p>
+        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Broadcasts ↗</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="1,904 read so far|EOSS Sale · sending now|97% delivered"></span></div>
+      </a>
+      <a class="card lift rv" href="/memory" style="text-decoration:none; color:inherit;">
+        <span class="chip">03 · Brain</span>
+        <h3 style="margin-top:14px;">AI Memory</h3>
+        <p>Upload your catalog, FAQs, and policies once. The AI answers customers with your facts, in Hindi, English, or Hinglish.</p>
+        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open AI Memory ↗</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Answered in 2.1s|catalog.xlsx synced|32 FAQs indexed"></span></div>
+      </a>
+      <a class="card lift rv" href="/analytics" style="text-decoration:none; color:inherit;">
+        <span class="chip">04 · Proof</span>
+        <h3 style="margin-top:14px;">Analytics &amp; Tags</h3>
+        <p>Message volume, response rates, peak hours, agent leaderboards. Stamp custom tags on every contact and filter by them.</p>
+        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Analytics ↗</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="3,412 messages this week|Peak hour: 8–9 PM|Sana leading today"></span></div>
+      </a>
+      <a class="card lift rv" href="/qr" style="text-decoration:none; color:inherit;">
+        <span class="chip">05 · Entry</span>
+        <h3 style="margin-top:14px;">QR Codes</h3>
+        <p>One scan from your counter, packaging, or poster opens a chat with a prefilled message and an automatic source tag.</p>
+        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open QR Codes ↗</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Counter QR scanned 418×|+1 lead · packaging QR|Hoarding: 129 scans"></span></div>
+      </a>
+      <a class="card lift rv" href="/pricing" style="text-decoration:none; color:inherit;">
+        <span class="chip">06 · Plan</span>
+        <h3 style="margin-top:14px;">Pricing</h3>
+        <p>Try the full product free for 7 days. Then we shape a plan around your volume and team, not the other way around.</p>
+        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Pricing ↗</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="7 day trial · no card|Setup call in 24h|Cancel anytime"></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BROADCASTS PREVIEW ═══ -->
+<section id="broadcasts">
+  <span class="folio" aria-hidden="true"><b>FOLIO 07</b> · BROADCASTS</span>
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Broadcasts</span>
+        <h2 class="sec">One Google Sheet. <span class="keep">2,500 phones.</span> Done.</h2>
+        <p class="lede">No CSV exports, no copy and paste marathons. Point YUSR at the sheet you already keep, pick a template, and go. Name, order ID, and due amount drop straight into a Meta approved template, per row.</p>
+        <div style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-ink btn-sm" href="/broadcasts">How broadcasts work ↗</a>
+        </div>
+      </div>
+      <div class="visual rv">
+        <div class="ledger ledger-broadcast" aria-label="A live broadcast send, delivery status updating in real time">
+          <div class="ledger-head"><span><i class="rec-dot sm" aria-hidden="true"></i>EOSS Sale <span class="dot">·</span> Broadcast #38</span><span>LIVE</span></div>
+          <div class="ledger-row" data-brow data-state="delivered"><span class="avatar">RK</span><div class="grow"><div class="name">Rohit Kumar</div><div class="sub">+91 98··· 4421 · Hi Rohit, flat 40% off ends tonight</div></div><span class="b-status" data-status></span></div>
+          <div class="ledger-row" data-brow data-state="sent"><span class="avatar o">PS</span><div class="grow"><div class="name">Priya Sharma</div><div class="sub">+91 97··· 1108 · Hi Priya, flat 40% off ends tonight</div></div><span class="b-status" data-status></span></div>
+          <div class="ledger-row" data-brow data-state="read"><span class="avatar g">AT</span><div class="grow"><div class="name">Anil Traders</div><div class="sub">+91 99··· 8852 · Hi Anil, flat 40% off ends tonight</div></div><span class="b-status" data-status></span></div>
+          <div class="ledger-row" style="justify-content:space-between; font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em;">
+            <span>Sent <b data-count="2487">0</b></span>
+            <span>Delivered <b data-count="2431">0</b></span>
+            <span>Read <b data-count="1904">0</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AI MEMORY PREVIEW ═══ -->
+<section id="memory">
+  <span class="folio" aria-hidden="true"><b>FOLIO 08</b> · AI MEMORY</span>
+  <div class="wrap">
+    <div class="split rev">
+      <div class="rv">
+        <span class="eyebrow">AI Memory</span>
+        <h2 class="sec">Answers from your knowledge, not generic fluff</h2>
+        <p class="lede">Upload your catalog, FAQs, and policies once. From then on, your AI assistant replies with your actual prices, stock, and rules. Every answer shows the exact row or page it came from, so you can trust what goes to customers.</p>
+        <div style="margin-top:26px;">
+          <a class="btn btn-ink btn-sm" href="/memory">How AI Memory works ↗</a>
+        </div>
+      </div>
+      <div class="visual rv">
+        <div class="chat" role="img" aria-label="A WhatsApp conversation where the AI answers with a cited answer from the catalog, live">
+          <div class="chat-head">
+            <span class="avatar o" style="border-color:var(--sand);">RK</span>
+            <div class="who"><b>Rohit Kumar</b><span>● online · AI handling</span></div>
+            <span class="chip green">AI</span>
+          </div>
+          <div class="chat-body" data-msgs>
+            <div class="bubble in" data-m>Is the Chikankari kurta set available in XL? And what is the return policy?</div>
+            <div class="ftyping" data-t><i></i><i></i><i></i></div>
+            <div class="bubble out" data-m>
+              Yes! Chikankari Kurta Set is available in XL, ₹2,499 (sale ₹1,999 this week). Returns: 7 day easy returns with free pickup. Size exchange is instant. ✅
+              <div><span class="src">catalog.xlsx · row 58</span><span class="src">policy.pdf · p1</span></div>
+              <div class="meta">AI · from your catalog · <span class="tick">✓✓</span></div>
+            </div>
+            <div class="bubble in" data-m>Perfect. Is cash on delivery available?</div>
+            <div class="ftyping" data-t><i></i><i></i><i></i></div>
+            <div class="bubble out" data-m>Cash on delivery is available on orders above ₹999 across India. Should I create the order for you? 🛍️<div class="meta">AI · from your FAQ · <span class="tick">✓✓</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ANALYTICS PREVIEW ═══ -->
+<section id="analytics">
+  <span class="folio" aria-hidden="true"><b>FOLIO 09</b> · ANALYTICS</span>
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Analytics &amp; custom tags</span>
+        <h2 class="sec">Know what is working. Stop guessing.</h2>
+        <p class="lede">Message volume, response rates, peak hours, and agent activity on one live dashboard. Stamp tags like <span class="chip orange">hot lead</span> and <span class="chip">wholesale</span> on any contact, then filter, broadcast, and follow up by tag.</p>
+        <div style="margin-top:26px;">
+          <a class="btn btn-ink btn-sm" href="/analytics">Open the dashboard ↗</a>
+        </div>
+      </div>
+      <div class="visual rv">
+        <div class="card" style="border:1.5px solid var(--ink); box-shadow:var(--stamp);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;">
+            <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone);">Messages this week</span>
+            <span style="font-family:var(--font-display); font-weight:800; font-size:26px;"><span data-count="3412">0</span> <span class="delta" style="font-family:var(--font-mono); font-size:11px; color:var(--green);">▲ 12%</span></span>
+          </div>
+          <div class="bars" aria-label="Messages per day, Monday to Sunday">
+            <div class="bar" data-h="0.45"></div>
+            <div class="bar" data-h="0.6"></div>
+            <div class="bar" data-h="0.52"></div>
+            <div class="bar" data-h="0.74"></div>
+            <div class="bar hot" data-h="0.98"></div>
+            <div class="bar hot" data-h="0.88"></div>
+            <div class="bar" data-h="0.4"></div>
+          </div>
+          <div class="bar-lbls"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QR PREVIEW ═══ -->
+<section id="qr">
+  <span class="folio" aria-hidden="true"><b>FOLIO 10</b> · QR CODES</span>
+  <div class="wrap">
+    <div class="split rev">
+      <div class="rv">
+        <span class="eyebrow">QR codes</span>
+        <h2 class="sec">From your counter to their chat, in one scan</h2>
+        <p class="lede">Print a YUSR QR on your counter, packaging, posters, or visiting cards. One scan opens WhatsApp with a prefilled first message, tags the contact with its source, and drops them straight into your inbox. You will finally know which poster actually works.</p>
+        <div style="margin-top:26px;">
+          <a class="btn btn-ink btn-sm" href="/qr">See QR entry points ↗</a>
+        </div>
+      </div>
+      <div class="visual rv" style="display:flex; justify-content:center;">
+        <div class="card" style="border:1.5px solid var(--ink); box-shadow:var(--stamp); text-align:center; padding:30px 36px;">
+          <svg width="180" height="180" viewBox="0 0 25 25" role="img" aria-label="A stylized QR code with the YUSR mark in the middle" shape-rendering="crispEdges" style="display:block; margin:0 auto;">
+            <rect width="25" height="25" fill="#FCFAF4"/>
+            <g fill="#0A0A0A">
+              <path d="M1 1h7v7H1zM2 2v5h5V2z"/><rect x="3" y="3" width="3" height="3" fill="#D85A30"/>
+              <path d="M17 1h7v7h-7zM18 2v5h5v-5z"/><rect x="19" y="3" width="3" height="3"/>
+              <path d="M1 17h7v7H1zM2 18v5h5v-5z"/><rect x="3" y="19" width="3" height="3"/>
+              <rect x="10" y="1" width="1" height="1"/><rect x="12" y="1" width="2" height="1"/><rect x="15" y="1" width="1" height="1"/>
+              <rect x="9" y="2" width="1" height="2"/><rect x="13" y="2" width="1" height="1"/><rect x="15" y="3" width="1" height="2"/>
+              <rect x="10" y="3" width="2" height="1"/><rect x="12" y="4" width="1" height="2"/><rect x="9" y="5" width="2" height="1"/>
+              <rect x="14" y="5" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="13" y="6" width="2" height="1"/>
+              <rect x="1" y="9" width="1" height="1"/><rect x="3" y="9" width="2" height="1"/><rect x="6" y="9" width="1" height="2"/>
+              <rect x="2" y="11" width="1" height="2"/><rect x="4" y="11" width="1" height="1"/><rect x="1" y="13" width="2" height="1"/>
+              <rect x="5" y="13" width="2" height="1"/><rect x="3" y="14" width="1" height="1"/><rect x="1" y="15" width="1" height="1"/>
+              <rect x="5" y="15" width="1" height="1"/><rect x="18" y="9" width="2" height="1"/><rect x="21" y="9" width="1" height="1"/>
+              <rect x="23" y="9" width="1" height="2"/><rect x="19" y="11" width="1" height="2"/><rect x="22" y="11" width="1" height="1"/>
+              <rect x="17" y="13" width="2" height="1"/><rect x="21" y="13" width="2" height="1"/><rect x="18" y="15" width="1" height="1"/>
+              <rect x="20" y="14" width="1" height="2"/><rect x="23" y="15" width="1" height="1"/>
+              <rect x="9" y="17" width="1" height="2"/><rect x="11" y="17" width="2" height="1"/><rect x="14" y="17" width="1" height="1"/>
+              <rect x="10" y="19" width="1" height="1"/><rect x="12" y="19" width="1" height="2"/><rect x="15" y="19" width="1" height="1"/>
+              <rect x="9" y="21" width="2" height="1"/><rect x="13" y="21" width="1" height="1"/><rect x="15" y="21" width="1" height="2"/>
+              <rect x="10" y="23" width="1" height="1"/><rect x="12" y="23" width="2" height="1"/>
+              <rect x="9" y="9" width="7" height="7" fill="#FCFAF4"/>
+              <rect x="9.5" y="9.5" width="6" height="6" fill="#0A0A0A" rx="1"/>
+            </g>
+            <g transform="translate(10.6,10.4) scale(0.038)" stroke="#F4EEE2" stroke-width="14" fill="none" stroke-linecap="square">
+              <path d="M0 0 L42 62 L84 0"/><line x1="42" y1="62" x2="42" y2="110"/><circle cx="42" cy="28" r="10" fill="#D85A30" stroke="none"/>
+            </g>
+          </svg>
+          <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-top:16px;">Scan · counter poster</p>
+          <span class="chip orange" style="margin-top:10px;">source: counter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing">
+  <span class="folio" aria-hidden="true"><b>FOLIO 11</b> · THE DEAL</span>
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center; margin-inline:auto;">
+      <span class="eyebrow" style="justify-content:center; display:inline-flex;">Pricing</span>
+      <h2 class="sec" style="margin-inline:auto;">Start free. Scale when ready.</h2>
+      <p class="lede" style="margin-inline:auto;">A shoe store and a coaching institute do not need the same setup. Try everything free, then we build a plan around you.</p>
+    </div>
+    <div class="plans">
+      <div class="plan rv">
+        <span class="plan-name">Free Trial</span>
+        <span class="plan-title">Try everything</span>
+        <div class="price">₹0<small>for 7 days · no card</small></div>
+        <p class="desc">The full product, not a demo. Cancel with one message.</p>
+        <ul>
+          <li>Team inbox, up to 3 agents</li>
+          <li>500 broadcast messages</li>
+          <li>AI Memory on your catalog and FAQs</li>
+          <li>Analytics dashboard and tags</li>
+          <li>Guided setup on WhatsApp</li>
+        </ul>
+        <a class="btn btn-ghost" href="/pricing#trial">Start free trial</a>
+      </div>
+      <div class="plan hero-plan rv">
+        <span class="badge chip orange">Most businesses</span>
+        <span class="plan-name">For Business</span>
+        <span class="plan-title">Built around your business</span>
+        <div class="price">Custom<small>INR · monthly</small></div>
+        <p class="desc">We shape the plan to your volume and team, not the other way around.</p>
+        <ul>
+          <li>Unlimited agents and conversations</li>
+          <li>High volume broadcasts from Sheets</li>
+          <li>AI trained on your full knowledge base</li>
+          <li>Multi workspace for agencies</li>
+          <li>Priority support, IST hours</li>
+        </ul>
+        <a class="btn btn-orange" href="/pricing#contact">Contact us</a>
+      </div>
+    </div>
+    <p class="rv" style="text-align:center; font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); margin-top:28px;">All plans run on the official WhatsApp Business API · Your data exports with you</p>
+    <p class="rv" style="text-align:center; margin-top:14px;"><a href="/pricing" style="color:var(--orange-deep); font-weight:600;">Full pricing details and FAQ ↗</a></p>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta" style="border-bottom:none;">
+  <span class="folio" aria-hidden="true"><b>FOLIO 12</b> · CLOSE</span>
+  <div class="wrap">
+    <div class="cta-band rv">
+      <h2>Put your WhatsApp on autopilot this week</h2>
+      <p>Connect your number, upload your catalog, invite your team. Most businesses go live in a day.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
+        <a class="btn btn-ghost" href="/features">See how it works</a>
+      </div>
+      <p class="fine">No credit card · Cancel anytime · Official WhatsApp Business API</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="/" style="margin-right:0;">
+          <svg width="30" height="30" viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#0A0A0A"/><g transform="translate(58,44)"><path d="M0 0 L42 62 L84 0" stroke="#F4EEE2" stroke-width="14" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><line x1="42" y1="62" x2="42" y2="118" stroke="#F4EEE2" stroke-width="14" stroke-linecap="square"/><circle cx="42" cy="30" r="10" fill="#D85A30"/></g></svg>
+         <span style="display:inline-block;width:1px;height:28px;background:#D8D4C8;" aria-hidden="true"></span><svg width="60" height="24" viewBox="0 0 164 66" role="img" aria-label="YUSR, built for business"><g transform="translate(2,2)" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter"><g stroke="#0A0A0A"><path d="M 0 0 L 13 20 L 26 0"/><line x1="13" y1="20" x2="13" y2="42"/></g><g stroke="#D85A30"><path d="M 42 0 L 42 32 Q 42 42 52 42 L 64 42 Q 74 42 74 32 L 74 0"/></g><g stroke="#0A0A0A"><path d="M 116 6 Q 116 0 108 0 L 96 0 Q 88 0 88 9 Q 88 18 96 20 L 108 22 Q 116 24 116 32 Q 116 42 108 42 L 94 42 Q 88 42 88 36"/></g><g stroke="#D85A30"><line x1="130" y1="0" x2="130" y2="42"/><path d="M 130 0 L 148 0 Q 158 0 158 11 Q 158 22 148 22 L 130 22"/><line x1="146" y1="22" x2="160" y2="42"/></g></g><text x="2" y="60" font-family="'Hanken Grotesk',Arial,sans-serif" font-size="10" font-weight="800" fill="#D85A30" textLength="160" lengthAdjust="spacingAndGlyphs">BUILT FOR BUSINESS</text></svg>
+        </a>
+        <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="/features">Team Inbox</a>
+        <a href="/broadcasts">Broadcasts</a>
+        <a href="/memory">AI Memory</a>
+        <a href="/analytics">Analytics &amp; Tags</a>
+        <a href="/qr">QR Codes</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/pricing">Pricing</a>
+        <a href="/book-demo">Book a demo</a>
+        <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacy">Privacy policy</a>
+        <a href="/terms">Terms of service</a>
+        <a href="/deletion">Data deletion</a>
+        <a href="/privacy#c09" data-cta="cookie-settings">Cookie settings</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 YUSR · All entries balanced</span>
+      <span>Made in India <span class="o">·</span> Built for business</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── shared: animate a sent message's tick through sent → delivered → read ── */
+  function animateTick(msgEl) {
+    var tick = msgEl.querySelector('.tick');
+    if (!tick || reduced) return;
+    tick.textContent = '✓';
+    tick.className = 'tick tick-sent';
+    setTimeout(function () { tick.textContent = '✓✓'; tick.className = 'tick tick-delivered'; }, 450);
+    setTimeout(function () { tick.className = 'tick tick-read'; }, 1100);
+  }
+
+  /* ── shared: play a message thread (typing dots + staggered reveal + live ticks) ── */
+  function playThread(container) {
+    if (!container) return 0;
+    var kids = Array.prototype.slice.call(container.children);
+    kids.forEach(function (el) { el.classList.remove('show'); });
+    if (reduced) { kids.forEach(function (el) { el.classList.add('show'); }); return 0; }
+    var d = 260;
+    kids.forEach(function (el) {
+      if (el.hasAttribute('data-t')) {
+        (function (el, at) { setTimeout(function () { el.classList.add('show'); }, at); })(el, d);
+        d += 900;
+        (function (el, at) { setTimeout(function () { el.classList.remove('show'); }, at); })(el, d);
+      } else {
+        (function (el, at) {
+          setTimeout(function () {
+            el.classList.add('show');
+            if (el.classList.contains('out')) animateTick(el);
+          }, at);
+        })(el, d);
+        d += 560;
+      }
+    });
+    return d;
+  }
+
+  /* ── THE FLOOR: interactive tabs, clickable contacts, live conversation replay ── */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.floor-tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.floor-panel'));
+  var floorStage = document.querySelector('.floor-stage');
+  var floorTimer = null;
+
+  function activeFloorPanel() {
+    return panels.filter(function (p) { return p.classList.contains('active'); })[0];
+  }
+  function loopFloor() {
+    clearTimeout(floorTimer);
+    var panel = activeFloorPanel();
+    var msgs = panel ? panel.querySelector('.thread-variant.on [data-msgs]') : null;
+    var dur = playThread(msgs);
+    floorTimer = setTimeout(loopFloor, (dur || 3200) + 2600);
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var key = t.getAttribute('data-floor');
+      tabs.forEach(function (x) {
+        var on = x === t;
+        x.classList.toggle('active', on);
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle('active', p.getAttribute('data-floor') === key);
+      });
+      loopFloor();
+    });
+  });
+
+  /* clicking (or keying into) a sidebar contact swaps the visible thread — real, felt interactivity */
+  function switchContact(panel, idx) {
+    if (!panel) return;
+    Array.prototype.forEach.call(panel.querySelectorAll('.floor-conv[data-contact]'), function (c) {
+      c.classList.toggle('on', c.getAttribute('data-contact') === idx);
+    });
+    Array.prototype.forEach.call(panel.querySelectorAll('.thread-variant[data-contact]'), function (v) {
+      v.classList.toggle('on', v.getAttribute('data-contact') === idx);
+    });
+    loopFloor();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.floor-conv[data-contact]'), function (conv) {
+    conv.addEventListener('click', function () {
+      switchContact(conv.closest('.floor-panel'), conv.getAttribute('data-contact'));
+    });
+    conv.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        switchContact(conv.closest('.floor-panel'), conv.getAttribute('data-contact'));
+      }
+    });
+  });
+
+  if (floorStage) {
+    loopFloor(); /* start right away — don't wait on scroll to fill the panel */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { loopFloor(); }
+          else { clearTimeout(floorTimer); }
+        });
+      }, { threshold: 0.3 }).observe(floorStage);
+    }
+  }
+
+  /* ── AI MEMORY: live chat replay, loops while in view ── */
+  var memChat = document.querySelector('#memory [data-msgs]');
+  if (memChat) {
+    var memTimer = null;
+    function loopMem() {
+      clearTimeout(memTimer);
+      var dur = playThread(memChat);
+      memTimer = setTimeout(loopMem, (dur || 3200) + 2800);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { loopMem(); }
+          else { clearTimeout(memTimer); }
+        });
+      }, { threshold: 0.35 }).observe(memChat);
+    } else {
+      loopMem();
+    }
+  }
+
+  /* ── THE LEAK: ledger reveal + a live "unrecorded losses" meter ── */
+  var lossLedger = document.querySelector('#problem .ledger');
+  if (lossLedger) {
+    var lossRows = Array.prototype.slice.call(lossLedger.querySelectorAll('[data-row]'));
+    var meter = lossLedger.querySelector('[data-meter]');
+    var meterPop = lossLedger.querySelector('[data-meter-pop]');
+    var lossStarted = false;
+
+    function tweenMeter(from, to, dur) {
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 2);
+        var val = Math.round(from + (to - from) * eased);
+        if (meter) meter.textContent = '₹' + val.toLocaleString('en-IN');
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    function startLoss() {
+      if (lossStarted) return;
+      lossStarted = true;
+      lossLedger.classList.add('in-view');
+      var idx = 0;
+      if (!reduced) {
+        setInterval(function () {
+          lossRows.forEach(function (r) { r.classList.remove('flag'); });
+          lossRows[idx % lossRows.length].classList.add('flag');
+          idx++;
+        }, 1600);
+      }
+      var amount = 4820;
+      if (meter) meter.textContent = '₹' + amount.toLocaleString('en-IN');
+      if (!reduced) {
+        setInterval(function () {
+          var bump = Math.floor(Math.random() * 60) + 15;
+          var next = amount + bump;
+          tweenMeter(amount, next, 550);
+          amount = next;
+          if (meterPop) {
+            meterPop.textContent = '+₹' + bump;
+            meterPop.classList.remove('pop');
+            void meterPop.offsetWidth; /* restart the animation */
+            meterPop.classList.add('pop');
+          }
+        }, 2400);
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) startLoss(); });
+      }, { threshold: 0.3 }).observe(lossLedger);
+    } else {
+      startLoss();
+    }
+  }
+
+  /* ── BROADCASTS: rows cycle sent → delivered → read, counters creep up ── */
+  var bcastLedger = document.querySelector('.ledger-broadcast');
+  if (bcastLedger) {
+    var bNext = { sent: 'delivered', delivered: 'read', read: 'read' };
+    function renderBStatus(el, s) {
+      if (!el) return;
+      if (s === 'read') el.innerHTML = '<span class="chip green">read</span>';
+      else if (s === 'delivered') el.innerHTML = '<span class="tick">✓✓</span>';
+      else el.innerHTML = '<span class="tick" style="color:var(--stone-2);">✓</span>';
+    }
+    var bRows = Array.prototype.slice.call(bcastLedger.querySelectorAll('[data-brow]'));
+    bRows.forEach(function (r) { renderBStatus(r.querySelector('[data-status]'), r.getAttribute('data-state')); });
+    var bCounters = Array.prototype.slice.call(bcastLedger.querySelectorAll('[data-count]'));
+    var bStarted = false;
+    function startBroadcast() {
+      if (bStarted || reduced) return;
+      bStarted = true;
+      setInterval(function () {
+        var advancing = bRows.filter(function (r) { return r.getAttribute('data-state') !== 'read'; });
+        if (!advancing.length) {
+          bRows.forEach(function (r) { r.setAttribute('data-state', 'sent'); renderBStatus(r.querySelector('[data-status]'), 'sent'); });
+          return;
+        }
+        var r = advancing[Math.floor(Math.random() * advancing.length)];
+        var ns = bNext[r.getAttribute('data-state')];
+        r.setAttribute('data-state', ns);
+        renderBStatus(r.querySelector('[data-status]'), ns);
+      }, 1900);
+      setTimeout(function () {
+        setInterval(function () {
+          bCounters.forEach(function (c) {
+            var v = parseInt((c.textContent || '0').replace(/,/g, ''), 10) || 0;
+            c.textContent = (v + Math.floor(Math.random() * 3) + 1).toLocaleString('en-IN');
+          });
+        }, 3200);
+      }, 2200);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) startBroadcast(); });
+      }, { threshold: 0.3 }).observe(bcastLedger);
+    } else {
+      startBroadcast();
+    }
+  }
+
+  /* rotating card-live status lines + card.lift cursor spotlight now live in
+     yusr.js (generic, site-wide) — removed the page-local duplicate here. */
+
+  /* ── autopilot toggle in the switch section ── */
+  var tog = document.querySelector('[data-toggle]');
+  var block = document.querySelector('.switch-block');
+  var state = document.querySelector('.tg-state');
+  if (tog) {
+    tog.addEventListener('click', function () {
+      var nowOff = !tog.classList.contains('off');
+      tog.classList.toggle('off', nowOff);
+      tog.setAttribute('aria-checked', nowOff ? 'false' : 'true');
+      if (block) block.classList.toggle('off', nowOff);
+      if (state) state.textContent = nowOff ? 'OFF' : 'ON';
+    });
+  }
+})();
+</script>
+<a class="fab-wa" href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.477L4 29l7.72-1.862A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm6.564 16.905c-.276.777-1.366 1.464-2.24 1.65-.6.127-1.383.228-4.017-.863-3.372-1.396-5.541-4.815-5.71-5.04-.164-.226-1.363-1.813-1.363-3.458 0-1.646.86-2.454 1.166-2.79.276-.303.6-.379.8-.379.2 0 .4.002.575.01.185.009.433-.07.677.517.276.664.937 2.31 1.02 2.478.084.168.14.365.028.591-.112.226-.168.365-.335.56-.168.196-.352.437-.503.587-.168.168-.343.35-.148.687.196.336.87 1.436 1.867 2.325 1.283 1.146 2.365 1.5 2.7 1.669.336.168.532.14.727-.084.196-.226.84-.98 1.064-1.316.224-.336.448-.28.756-.168.308.112 1.958.924 2.294 1.092.336.168.56.253.643.393.084.14.084.812-.192 1.589z"/></svg>
+</a>
+</body>
+</html>

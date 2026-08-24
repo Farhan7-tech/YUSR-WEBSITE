@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://yusr.co.in/sitemap.xml
+
+# Block access to internal/admin paths if any are added later
+Disallow: /admin/
+Disallow: /api/

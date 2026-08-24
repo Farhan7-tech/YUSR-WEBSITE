@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics & Custom Tags · YUSR AI</title>
+  <meta name="description" content="Live WhatsApp analytics: message volume, peak hours, bot vs human performance, an activity feed, and a custom tag system for contacts." />
+  <link rel="canonical" href="https://yusr.co.in/analytics" />
+  <meta property="og:site_name" content="YUSR AI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yusr.co.in/analytics" />
+  <meta property="og:title" content="Analytics & Custom Tags · YUSR AI" />
+  <meta property="og:description" content="Live WhatsApp analytics: message volume, peak hours, bot vs human performance, an activity feed, and a custom tag system for contacts." />
+  <meta property="og:image" content="https://yusr.co.in/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="YUSR AI. Every chat. Every order. Nothing missed." />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Analytics & Custom Tags · YUSR AI" />
+  <meta name="twitter:description" content="Live WhatsApp analytics: message volume, peak hours, bot vs human performance, an activity feed, and a custom tag system for contacts." />
+  <meta name="twitter:image" content="https://yusr.co.in/og-image.png" />
+  <meta name="twitter:image:alt" content="YUSR AI. Every chat. Every order. Nothing missed." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='%230A0A0A'/%3E%3Cg transform='translate(58,44)'%3E%3Cpath d='M0 0 L42 62 L84 0' stroke='%23F4EEE2' stroke-width='14' fill='none' stroke-linecap='square'/%3E%3Cline x1='42' y1='62' x2='42' y2='118' stroke='%23F4EEE2' stroke-width='14' stroke-linecap='square'/%3E%3Ccircle cx='42' cy='30' r='10' fill='%23D85A30'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="yusr.css?v=3" />
+  <script defer src="yusr.js?v=3"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://yusr.co.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Analytics & Tags",
+        "item": "https://yusr.co.in/analytics"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div class="margin-rule" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/"><svg width="30" height="30" viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#0A0A0A"/><g transform="translate(58,44)"><path d="M0 0 L42 62 L84 0" stroke="#F4EEE2" stroke-width="14" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><line x1="42" y1="62" x2="42" y2="118" stroke="#F4EEE2" stroke-width="14" stroke-linecap="square"/><circle cx="42" cy="30" r="10" fill="#D85A30"/></g></svg><span style="display:inline-block;width:1px;height:28px;background:#D8D4C8;" aria-hidden="true"></span><svg width="60" height="24" viewBox="0 0 164 66" role="img" aria-label="YUSR, built for business"><g transform="translate(2,2)" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter"><g stroke="#0A0A0A"><path d="M 0 0 L 13 20 L 26 0"/><line x1="13" y1="20" x2="13" y2="42"/></g><g stroke="#D85A30"><path d="M 42 0 L 42 32 Q 42 42 52 42 L 64 42 Q 74 42 74 32 L 74 0"/></g><g stroke="#0A0A0A"><path d="M 116 6 Q 116 0 108 0 L 96 0 Q 88 0 88 9 Q 88 18 96 20 L 108 22 Q 116 24 116 32 Q 116 42 108 42 L 94 42 Q 88 42 88 36"/></g><g stroke="#D85A30"><line x1="130" y1="0" x2="130" y2="42"/><path d="M 130 0 L 148 0 Q 158 0 158 11 Q 158 22 148 22 L 130 22"/><line x1="146" y1="22" x2="160" y2="42"/></g></g><text x="2" y="60" font-family="'Hanken Grotesk',Arial,sans-serif" font-size="10" font-weight="800" fill="#D85A30" textLength="160" lengthAdjust="spacingAndGlyphs">BUILT FOR BUSINESS</text></svg></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/broadcasts">Broadcasts</a>
+      <a href="/memory">AI Memory</a>
+      <a href="/analytics" aria-current="page">Analytics</a>
+      <a href="/qr">QR Codes</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="/">Home</a>
+      <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<section class="page-hero">
+  <span class="folio" aria-hidden="true"><b>FOLIO 01</b> · ANALYTICS</span>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">YUSR AI</a> <span class="o">/</span> Analytics &amp; Tags</p>
+    <span class="eyebrow">Analytics &amp; custom tags</span>
+    <h1 class="display" style="font-size:clamp(40px,5.4vw,68px);">Know what is working. <span class="u">Stop guessing.</span></h1>
+    <p class="lede">How many messages came in today? How much did the AI handle on its own? Which broadcast converted? Until now, the answer was a shrug. Now it's a dashboard that updates the moment a new message lands, no refresh needed.</p>
+
+    <div class="stat-row rv" data-creep style="margin-top:48px;">
+      <div class="stat"><div class="num"><span data-count="3412">0</span></div><div class="lbl">Messages this week <span class="delta">▲ 12%</span></div></div>
+      <div class="stat"><div class="num"><span data-count="94">0</span><small>%</small></div><div class="lbl">Response rate <span class="delta">▲ 6%</span></div></div>
+      <div class="stat"><div class="num"><span data-count="81">0</span><small>%</small></div><div class="lbl">Bot handled rate</div></div>
+      <div class="stat"><div class="num">₹<span data-count="184000">0</span></div><div class="lbl">Revenue from your order sheet</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="folio" aria-hidden="true"><b>FOLIO 02</b> · THE WEEK</span>
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Peak hours &amp; volume</span>
+        <h2 class="sec">See your week the way your counter feels it</h2>
+        <p class="lede">Message volume by day and hour shows exactly when your customers are active, in your own timezone, so you know when to staff up, when to schedule broadcasts, and when the AI is carrying the shop on its own.</p>
+      </div>
+      <div class="visual rv">
+        <div class="card" style="border:1.5px solid var(--ink); box-shadow:var(--stamp);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;">
+            <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone);">Messages per day</span>
+            <span class="chip green"><i class="rec-dot sm" style="background:var(--green); margin-right:5px;" aria-hidden="true"></i>live</span>
+          </div>
+          <div class="bars" aria-label="Messages per day, Monday to Sunday, peaking Friday and Saturday">
+            <div class="bar" data-h="0.45"></div>
+            <div class="bar" data-h="0.6"></div>
+            <div class="bar" data-h="0.52"></div>
+            <div class="bar" data-h="0.74"></div>
+            <div class="bar hot" data-h="0.98"></div>
+            <div class="bar hot" data-h="0.88"></div>
+            <div class="bar hot" data-h="0.4" style="animation:barGrow 3.2s ease-in-out infinite; transform-origin:bottom;"></div>
+          </div>
+          <style>@keyframes barGrow { 0%,100% { transform:scaleY(0.4); } 50% { transform:scaleY(0.46); } } @media (prefers-reduced-motion: reduce) { [style*="barGrow"] { animation:none !important; } }</style>
+          <div class="bar-lbls"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="performance">
+  <span class="folio" aria-hidden="true"><b>FOLIO 03</b> · BOT VS HUMAN</span>
+  <div class="wrap">
+    <div class="split rev">
+      <div class="rv">
+        <span class="eyebrow">Assistant performance</span>
+        <h2 class="sec">How much is the bot actually carrying?</h2>
+        <p class="lede">Active conversations, bot handled rate, average bot and human response times, and how many times a human had to step in. All in one view, with a 7 / 30 / 90 day selector. This is the honest measure of whether your AI is pulling its weight or just answering the easy ones.</p>
+      </div>
+      <div class="visual rv">
+        <div class="ledger" data-live-meter>
+          <div class="ledger-head"><span><i class="rec-dot sm" aria-hidden="true"></i>Assistant performance <span class="dot">·</span> last 30 days</span><span>7D / 30D / 90D</span></div>
+          <div class="ledger-row" data-row><span class="avatar g">AI</span><div class="grow"><div class="name">YUSR AI</div><div class="sub">Bot handled, zero takeover needed</div></div><span class="mono">312 · 2.1s</span></div>
+          <div class="ledger-row" data-row><span class="avatar o">AY</span><div class="grow"><div class="name">Ayesha</div><div class="sub">Took over for exchanges and bulk orders</div></div><span class="mono">41 · 1m 40s</span></div>
+          <div class="ledger-row" data-row><span class="avatar">RA</span><div class="grow"><div class="name">Rahul</div><div class="sub">Took over for delivery escalations</div></div><span class="mono">33 · 2m 05s</span></div>
+          <div class="ledger-row" style="justify-content:space-between; font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em;"><span>Takeovers <b>74</b></span><span>Bot handled <b>81%</b></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="activity">
+  <span class="folio" aria-hidden="true"><b>FOLIO 04</b> · ACTIVITY FEED</span>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">What just happened</span>
+      <h2 class="sec">A rolling feed of everything worth knowing</h2>
+      <p class="lede">The last 48 hours, merged from five sources into one feed: inbound customer messages, human takeovers, completed broadcasts, manual contact tagging, and catalog sync results. You open the dashboard and know what happened without checking five different places.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card lift rv" style="--i:0;"><span class="chip green">Message</span><h3 style="margin-top:14px;">Inbound customer messages</h3><p>New conversations and replies as they happen, so you're never surprised by what's waiting in the inbox.</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="New message · 40s ago|3 messages in the last hour|Priya S. just replied"></span></div>
+      </div>
+      <div class="card lift rv" style="--i:1;"><span class="chip orange">Takeover</span><h3 style="margin-top:14px;">Human takeovers</h3><p>Every time an agent takes over from the bot, or hands a conversation back, shows up here with who and when.</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Ayesha took over · 4m ago|Rahul released back to bot|2 takeovers today"></span></div>
+      </div>
+      <div class="card lift rv" style="--i:2;"><span class="chip">Broadcast</span><h3 style="margin-top:14px;">Completed broadcasts</h3><p>Know the moment a broadcast finishes sending, with the final sent/failed counts right there.</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="EOSS Sale · 2,487 sent|12 failed, logged and skipped|Last broadcast: 6:04 PM"></span></div>
+      </div>
+      <div class="card lift rv" style="--i:3;"><span class="chip">Catalog sync</span><h3 style="margin-top:14px;">Catalog sync results</h3><p>Successes and failures both show up, so a silent sync failure never goes unnoticed for days.</p>
+        <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Synced 3:00 AM · 289 products|0 failures this week|Next sync: tomorrow 3 AM"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tags">
+  <span class="folio" aria-hidden="true"><b>FOLIO 05</b> · TAGS</span>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Custom tags</span>
+      <h2 class="sec">Stamp every contact. Filter everything.</h2>
+      <p class="lede">Tags are rubber stamps for your contacts. Invent any tag your business thinks in, stamp it manually or let rules apply it automatically, then filter your inbox, broadcasts, and analytics by tag. Tag a contact and every one of their conversations stays in sync automatically.</p>
+    </div>
+    <div class="card rv" style="border:1.5px solid var(--ink); box-shadow:var(--stamp); padding:32px;">
+      <div data-tag-cycle style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <span class="chip orange">hot lead</span>
+        <span class="chip tilt">repeat buyer</span>
+        <span class="chip green">paid</span>
+        <span class="chip">cod</span>
+        <span class="chip tilt">size 9</span>
+        <span class="chip orange" style="transform:rotate(1.4deg);">wholesale</span>
+        <span class="chip">vip</span>
+        <span class="chip green">delivered</span>
+        <span class="chip tilt">exchange</span>
+        <span class="chip">source: counter qr</span>
+        <span class="chip orange">due &gt; ₹5k</span>
+        <span class="chip">batch 2026</span>
+      </div>
+      <div class="tag-uses">
+        <div><h3 style="font-size:16px;">Filter the inbox</h3><p style="color:var(--stone); font-size:14.5px;">Show me every open chat stamped hot lead. Done in one tap.</p>
+          <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Filtered to hot lead · 6 chats|Filtered to takeover · 1 chat|Filter cleared, showing all"></span></div>
+        </div>
+        <div><h3 style="font-size:16px;">Target broadcasts</h3><p style="color:var(--stone); font-size:14.5px;">Send the wholesale rate list only to wholesale. No spam, better delivery.</p>
+          <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="wholesale tag · 41 recipients|size 9 tag · 41 matches|0 sent outside the tag"></span></div>
+        </div>
+        <div><h3 style="font-size:16px;">Automate with rules</h3><p style="color:var(--stone); font-size:14.5px;">Order above ₹10,000? Auto stamp vip. Came from a poster? source: counter qr.</p>
+          <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="vip auto stamped · order ₹12,400|counter qr auto stamped · new scan|3 rules ran today"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="meta">
+  <span class="folio" aria-hidden="true"><b>FOLIO 06</b> · TWO SOURCES</span>
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Two dashboards, two sources</span>
+        <h2 class="sec">Your business, and what Meta sees</h2>
+        <p class="lede">This dashboard reads your own database: conversations, response times, tags, revenue. A separate section under Settings → General → Analytics asks Meta's own servers, live, for delivery and pricing data about your WhatsApp number itself: sent and delivered counts straight from Meta, with read and failed counts computed from your local messages since Meta doesn't expose those.</p>
+        <div style="margin-top:22px;">
+          <a class="btn btn-ink btn-sm" href="/qr">See the review funnel next ↗</a>
+        </div>
+      </div>
+      <div class="visual rv">
+        <div class="ledger" data-live-meter>
+          <div class="ledger-head"><span><i class="rec-dot sm" aria-hidden="true"></i>Delivery funnel <span class="dot">·</span> from Meta + local DB</span><span>LIVE</span></div>
+          <div class="ledger-row" data-row><span class="avatar">SNT</span><div class="grow"><div class="name">Sent</div><div class="sub">From Meta's Graph API</div></div><span class="mono">3,412</span></div>
+          <div class="ledger-row" data-row><span class="avatar o">DLV</span><div class="grow"><div class="name">Delivered</div><div class="sub">From Meta's Graph API</div></div><span class="mono">3,388</span></div>
+          <div class="ledger-row" data-row><span class="avatar g">RD</span><div class="grow"><div class="name">Read</div><div class="sub">Computed from your local messages</div></div><span class="mono">2,904</span></div>
+          <div class="ledger-row" data-row><span class="avatar">FL</span><div class="grow"><div class="name">Failed</div><div class="sub">Computed from your local messages</div></div><span class="mono">24</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- shared closing CTA -->
+<section id="cta" style="border-bottom:none;">
+  <span class="folio" aria-hidden="true"><b>FOLIO 99</b> · CLOSE</span>
+  <div class="wrap">
+    <div class="cta-band rv">
+      <h2>Run your counter on numbers, not vibes</h2>
+      <p>The dashboard fills itself from day one of your trial. See a full week of your real data before you pay a rupee.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
+        <a class="btn btn-ghost" href="/qr">See QR codes next</a>
+      </div>
+      <p class="fine">No credit card · Cancel anytime · Official WhatsApp Business API</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="/" style="margin-right:0;"><svg width="30" height="30" viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#0A0A0A"/><g transform="translate(58,44)"><path d="M0 0 L42 62 L84 0" stroke="#F4EEE2" stroke-width="14" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><line x1="42" y1="62" x2="42" y2="118" stroke="#F4EEE2" stroke-width="14" stroke-linecap="square"/><circle cx="42" cy="30" r="10" fill="#D85A30"/></g></svg><span style="display:inline-block;width:1px;height:28px;background:#D8D4C8;" aria-hidden="true"></span><svg width="60" height="24" viewBox="0 0 164 66" role="img" aria-label="YUSR, built for business"><g transform="translate(2,2)" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter"><g stroke="#0A0A0A"><path d="M 0 0 L 13 20 L 26 0"/><line x1="13" y1="20" x2="13" y2="42"/></g><g stroke="#D85A30"><path d="M 42 0 L 42 32 Q 42 42 52 42 L 64 42 Q 74 42 74 32 L 74 0"/></g><g stroke="#0A0A0A"><path d="M 116 6 Q 116 0 108 0 L 96 0 Q 88 0 88 9 Q 88 18 96 20 L 108 22 Q 116 24 116 32 Q 116 42 108 42 L 94 42 Q 88 42 88 36"/></g><g stroke="#D85A30"><line x1="130" y1="0" x2="130" y2="42"/><path d="M 130 0 L 148 0 Q 158 0 158 11 Q 158 22 148 22 L 130 22"/><line x1="146" y1="22" x2="160" y2="42"/></g></g><text x="2" y="60" font-family="'Hanken Grotesk',Arial,sans-serif" font-size="10" font-weight="800" fill="#D85A30" textLength="160" lengthAdjust="spacingAndGlyphs">BUILT FOR BUSINESS</text></svg></a>
+        <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="/features">Team Inbox</a>
+        <a href="/broadcasts">Broadcasts</a>
+        <a href="/memory">AI Memory</a>
+        <a href="/analytics">Analytics &amp; Tags</a>
+        <a href="/qr">QR Codes</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/pricing">Pricing</a>
+        <a href="/book-demo">Book a demo</a>
+        <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacy">Privacy policy</a>
+        <a href="/terms">Terms of service</a>
+        <a href="/deletion">Data deletion</a>
+        <a href="/privacy#c09" data-cta="cookie-settings">Cookie settings</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 YUSR · All entries balanced</span>
+      <span>Made in India <span class="o">·</span> Built for business</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<a class="fab-wa" href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.477L4 29l7.72-1.862A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm6.564 16.905c-.276.777-1.366 1.464-2.24 1.65-.6.127-1.383.228-4.017-.863-3.372-1.396-5.541-4.815-5.71-5.04-.164-.226-1.363-1.813-1.363-3.458 0-1.646.86-2.454 1.166-2.79.276-.303.6-.379.8-.379.2 0 .4.002.575.01.185.009.433-.07.677.517.276.664.937 2.31 1.02 2.478.084.168.14.365.028.591-.112.226-.168.365-.335.56-.168.196-.352.437-.503.587-.168.168-.343.35-.148.687.196.336.87 1.436 1.867 2.325 1.283 1.146 2.365 1.5 2.7 1.669.336.168.532.14.727-.084.196-.226.84-.98 1.064-1.316.224-.336.448-.28.756-.168.308.112 1.958.924 2.294 1.092.336.168.56.253.643.393.084.14.084.812-.192 1.589z"/></svg>
+</a>
+</body>
+</html>
