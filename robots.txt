@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yusr.co.in/sitemap.xml
+Sitemap: https://yusr.co.in/sitemap.xml?v2
 
 # Block access to internal/admin paths if any are added later
 Disallow: /admin/
