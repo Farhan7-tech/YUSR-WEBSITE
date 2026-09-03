@@ -455,7 +455,7 @@
    entirely rather than beaconing to a property that does not exist.
 
    There is no gtag snippet in the HTML on purpose. This loader
-   covers all 11 pages from one place, so the ID lives in exactly
+   covers all 13 pages from one place, so the ID lives in exactly
    one file.
 
    GA4 sets _ga cookies, which privacy.html discloses under Cookies.
@@ -573,7 +573,7 @@
   var page = location.pathname.replace(/\.html$/, "") || "/";
 
   /* ── Consent banner UI ────────────────────────────────────────────
-     Injected from here so all 11 pages stay in sync and there is no
+     Injected from here so all 13 pages stay in sync and there is no
      markup to keep updated by hand. */
   function buildBanner() {
     var el = document.createElement("div");

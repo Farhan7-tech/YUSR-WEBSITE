@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=4" />
-  <script defer src="yusr.js?v=4"></script>
+  <link rel="stylesheet" href="yusr.css?v=5" />
+  <script defer src="yusr.js?v=5"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,9 +71,10 @@
       <a href="/analytics">Analytics</a>
       <a href="/qr">QR Codes</a>
       <a href="/pricing">Pricing</a>
+      <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm" href="/">Home</a>
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
       <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
     </div>
@@ -88,9 +89,9 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">YUSR AI</a> <span class="o">/</span> Book a Demo</p>
     <span class="eyebrow">Book a demo</span>
-    <h1 class="display" style="font-size:clamp(40px,5.4vw,68px);">See it on <span class="u">your own catalog.</span></h1>
+    <h1 class="display">See it on <span class="u">your own catalog.</span></h1>
     <p class="lede">Tell us a bit about your business. We'll walk you through the shared inbox, broadcasts, and the AI assistant live, using your actual products and FAQs instead of a generic slideshow.</p>
-    <div style="display:flex; gap:10px; margin-top:22px; flex-wrap:wrap;">
+    <div class="chip-row">
       <span class="chip">15 minute call</span>
       <span class="chip green">No pressure, no card</span>
       <span class="chip orange">Reply within 1 business day</span>
@@ -165,7 +166,7 @@
         <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="/features">Team Inbox</a>
         <a href="/broadcasts">Broadcasts</a>
         <a href="/memory">AI Memory</a>
@@ -173,14 +174,14 @@
         <a href="/qr">QR Codes</a>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <a href="/privacy">Privacy policy</a>
         <a href="/terms">Terms of service</a>
         <a href="/deletion">Data deletion</a>

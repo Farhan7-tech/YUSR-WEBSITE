@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=4" />
-  <script defer src="yusr.js?v=4"></script>
+  <link rel="stylesheet" href="yusr.css?v=5" />
+  <script defer src="yusr.js?v=5"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,9 +71,10 @@
       <a href="/analytics">Analytics</a>
       <a href="/qr" aria-current="page">QR Codes</a>
       <a href="/pricing">Pricing</a>
+      <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm" href="/">Home</a>
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
       <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
     </div>
@@ -90,9 +91,9 @@
     <div class="split" style="align-items:center;">
       <div>
         <span class="eyebrow">Part 1 · Quick entry QR codes</span>
-        <h1 class="display" style="font-size:clamp(40px,5.4vw,68px);">From print to WhatsApp, <span class="u">one scan</span></h1>
+        <h1 class="display">From print to WhatsApp, <span class="u">one scan</span></h1>
         <p class="lede">Every YUSR quick entry QR opens WhatsApp with a prefilled first message and stamps the contact with its source tag. Put one on your counter, your packaging, your posters, your visiting card. Then finally know which one brings customers.</p>
-        <div class="hero-actions" style="display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;">
+        <div class="hero-actions">
           <a class="btn btn-orange" href="/pricing#trial">Make your first QR free</a>
           <a class="btn btn-ghost" href="#review">There's a second QR system too ↓</a>
         </div>
@@ -181,13 +182,13 @@
       <p class="lede">The image you print does not encode your WhatsApp number and message directly. It encodes a short tracked link on our own domain, which redirects to WhatsApp in a fraction of a second. That single design choice makes three things possible:</p>
     </div>
     <div class="grid-3">
-      <div class="card lift rv" style="--i:0;"><span class="chip orange">Real scan counts</span><h3 style="margin-top:14px;">Bots and link previewers are filtered out</h3><p>Facebook, WhatsApp's own preview fetcher, and search crawlers all touch the link when it's shared. Only real human scans count toward your numbers.</p>
+      <div class="card lift rv" style="--i:0;"><span class="chip orange">Real scan counts</span><h3>Bots and link previewers are filtered out</h3><p>Facebook, WhatsApp's own preview fetcher, and search crawlers all touch the link when it's shared. Only real human scans count toward your numbers.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="7 bot hits filtered today|1 crawler ignored just now|Filtering Facebook preview bot"></span></div>
       </div>
-      <div class="card lift rv" style="--i:1;"><span class="chip orange">Edit after printing</span><h3 style="margin-top:14px;">Change the message, keep the same code</h3><p>Update the prefilled text any time. Every future scan of the already printed code picks up the new message instantly. No reprinting.</p>
+      <div class="card lift rv" style="--i:1;"><span class="chip orange">Edit after printing</span><h3>Change the message, keep the same code</h3><p>Update the prefilled text any time. Every future scan of the already printed code picks up the new message instantly. No reprinting.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Message updated 2h ago|Same code, new offer live|Zero reprints needed"></span></div>
       </div>
-      <div class="card lift rv" style="--i:2;"><span class="chip orange">Safe to delete</span><h3 style="margin-top:14px;">A deleted code fails gracefully</h3><p>If you ever remove a code, old printed copies simply redirect to the YUSR homepage instead of showing a broken link on someone's phone.</p>
+      <div class="card lift rv" style="--i:2;"><span class="chip orange">Safe to delete</span><h3>A deleted code fails gracefully</h3><p>If you ever remove a code, old printed copies simply redirect to the YUSR homepage instead of showing a broken link on someone's phone.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="No broken scans on record|Redirects tested, all clean|0 dead links this month"></span></div>
       </div>
     </div>
@@ -202,16 +203,16 @@
       <h2 class="sec">One QR per place, so the data means something</h2>
     </div>
     <div class="grid-2">
-      <div class="card lift rv" style="--i:0;"><span class="chip">Counter</span><h3 style="margin-top:14px;">On the counter standee</h3><p>Walk ins scan while they wait to pay. They leave with your chat in their phone, and you can broadcast the next sale straight to them.</p>
+      <div class="card lift rv" style="--i:0;"><span class="chip">Counter</span><h3>On the counter standee</h3><p>Walk ins scan while they wait to pay. They leave with your chat in their phone, and you can broadcast the next sale straight to them.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="412 scans this month|3 scans in the last hour|Top performing placement"></span></div>
       </div>
-      <div class="card lift rv" style="--i:1;"><span class="chip">Packaging</span><h3 style="margin-top:14px;">On the box and the bag</h3><p>Every delivered order carries a QR for exchange, support, or reorder. Support questions skip the phone call and land in the inbox, tagged.</p>
+      <div class="card lift rv" style="--i:1;"><span class="chip">Packaging</span><h3>On the box and the bag</h3><p>Every delivered order carries a QR for exchange, support, or reorder. Support questions skip the phone call and land in the inbox, tagged.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="238 scans this month|New scan · reorder tag added|80% turn into a chat"></span></div>
       </div>
-      <div class="card lift rv" style="--i:2;"><span class="chip">Print</span><h3 style="margin-top:14px;">Posters, pamphlets, hoardings</h3><p>Each campaign gets its own QR. When scans from the bus stand hoarding beat the newspaper insert 8 to 1, next month's budget decides itself.</p>
+      <div class="card lift rv" style="--i:2;"><span class="chip">Print</span><h3>Posters, pamphlets, hoardings</h3><p>Each campaign gets its own QR. When scans from the bus stand hoarding beat the newspaper insert 8 to 1, next month's budget decides itself.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="164 scans · hoarding 01|8x the newspaper insert|Budget call: easy"></span></div>
       </div>
-      <div class="card lift rv" style="--i:3;"><span class="chip">Digital</span><h3 style="margin-top:14px;">Reels, stories, visiting cards</h3><p>The same link works as a tap on Instagram and a scan in the real world. One click from a reel to a live AI conversation about your product.</p>
+      <div class="card lift rv" style="--i:3;"><span class="chip">Digital</span><h3>Reels, stories, visiting cards</h3><p>The same link works as a tap on Instagram and a scan in the real world. One click from a reel to a live AI conversation about your product.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Same link, tap or scan|Works from Reels bio link|One QR, every channel"></span></div>
       </div>
     </div>
@@ -325,13 +326,13 @@
     <style>@keyframes cardFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } } @media (prefers-reduced-motion: reduce) { [style*="cardFloat"] { animation:none !important; } }</style>
 
     <div class="grid-3" style="margin-top:56px;">
-      <div class="card lift rv" style="--i:0;"><span class="chip">Multi location</span><h3 style="margin-top:14px;">One QR per branch</h3><p>Each physical location gets its own QR and its own Google listing, so you can see exactly which branch converts better.</p>
+      <div class="card lift rv" style="--i:0;"><span class="chip">Multi location</span><h3>One QR per branch</h3><p>Each physical location gets its own QR and its own Google listing, so you can see exactly which branch converts better.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Branch A · 62% confirm rate|Branch B · 3 new views|2 locations tracked live"></span></div>
       </div>
-      <div class="card lift rv" style="--i:1;"><span class="chip">From the inbox</span><h3 style="margin-top:14px;">"Request review" button</h3><p>Mid conversation with a customer, send your review link directly as a WhatsApp message, no QR needed for people you're already chatting with.</p>
+      <div class="card lift rv" style="--i:1;"><span class="chip">From the inbox</span><h3>"Request review" button</h3><p>Mid conversation with a customer, send your review link directly as a WhatsApp message, no QR needed for people you're already chatting with.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Sent to Rohit · 2m ago|14 links sent this week|Awaiting reply · Kavya D."></span></div>
       </div>
-      <div class="card lift rv" style="--i:2;"><span class="chip">Full funnel</span><h3 style="margin-top:14px;">Views, clicks, and confirmations</h3><p>Track views, CTA clicks, confirmed Google reviews, and private feedback submissions, broken down by location and over time.</p>
+      <div class="card lift rv" style="--i:2;"><span class="chip">Full funnel</span><h3>Views, clicks, and confirmations</h3><p>Track views, CTA clicks, confirmed Google reviews, and private feedback submissions, broken down by location and over time.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="128 views · 74 clicks|41 confirmed reviews|3 private feedback notes"></span></div>
       </div>
     </div>
@@ -366,7 +367,7 @@
     <div class="cta-band rv">
       <h2>Turn every poster into a salesperson</h2>
       <p>Print one QR this week and watch scans become tagged conversations in your inbox.</p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div class="cta-actions">
         <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
         <a class="btn btn-ghost" href="/pricing">See pricing next</a>
       </div>
@@ -385,7 +386,7 @@
         <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="/features">Team Inbox</a>
         <a href="/broadcasts">Broadcasts</a>
         <a href="/memory">AI Memory</a>
@@ -393,14 +394,14 @@
         <a href="/qr">QR Codes</a>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <a href="/privacy">Privacy policy</a>
         <a href="/terms">Terms of service</a>
         <a href="/deletion">Data deletion</a>

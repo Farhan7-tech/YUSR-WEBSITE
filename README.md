@@ -8,7 +8,7 @@ This repo is the website only. The product itself (the app at `app.yusr.co.in`) 
 
 Plain, hand written HTML, CSS and JavaScript. No build step, no framework, no npm dependencies.
 
-- 12 static pages (including a custom `404.html`), one file each (`index.html`, `features.html`, `pricing.html`, ...)
+- 13 static pages (including a custom `404.html`), one file each (`index.html`, `features.html`, `pricing.html`, ...)
 - `yusr.css` — one stylesheet for the whole site
 - `yusr.js` — one script for the whole site: reveal animations, count-up numbers, the live counter tape, mobile nav, event tracking, and the cookie consent banner
 - Fonts load from Google Fonts (Bricolage Grotesque, Hanken Grotesk, Fragment Mono)
@@ -30,11 +30,11 @@ Hosted on **Cloudflare Pages**, deployed from this repo's `main` branch. Cloudfl
 **Cache busting is manual and load bearing.** `_headers` serves `yusr.css` and `yusr.js` as `immutable, max-age=31536000` (one year). Both are linked from every page with a version query string:
 
 ```html
-<link rel="stylesheet" href="yusr.css?v=4" />
-<script defer src="yusr.js?v=4"></script>
+<link rel="stylesheet" href="yusr.css?v=5" />
+<script defer src="yusr.js?v=5"></script>
 ```
 
-**Whenever you edit either file, bump `?v=N` to `?v=N+1` across all 11 HTML pages.** Skip this and returning visitors keep the old file for up to a year.
+**Whenever you edit either file, bump `?v=N` to `?v=N+1` across all 13 HTML pages.** Skip this and returning visitors keep the old file for up to a year.
 
 ## Analytics & consent
 

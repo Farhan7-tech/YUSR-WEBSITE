@@ -12,11 +12,15 @@
   --ink: #0A0A0A;
   --ink-2: #2A2A2A;
   --stone: #5F5E5A;
-  --stone-2: #8A8983;
+  --stone-2: #6B6A64;
+  --stone-dim: #9C9A92;   /* muted text on ink only; --stone-2 is too dark there */
   --orange: #D85A30;
   --orange-deep: #B84623;
+  --orange-ink: #9F3A1C;  /* orange text on --orange-soft (chips, error states) */
   --orange-soft: #F3D9CD;
+  --orange-wash: #F9EAE2; /* transient row highlight, light enough to read muted text on */
   --green: #2F9E6E;
+  --green-ink: #1E7550;   /* green text on light; --green is for ink backgrounds + dots */
   --green-soft: #E2F0E9;
 
   --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
@@ -169,7 +173,10 @@ section:last-of-type { border-bottom: none; }
 }
 .btn-ink { background: var(--ink); color: var(--sand); }
 .btn-ink:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--orange); }
-.btn-orange { background: var(--orange); color: var(--sand); border-color: var(--orange-deep); }
+/* The deep orange, not the bright one: sand on --orange only reaches 3.35:1,
+   which is under the bar for button text. --orange stays the accent colour
+   for rules, underlines and chip borders, where it is not carrying text. */
+.btn-orange { background: var(--orange-deep); color: var(--sand); border-color: var(--orange-deep); }
 .btn-orange:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ink); }
 .btn-ghost { background: transparent; color: var(--ink); }
 .btn-ghost:hover { background: var(--paper); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--bone-2); }
@@ -245,6 +252,30 @@ p.muted { color: var(--stone); }
 
 .sec-head { margin-bottom: 52px; }
 
+/* ── Repeated layout groups ─────────────────────────────────────
+   These were inline styles duplicated across all 13 pages, which
+   drifted (hero button rows sat at 28px on some pages and 30px on
+   others) and could not be overridden by any media query. */
+
+/* Subpage h1s run one step below the homepage hero. */
+.page-hero .display { font-size: clamp(40px, 5.4vw, 68px); }
+
+.hero-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+.cta-actions  { display: flex; gap: 14px; flex-wrap: wrap; }
+.chip-row     { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+.sec-actions  { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+
+/* Chip sitting directly above a card heading. */
+.card .chip + h3 { margin-top: 14px; }
+
+/* "Open Team Inbox ↗" affordance at the foot of a linked card. */
+.card-open {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--orange-deep);
+}
+
 /* ── Chips / stamps ─────────────────────────────────────────── */
 .chip {
   display: inline-block;
@@ -258,11 +289,11 @@ p.muted { color: var(--stone); }
   background: var(--paper);
   color: var(--ink);
 }
-.chip.orange { border-color: var(--orange-deep); color: var(--orange-deep); background: var(--orange-soft); transform: rotate(-1.5deg); }
-.chip.green { border-color: var(--green); color: var(--green); background: var(--green-soft); }
+.chip.orange { border-color: var(--orange-ink); color: var(--orange-ink); background: var(--orange-soft); transform: rotate(-1.5deg); }
+.chip.green { border-color: var(--green-ink); color: var(--green-ink); background: var(--green-soft); }
 .chip.tilt { transform: rotate(1.6deg); }
 
-.tick { color: var(--green); font-weight: 700; letter-spacing: -0.12em; }
+.tick { color: var(--green-ink); font-weight: 700; letter-spacing: -0.12em; }
 
 /* ── Demo request form ─────────────────────────────────────── */
 .form-card { background: var(--paper); border: 1.5px solid var(--ink); border-radius: var(--r); box-shadow: var(--stamp); padding: clamp(24px,4vw,40px); }
@@ -280,11 +311,11 @@ p.muted { color: var(--stone); }
 .form-fine { margin-top: 14px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--stone-2); }
 .form-status { display: none; margin-top: 16px; font-family: var(--font-mono); font-size: 13px; padding: 12px 14px; border-radius: 8px; border: 1.5px solid; }
 .form-status.show { display: block; }
-.form-status.ok { color: var(--green); border-color: var(--green); background: var(--green-soft); }
-.form-status.err { color: var(--orange-deep); border-color: var(--orange); background: var(--orange-soft); }
+.form-status.ok { color: var(--green-ink); border-color: var(--green-ink); background: var(--green-soft); }
+.form-status.err { color: var(--orange-ink); border-color: var(--orange); background: var(--orange-soft); }
 .demo-confirm { display: none; text-align: center; padding: 20px 10px; }
 .demo-confirm.show { display: block; }
-.demo-confirm .mk { font-family: var(--font-mono); font-size: 34px; color: var(--green); line-height: 1; }
+.demo-confirm .mk { font-family: var(--font-mono); font-size: 34px; color: var(--green-ink); line-height: 1; }
 .demo-confirm h2 { font-size: 24px; font-weight: 800; margin-top: 14px; }
 .demo-confirm p { color: var(--stone); margin-top: 8px; }
 
@@ -344,7 +375,7 @@ p.muted { color: var(--stone); }
 .b-status { display: inline-flex; min-width: 64px; justify-content: flex-end; }
 .tick { transition: color .3s ease; }
 .tick.tick-sent, .tick.tick-delivered { color: var(--stone-2); }
-.tick.tick-read { color: var(--orange-deep); }
+.tick.tick-read { color: var(--orange-ink); }
 
 /* ── shared chat/message typing indicator + reveal ── */
 .fmsg, .bubble { opacity: 0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; position: relative; z-index: 1; }
@@ -477,10 +508,10 @@ p.muted { color: var(--stone); }
   animation: printIn .35s ease both;
   transition: background-color .55s ease;
 }
-.tape-line.fresh { background-color: var(--orange-soft); }
+.tape-line.fresh { background-color: var(--orange-wash); }
 .tape-line .t { color: var(--stone-2); flex: none; }
-.tape-line .ok { color: var(--green); margin-left: auto; flex: none; }
-.tape-line .hot { color: var(--orange-deep); margin-left: auto; flex: none; }
+.tape-line .ok { color: var(--green-ink); margin-left: auto; flex: none; }
+.tape-line .hot { color: var(--orange-ink); margin-left: auto; flex: none; }
 @keyframes printIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: none; }
@@ -549,7 +580,10 @@ p.muted { color: var(--stone); }
   color: var(--stone); text-transform: uppercase; letter-spacing: 0.1em;
   margin-top: 8px;
 }
-.stat .delta { font-family: var(--font-mono); font-size: 11px; color: var(--green); margin-left: 8px; }
+.delta { font-family: var(--font-mono); font-size: 11px; color: var(--green-ink); }
+.stat .delta { margin-left: 8px; }
+/* The big number a card leads with, e.g. "3,412 ▲ 12%". */
+.metric-lead { font-family: var(--font-display); font-weight: 800; font-size: 26px; }
 
 /* ── Steps (numbered, real sequence) ────────────────────────── */
 .steps { display: grid; gap: 0; counter-reset: step; }
@@ -571,8 +605,24 @@ p.muted { color: var(--stone); }
   display: flex; align-items: center; justify-content: center;
   box-shadow: 3px 3px 0 var(--orange);
 }
-.step h3 { margin-bottom: 6px; }
+/* Legal pages number their clauses as h2 (they are the document's top level
+   sections). Same visual weight as an h3 step heading elsewhere. */
+.step h2, .step h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
 .step p { color: var(--stone); font-size: 15.5px; max-width: 34em; }
+
+/* A steps list whose items are facts, not an ordered process. Same rhythm,
+   but a stamp instead of a counter, so the numbering never implies a sequence
+   that does not exist. */
+.steps.facts { counter-reset: none; }
+.steps.facts .step { counter-increment: none; }
+.steps.facts .step::before {
+  content: "";
+  width: 14px; height: 14px;
+  margin: 8px 0 0 15px;
+  border-radius: 3px;
+  background: var(--orange);
+  box-shadow: 3px 3px 0 var(--ink);
+}
 
 /* ── Marquee ────────────────────────────────────────────────── */
 .marquee {
@@ -656,7 +706,7 @@ p.muted { color: var(--stone); }
   font-size: 15px;
   display: flex; gap: 10px; align-items: baseline;
 }
-.plan li::before { content: "✓✓"; color: var(--green); font-weight: 700; letter-spacing: -0.12em; font-size: 13px; flex: none; }
+.plan li::before { content: "✓✓"; color: var(--green-ink); font-weight: 700; letter-spacing: -0.12em; font-size: 13px; flex: none; }
 .plan .btn { justify-content: center; }
 
 /* ── FAQ ────────────────────────────────────────────────────── */
@@ -678,7 +728,7 @@ details.faq summary::-webkit-details-marker { display: none; }
 details.faq summary::after {
   content: "+";
   font-family: var(--font-mono);
-  color: var(--orange-deep);
+  color: var(--orange-ink);
   font-size: 18px;
   flex: none;
 }
@@ -720,7 +770,7 @@ details.faq p { color: var(--stone); padding-bottom: 18px; font-size: 15.5px; ma
 .cta-band h2, .cta-band p, .cta-band .fine, .cta-band > div { position: relative; z-index: 1; }
 .cta-band h2 { font-size: clamp(30px, 4vw, 48px); font-weight: 800; line-height: 1.03; max-width: 14em; }
 .cta-band p { color: var(--bone-2); margin: 16px 0 28px; max-width: 32em; }
-.cta-band .fine { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone-2); margin-top: 22px; }
+.cta-band .fine { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone-dim); margin-top: 22px; }
 .cta-band .btn-ink { background: var(--sand); color: var(--ink); border-color: var(--sand); }
 .cta-band .btn-ink:hover { box-shadow: 4px 4px 0 var(--orange); }
 .cta-band .btn-ghost { color: var(--sand); border-color: var(--stone); }
@@ -733,7 +783,9 @@ footer {
   background: var(--sand);
 }
 .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; }
-.foot-grid h4 {
+/* h3, not h4: the CTA band above closes on an h2, and skipping a level
+   breaks the document outline for screen readers. */
+.foot-grid h3 {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--stone); margin-bottom: 14px; font-weight: 400;
 }
@@ -778,6 +830,11 @@ footer {
 .note { border-left: 3px solid var(--orange); background: var(--orange-soft); border-radius: 0 8px 8px 0;
   padding: 14px 18px; font-size: 14.5px; margin-top: 14px; color: var(--ink-2); }
 .note strong { color: var(--ink); }
+
+/* A heading one level under a legal clause, e.g. the three ways to request
+   deletion. Sized like body copy, weighted like a heading. */
+.sub-h { font-size: 15.5px; font-weight: 700; margin-bottom: 4px; }
+.sub-stack { display: grid; gap: 16px; margin-top: 10px; }
 
 .legal-related { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
 .legal-related span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); }
@@ -1055,6 +1112,43 @@ footer {
 
   /* Stat attribution lines under the hero and pipeline. */
   .stat-row + p, .pipe-hud + p { font-size: 15px; line-height: 1.55; }
+}
+
+/* ── "Book a demo" in the mobile menu ────────────────────────
+   The nav's ghost button is hidden below 900px to keep the bar from
+   wrapping, which left Book a demo unreachable on a phone. This puts
+   it in the dropdown instead, where the other nav links already live. */
+.nav-links .nav-mobile-only { display: none; }
+@media (max-width: 900px) {
+  .nav-links .nav-mobile-only {
+    display: block;
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--bone-2);
+    color: var(--orange-deep);
+  }
+}
+
+/* ── Pipeline diagram on small screens ───────────────────────
+   The SVG is drawn on a 1040 unit canvas with 10px labels. Squeezed
+   into a 350px phone those labels render around 3px and the whole
+   diagram becomes decoration. Give it a floor width and let the frame
+   scroll instead, so it stays readable. */
+@media (max-width: 720px) {
+  .pipe-frame {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .pipe { min-width: 640px; }
+  .pipe-hud, .pipe-frame .stat-note { min-width: 0; }
+}
+
+/* ── Inbox mockup height on phones ───────────────────────────
+   The conversation list is hidden below 640px, so the fixed 480px body
+   left a large empty panel while the thread replayed. */
+@media (max-width: 640px) {
+  .floor-body { height: 400px; }
 }
 
 /* ── Stat attribution lines ──────────────────────────────────

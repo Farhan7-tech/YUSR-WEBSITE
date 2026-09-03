@@ -129,7 +129,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=4" />
+  <link rel="stylesheet" href="yusr.css?v=5" />
   <style>
     /* ═══ Homepage additions · Switch · Pipeline · Floor ═══ */
     .adds-head { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:8px; }
@@ -141,14 +141,14 @@
     .switch-card.bad { transform:rotate(-0.5deg); }
     .switch-card.good { transform:rotate(0.5deg); }
     .switch-card .tag { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:6px 11px; border-radius:5px; border:1.5px solid; margin-bottom:16px; }
-    .switch-card.bad .tag { color:var(--orange-deep); border-color:var(--orange-deep); background:var(--orange-soft); }
-    .switch-card.good .tag { color:var(--green); border-color:var(--green); background:var(--green-soft); }
+    .switch-card.bad .tag { color:var(--orange-ink); border-color:var(--orange-ink); background:var(--orange-soft); }
+    .switch-card.good .tag { color:var(--green-ink); border-color:var(--green-ink); background:var(--green-soft); }
     .switch-list { list-style:none; display:grid; gap:0; }
     .switch-list li { display:grid; grid-template-columns:22px 1fr; gap:10px; padding:12px 0; border-top:1px dashed var(--bone-2); font-size:15px; align-items:start; line-height:1.45; }
     .switch-list li:first-child { border-top:none; }
     .switch-card .mk { font-family:var(--font-mono); flex:none; font-size:13px; letter-spacing:-0.08em; }
     .switch-card.bad .mk { color:var(--orange-deep); }
-    .switch-card.good .mk { color:var(--green); font-weight:700; }
+    .switch-card.good .mk { color:var(--green-ink); font-weight:700; }
 
     .switch-mid { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-width:118px; }
     .switch-arrow { font-family:var(--font-mono); color:var(--bone-2); font-size:22px; line-height:1; }
@@ -157,7 +157,7 @@
     .toggle.off { background:var(--bone); }
     .toggle.off .knob { left:4px; }
     .mid-lbl { font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); text-align:center; }
-    .mid-lbl b { color:var(--green); font-weight:400; }
+    .mid-lbl b { color:var(--green-ink); font-weight:400; }
     .switch-block.off .switch-card.good { opacity:.4; box-shadow:none; }
     .switch-block.off .switch-card.bad { box-shadow:6px 6px 0 var(--orange-deep); }
     .switch-block.off .mid-lbl b { color:var(--stone-2); }
@@ -173,14 +173,14 @@
     .pipe text { font-family:var(--font-mono); fill:var(--stone); font-size:10px; letter-spacing:0.07em; text-transform:uppercase; }
     .pipe text.hd { fill:var(--ink); }
     .pipe text.or { fill:var(--orange-deep); }
-    .pipe text.gr { fill:var(--green); }
+    .pipe text.gr { fill:var(--green-ink); }
     .pipe .dot { fill:var(--orange); }
     .pipe .dot.g { fill:var(--green); }
     .pipe .ring { fill:none; stroke:var(--orange); stroke-width:1.5; opacity:.5; transform-box:fill-box; transform-origin:center; animation:ringpulse 2.4s ease-out infinite; }
     @keyframes ringpulse { from { transform:scale(.55); opacity:.7; } to { transform:scale(1.75); opacity:0; } }
     .pipe-hud { display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center; justify-content:center; margin-top:22px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:var(--stone); }
-    .pipe-hud .live { color:var(--green); display:inline-flex; align-items:center; gap:8px; }
-    .pipe-hud .live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); animation:beat 1.8s infinite; }
+    .pipe-hud .live { color:var(--green-ink); display:inline-flex; align-items:center; gap:8px; }
+    .pipe-hud .live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green-ink); animation:beat 1.8s infinite; }
     @keyframes beat { 0%,100%{opacity:1} 50%{opacity:.3} }
     .pipe-hud b { color:var(--orange-deep); font-weight:400; }
 
@@ -205,7 +205,7 @@
     .floor-bar .rt::before { content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:7px; height:7px; border-radius:50%; background:var(--green); animation:beat 1.8s infinite; }
     .tick { transition:color .3s ease; }
     .tick.tick-sent, .tick.tick-delivered { color:var(--stone-2); }
-    .tick.tick-read { color:var(--orange-deep); }
+    .tick.tick-read { color:var(--orange-ink); }
     .floor-body { display:grid; grid-template-columns:242px 1fr; height:480px; }
     .floor-side { border-right:1px solid var(--bone-2); background:var(--sand); }
     .floor-conv { display:flex; gap:11px; align-items:center; padding:13px 14px; border-bottom:1px dashed var(--bone-2); border-left:3px solid transparent;
@@ -217,11 +217,11 @@
     .floor-conv .cm b { display:block; font-size:13.5px; font-weight:600; font-family:var(--font-body); }
     .floor-conv .cm span.pv { display:block; font-size:12px; color:var(--stone); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .floor-conv .ct { font-family:var(--font-mono); font-size:8.5px; letter-spacing:0.07em; text-transform:uppercase; padding:2px 6px; border-radius:3px; margin-top:4px; display:inline-block; border:1px solid; }
-    .ct.sales { color:var(--orange-deep); border-color:var(--orange); background:var(--orange-soft); }
-    .ct.ai { color:var(--green); border-color:var(--green); background:var(--green-soft); }
+    .ct.sales { color:var(--orange-ink); border-color:var(--orange); background:var(--orange-soft); }
+    .ct.ai { color:var(--green-ink); border-color:var(--green-ink); background:var(--green-soft); }
     .ct.b2b { color:var(--ink); border-color:var(--bone-2); background:var(--sand); }
     .ct.sup { color:#2A6FA8; border-color:#9CC4E0; background:#E7F0F8; }
-    .floor-conv .un { flex:none; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--green); color:#fff; font-size:11px; font-weight:700; display:grid; place-items:center; }
+    .floor-conv .un { flex:none; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--green-ink); color:#fff; font-size:11px; font-weight:700; display:grid; place-items:center; }
     .floor-thread { display:flex; flex-direction:column; background:var(--sand); }
     .thread-variant { display:none; flex-direction:column; flex:1; min-height:0; }
     .thread-variant.on { display:flex; }
@@ -230,13 +230,13 @@
     @keyframes threadSwap { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:none; } }
     .floor-thread-head { display:flex; align-items:center; gap:11px; padding:12px 16px; border-bottom:1px solid var(--bone-2); background:var(--paper); }
     .floor-thread-head .nm b { display:block; font-size:13.5px; font-weight:600; }
-    .floor-thread-head .nm span { font-family:var(--font-mono); font-size:10.5px; color:var(--green); }
+    .floor-thread-head .nm span { font-family:var(--font-mono); font-size:10.5px; color:var(--green-ink); }
     .floor-thread-head .av { width:32px; height:32px; border-radius:8px; border:1.5px solid var(--ink); display:grid; place-items:center; font-family:var(--font-mono); font-size:11px; flex:none; }
     .floor-msgs { flex:1; display:flex; flex-direction:column; gap:11px; padding:20px 18px; min-height:0; overflow-y:auto; }
     .fmsg { max-width:80%; padding:11px 14px; border-radius:12px; font-size:14px; line-height:1.5; border:1px solid var(--bone-2); }
     .fmsg.in { align-self:flex-start; background:var(--paper); border-bottom-left-radius:3px; }
     .fmsg.out { align-self:flex-end; background:var(--green-soft); border-color:#C4DFD2; border-bottom-right-radius:3px; }
-    .fmsg .who { display:block; font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); margin-bottom:5px; }
+    .fmsg .who { display:block; font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-ink); margin-bottom:5px; }
     .fmsg .who::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--green); margin-right:5px; vertical-align:middle; }
     .fmsg .src { display:inline-block; font-family:var(--font-mono); font-size:9.5px; color:var(--orange-deep); border:1px dashed var(--orange); border-radius:4px; padding:2px 6px; margin-top:8px; }
     .fmsg .mt { display:flex; justify-content:flex-end; gap:6px; font-family:var(--font-mono); font-size:9.5px; color:var(--stone-2); text-transform:uppercase; letter-spacing:0.06em; margin-top:7px; }
@@ -329,7 +329,7 @@
       .rec-dot, .card-live .cdot, .ftyping i { animation:none; }
     }
   </style>
-  <script defer src="yusr.js?v=4"></script>
+  <script defer src="yusr.js?v=5"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -348,6 +348,7 @@
       <a href="/analytics">Analytics</a>
       <a href="/qr">QR Codes</a>
       <a href="/pricing">Pricing</a>
+      <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
@@ -379,7 +380,7 @@
         </div>
         <h1 class="display">Every chat.<br>Every order.<br><span class="u">Nothing missed.</span></h1>
         <p class="lede">YUSR AI is the WhatsApp CRM for Indian business. A <b>shared team inbox</b>, <b>bulk broadcasts from Google Sheets</b>, and an <b>AI assistant trained on your catalog</b>. Every conversation entered, answered, and accounted for.</p>
-        <div class="hero-actions" style="display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;">
+        <div class="hero-actions">
           <a class="btn btn-orange" href="/pricing#trial">Start free · 7 days</a>
           <a class="btn btn-ghost" href="#features">See it work ↓</a>
         </div>
@@ -427,12 +428,12 @@
         <span class="eyebrow">The problem</span>
         <h2 class="sec">Still running lakhs a month through one phone?</h2>
         <p class="lede">Your customers live on WhatsApp. Your business should not live on a single handset that everyone at the counter fights over. Every missed reply is a customer walking to the next shop, and right now nobody is keeping count.</p>
-        <div style="margin-top:26px;">
+        <div class="sec-actions">
           <a class="btn btn-ink btn-sm" href="#features">Here is the fix ↓</a>
         </div>
       </div>
       <div class="visual rv">
-        <div class="ledger" role="table" aria-label="Daily losses that go unrecorded, tallying live">
+        <div class="ledger" role="img" aria-label="Daily losses that go unrecorded, tallying live">
           <div class="ledger-head"><span><i class="rec-dot" aria-hidden="true"></i>Daily losses <span class="dot">·</span> unrecorded</span><span>DEBIT</span></div>
           <div class="ledger-row" data-row style="transition-delay:.05s"><span class="mono">08:10</span><div class="grow"><div class="name">14 chats waiting since last night</div><div class="sub">One phone, five people, no owner</div></div><span class="chip orange">missed</span></div>
           <div class="ledger-row" data-row style="transition-delay:.18s"><span class="mono">11:30</span><div class="grow"><div class="name">"What's the price?" typed for the 40th time</div><div class="sub">Same answers, every single day</div></div><span class="chip orange">manual</span></div>
@@ -573,10 +574,10 @@
     </div>
     <div class="floor-top rv">
       <div class="floor-tabs" role="tablist" aria-label="Conversation type">
-        <button class="floor-tab active" data-floor="footwear" role="tab" aria-selected="true">👟 Footwear</button>
-        <button class="floor-tab" data-floor="fashion" role="tab" aria-selected="false">👗 Fashion</button>
-        <button class="floor-tab" data-floor="orders" role="tab" aria-selected="false">📦 Orders</button>
-        <button class="floor-tab" data-floor="faqs" role="tab" aria-selected="false">💬 FAQs</button>
+        <button class="floor-tab active" data-floor="footwear" role="tab" id="floortab-footwear" aria-controls="floorpanel-footwear" aria-selected="true" tabindex="0"><span aria-hidden="true">👟</span> Footwear</button>
+        <button class="floor-tab" data-floor="fashion" role="tab" id="floortab-fashion" aria-controls="floorpanel-fashion" aria-selected="false" tabindex="-1"><span aria-hidden="true">👗</span> Fashion</button>
+        <button class="floor-tab" data-floor="orders" role="tab" id="floortab-orders" aria-controls="floorpanel-orders" aria-selected="false" tabindex="-1"><span aria-hidden="true">📦</span> Orders</button>
+        <button class="floor-tab" data-floor="faqs" role="tab" id="floortab-faqs" aria-controls="floorpanel-faqs" aria-selected="false" tabindex="-1"><span aria-hidden="true">💬</span> FAQs</button>
       </div>
       <div class="floor-stats">
         <span class="floor-stat"><b>81%</b> answered by AI</span>
@@ -586,7 +587,7 @@
 
     <div class="floor-stage rv">
       <!-- FOOTWEAR -->
-      <div class="floor-panel active" data-floor="footwear" role="tabpanel">
+      <div class="floor-panel active" data-floor="footwear" role="tabpanel" id="floorpanel-footwear" aria-labelledby="floortab-footwear">
         <div class="floor-window">
           <div class="floor-bar">
             <span class="dots"><i class="o"></i><i></i><i></i></span>
@@ -658,7 +659,7 @@
       </div>
 
       <!-- FASHION -->
-      <div class="floor-panel" data-floor="fashion" role="tabpanel">
+      <div class="floor-panel" data-floor="fashion" role="tabpanel" id="floorpanel-fashion" aria-labelledby="floortab-fashion">
         <div class="floor-window">
           <div class="floor-bar">
             <span class="dots"><i class="o"></i><i></i><i></i></span>
@@ -731,7 +732,7 @@
       </div>
 
       <!-- ORDERS -->
-      <div class="floor-panel" data-floor="orders" role="tabpanel">
+      <div class="floor-panel" data-floor="orders" role="tabpanel" id="floorpanel-orders" aria-labelledby="floortab-orders">
         <div class="floor-window">
           <div class="floor-bar">
             <span class="dots"><i class="o"></i><i></i><i></i></span>
@@ -803,7 +804,7 @@
       </div>
 
       <!-- FAQs -->
-      <div class="floor-panel" data-floor="faqs" role="tabpanel">
+      <div class="floor-panel" data-floor="faqs" role="tabpanel" id="floorpanel-faqs" aria-labelledby="floortab-faqs">
         <div class="floor-window">
           <div class="floor-bar">
             <span class="dots"><i class="o"></i><i></i><i></i></span>
@@ -888,44 +889,44 @@
     <div class="grid-3">
       <a class="card lift rv" href="/features" style="text-decoration:none; color:inherit;">
         <span class="chip">01 · Inbox</span>
-        <h3 style="margin-top:14px;">Team Inbox</h3>
+        <h3>Team Inbox</h3>
         <p>Every WhatsApp chat in one shared screen. Assign to agents, track status from open to closed, stop passing the phone around.</p>
-        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Team Inbox ↗</p>
+        <p class="card-open">Open Team Inbox ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Rahul replied 6s ago|3 chats waiting|Sana just closed #2231"></span></div>
       </a>
       <a class="card lift rv" href="/broadcasts" style="text-decoration:none; color:inherit;">
         <span class="chip">02 · Reach</span>
-        <h3 style="margin-top:14px;">Broadcasts</h3>
+        <h3>Broadcasts</h3>
         <p>Your Google Sheet becomes the audience. Meta approved templates, per row personalization, delivery tracked in real time.</p>
-        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Broadcasts ↗</p>
+        <p class="card-open">Open Broadcasts ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="1,904 read so far|EOSS Sale · sending now|97% delivered"></span></div>
       </a>
       <a class="card lift rv" href="/memory" style="text-decoration:none; color:inherit;">
         <span class="chip">03 · Brain</span>
-        <h3 style="margin-top:14px;">AI Memory</h3>
+        <h3>AI Memory</h3>
         <p>Upload your catalog, FAQs, and policies once. The AI answers customers with your facts, in Hindi, English, or Hinglish.</p>
-        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open AI Memory ↗</p>
+        <p class="card-open">Open AI Memory ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Answered in 2.1s|catalog.xlsx synced|32 FAQs indexed"></span></div>
       </a>
       <a class="card lift rv" href="/analytics" style="text-decoration:none; color:inherit;">
         <span class="chip">04 · Proof</span>
-        <h3 style="margin-top:14px;">Analytics &amp; Tags</h3>
+        <h3>Analytics &amp; Tags</h3>
         <p>Message volume, response rates, peak hours, agent leaderboards. Stamp custom tags on every contact and filter by them.</p>
-        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Analytics ↗</p>
+        <p class="card-open">Open Analytics ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="3,412 messages this week|Peak hour: 8–9 PM|Sana leading today"></span></div>
       </a>
       <a class="card lift rv" href="/qr" style="text-decoration:none; color:inherit;">
         <span class="chip">05 · Entry</span>
-        <h3 style="margin-top:14px;">QR Codes</h3>
+        <h3>QR Codes</h3>
         <p>One scan from your counter, packaging, or poster opens a chat with a prefilled message and an automatic source tag.</p>
-        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open QR Codes ↗</p>
+        <p class="card-open">Open QR Codes ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Counter QR scanned 418×|+1 lead · packaging QR|Hoarding: 129 scans"></span></div>
       </a>
       <a class="card lift rv" href="/pricing" style="text-decoration:none; color:inherit;">
         <span class="chip">06 · Plan</span>
-        <h3 style="margin-top:14px;">Pricing</h3>
+        <h3>Pricing</h3>
         <p>Try the full product free for 7 days. Then we shape a plan around your volume and team, not the other way around.</p>
-        <p style="margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--orange-deep);">Open Pricing ↗</p>
+        <p class="card-open">Open Pricing ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="7 day trial · no card|Setup call in 24h|Cancel anytime"></span></div>
       </a>
     </div>
@@ -941,12 +942,12 @@
         <span class="eyebrow">Broadcasts</span>
         <h2 class="sec">One Google Sheet. <span class="keep">2,500 phones.</span> Done.</h2>
         <p class="lede">No CSV exports, no copy and paste marathons. Point YUSR at the sheet you already keep, pick a template, and go. Name, order ID, and due amount drop straight into a Meta approved template, per row.</p>
-        <div style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+        <div class="sec-actions">
           <a class="btn btn-ink btn-sm" href="/broadcasts">How broadcasts work ↗</a>
         </div>
       </div>
       <div class="visual rv">
-        <div class="ledger ledger-broadcast" aria-label="A live broadcast send, delivery status updating in real time">
+        <div class="ledger ledger-broadcast" role="img" aria-label="A live broadcast send, delivery status updating in real time">
           <div class="ledger-head"><span><i class="rec-dot sm" aria-hidden="true"></i>EOSS Sale <span class="dot">·</span> Broadcast #38</span><span>LIVE</span></div>
           <div class="ledger-row" data-brow data-state="delivered"><span class="avatar">RK</span><div class="grow"><div class="name">Rohit Kumar</div><div class="sub">+91 98··· 4421 · Hi Rohit, flat 40% off ends tonight</div></div><span class="b-status" data-status></span></div>
           <div class="ledger-row" data-brow data-state="sent"><span class="avatar o">PS</span><div class="grow"><div class="name">Priya Sharma</div><div class="sub">+91 97··· 1108 · Hi Priya, flat 40% off ends tonight</div></div><span class="b-status" data-status></span></div>
@@ -971,7 +972,7 @@
         <span class="eyebrow">AI Memory</span>
         <h2 class="sec">Answers from your knowledge, not generic fluff</h2>
         <p class="lede">Upload your catalog, FAQs, and policies once. From then on, your AI assistant replies with your actual prices, stock, and rules. Every answer shows the exact row or page it came from, so you can trust what goes to customers.</p>
-        <div style="margin-top:26px;">
+        <div class="sec-actions">
           <a class="btn btn-ink btn-sm" href="/memory">How AI Memory works ↗</a>
         </div>
       </div>
@@ -1009,7 +1010,7 @@
         <span class="eyebrow">Analytics &amp; custom tags</span>
         <h2 class="sec">Know what is working. Stop guessing.</h2>
         <p class="lede">Message volume, response rates, peak hours, and agent activity on one live dashboard. Stamp tags like <span class="chip orange">hot lead</span> and <span class="chip">wholesale</span> on any contact, then filter, broadcast, and follow up by tag.</p>
-        <div style="margin-top:26px;">
+        <div class="sec-actions">
           <a class="btn btn-ink btn-sm" href="/analytics">Open the dashboard ↗</a>
         </div>
       </div>
@@ -1017,9 +1018,9 @@
         <div class="card" style="border:1.5px solid var(--ink); box-shadow:var(--stamp);">
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;">
             <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone);">Messages this week</span>
-            <span style="font-family:var(--font-display); font-weight:800; font-size:26px;"><span data-count="3412">0</span> <span class="delta" style="font-family:var(--font-mono); font-size:11px; color:var(--green);">▲ 12%</span></span>
+            <span class="metric-lead"><span data-count="3412">0</span> <span class="delta">▲ 12%</span></span>
           </div>
-          <div class="bars" aria-label="Messages per day, Monday to Sunday">
+          <div class="bars" role="img" aria-label="Messages per day, Monday to Sunday">
             <div class="bar" data-h="0.45"></div>
             <div class="bar" data-h="0.6"></div>
             <div class="bar" data-h="0.52"></div>
@@ -1044,7 +1045,7 @@
         <span class="eyebrow">QR codes</span>
         <h2 class="sec">From your counter to their chat, in one scan</h2>
         <p class="lede">Print a YUSR QR on your counter, packaging, posters, or visiting cards. One scan opens WhatsApp with a prefilled first message, tags the contact with its source, and drops them straight into your inbox. You will finally know which poster actually works.</p>
-        <div style="margin-top:26px;">
+        <div class="sec-actions">
           <a class="btn btn-ink btn-sm" href="/qr">See QR entry points ↗</a>
         </div>
       </div>
@@ -1138,7 +1139,7 @@
     <div class="cta-band rv">
       <h2>Put your WhatsApp on autopilot this week</h2>
       <p>Connect your number, upload your catalog, invite your team. Most businesses go live in a day.</p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div class="cta-actions">
         <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
         <a class="btn btn-ghost" href="/features">See how it works</a>
       </div>
@@ -1160,7 +1161,7 @@
         <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="/features">Team Inbox</a>
         <a href="/broadcasts">Broadcasts</a>
         <a href="/memory">AI Memory</a>
@@ -1168,14 +1169,14 @@
         <a href="/qr">QR Codes</a>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <a href="/privacy">Privacy policy</a>
         <a href="/terms">Terms of service</a>
         <a href="/deletion">Data deletion</a>
@@ -1247,18 +1248,32 @@
     floorTimer = setTimeout(loopFloor, (dur || 3200) + 2600);
   }
 
-  tabs.forEach(function (t) {
-    t.addEventListener('click', function () {
-      var key = t.getAttribute('data-floor');
-      tabs.forEach(function (x) {
-        var on = x === t;
-        x.classList.toggle('active', on);
-        x.setAttribute('aria-selected', on ? 'true' : 'false');
-      });
-      panels.forEach(function (p) {
-        p.classList.toggle('active', p.getAttribute('data-floor') === key);
-      });
-      loopFloor();
+  /* Roving tabindex: only the selected tab is in the tab order, and the
+     arrow keys move between them. That is what the tablist role promises. */
+  function selectTab(t, focus) {
+    var key = t.getAttribute('data-floor');
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.classList.toggle('active', on);
+      x.setAttribute('aria-selected', on ? 'true' : 'false');
+      x.setAttribute('tabindex', on ? '0' : '-1');
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('active', p.getAttribute('data-floor') === key);
+    });
+    if (focus) t.focus();
+    loopFloor();
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectTab(t, false); });
+    t.addEventListener('keydown', function (e) {
+      var to = null;
+      if (e.key === 'ArrowRight') to = tabs[(i + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') to = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') to = tabs[0];
+      else if (e.key === 'End') to = tabs[tabs.length - 1];
+      if (to) { e.preventDefault(); selectTab(to, true); }
     });
   });
 

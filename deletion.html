@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=4" />
-  <script defer src="yusr.js?v=4"></script>
+  <link rel="stylesheet" href="yusr.css?v=5" />
+  <script defer src="yusr.js?v=5"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,9 +71,10 @@
       <a href="/analytics">Analytics</a>
       <a href="/qr">QR Codes</a>
       <a href="/pricing">Pricing</a>
+      <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm" href="/">Home</a>
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
       <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
     </div>
@@ -88,9 +89,9 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">YUSR AI</a> <span class="o">/</span> Data Deletion</p>
     <span class="eyebrow">Legal</span>
-    <h1 class="display" style="font-size:clamp(40px,5.4vw,68px);">Data Deletion</h1>
+    <h1 class="display">Data Deletion</h1>
     <p class="lede">YUSR AI uses Meta's WhatsApp Business API. If you connected your Meta or WhatsApp account and want your data removed, this page explains exactly how.</p>
-    <div style="display:flex; gap:10px; margin-top:22px; flex-wrap:wrap;">
+    <div class="chip-row">
       <span class="chip">Last updated · June 2026</span>
       <span class="chip">YUSR AI</span>
       <span class="chip orange">Meta compliance doc</span>
@@ -120,7 +121,7 @@
     <div class="steps rv">
       <div class="step" id="c01">
         <div>
-          <h3>What data we hold</h3>
+          <h2>What data we hold</h2>
           <p>When you connect your WhatsApp Business Account to YUSR AI, we store:</p>
           <ul style="margin-top:8px; padding-left:20px; color:var(--stone); font-size:15px; display:grid; gap:6px;">
             <li>Your <strong style="color:var(--ink);">Meta Business Account ID</strong> and <strong style="color:var(--ink);">WhatsApp Business Account (WABA) ID</strong></li>
@@ -134,18 +135,18 @@
       </div>
       <div class="step" id="c02">
         <div>
-          <h3>How to request deletion</h3>
-          <div style="display:grid; gap:16px; margin-top:10px;">
+          <h2>How to request deletion</h2>
+          <div class="sub-stack">
             <div>
-              <h4 style="font-size:15.5px; font-weight:700; margin-bottom:4px;">Email request (recommended)</h4>
+              <h3 class="sub-h">Email request (recommended)</h3>
               <p style="color:var(--stone); font-size:15px;">Send an email to <a href="mailto:contact@yusr.co.in" style="color:var(--orange-deep);">contact@yusr.co.in</a> with the subject line <strong style="color:var(--ink);">"Data Deletion Request: [your registered email]"</strong>. Include your registered email and WhatsApp phone number if applicable. We confirm receipt within 48 hours and complete deletion within 30 days.</p>
             </div>
             <div>
-              <h4 style="font-size:15.5px; font-weight:700; margin-bottom:4px;">In app account deletion</h4>
+              <h3 class="sub-h">In app account deletion</h3>
               <p style="color:var(--stone); font-size:15px;">Log in to <a href="https://app.yusr.co.in" style="color:var(--orange-deep);">app.yusr.co.in</a>, go to Settings → Profile, scroll to the bottom, click <strong style="color:var(--ink);">"Delete Account"</strong>, then confirm your identity and submit.</p>
             </div>
             <div>
-              <h4 style="font-size:15.5px; font-weight:700; margin-bottom:4px;">Via Facebook app settings</h4>
+              <h3 class="sub-h">Via Facebook app settings</h3>
               <p style="color:var(--stone); font-size:15px;">Open Facebook → Settings → Security &amp; Login, go to <strong style="color:var(--ink);">Apps and Websites</strong>, find <strong style="color:var(--ink);">"YUSR AI"</strong> and click Remove, then select <strong style="color:var(--ink);">"Delete all your activity for this app"</strong>. After revoking via Facebook, email <a href="mailto:contact@yusr.co.in" style="color:var(--orange-deep);">contact@yusr.co.in</a> to confirm complete deletion from our servers.</p>
             </div>
           </div>
@@ -153,7 +154,7 @@
       </div>
       <div class="step" id="c03">
         <div>
-          <h3>What gets deleted</h3>
+          <h2>What gets deleted</h2>
           <p>Upon a confirmed deletion request, we permanently delete:</p>
           <ul style="margin-top:8px; padding-left:20px; color:var(--stone); font-size:15px; display:grid; gap:6px;">
             <li>Your YUSR account and user profile</li>
@@ -168,7 +169,7 @@
       </div>
       <div class="step" id="c04">
         <div>
-          <h3>Deletion timeline</h3>
+          <h2>Deletion timeline</h2>
           <table class="tbl">
             <thead><tr><th>Step</th><th>Timeline</th></tr></thead>
             <tbody>
@@ -183,7 +184,7 @@
       </div>
       <div class="step" id="c05">
         <div>
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <p>For questions about data deletion or to check request status, email <a href="mailto:contact@yusr.co.in" style="color:var(--orange-deep);">contact@yusr.co.in</a>. We respond within 48 hours on business days.</p>
         </div>
       </div>
@@ -204,7 +205,7 @@
     <div class="cta-band rv">
       <h2>Put your WhatsApp on autopilot this week</h2>
       <p>Connect your number, upload your catalog, invite your team. Most businesses go live in a day.</p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div class="cta-actions">
         <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
         <a class="btn btn-ghost" href="/">Back to overview</a>
       </div>
@@ -223,7 +224,7 @@
         <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="/features">Team Inbox</a>
         <a href="/broadcasts">Broadcasts</a>
         <a href="/memory">AI Memory</a>
@@ -231,14 +232,14 @@
         <a href="/qr">QR Codes</a>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <a href="/privacy">Privacy policy</a>
         <a href="/terms">Terms of service</a>
         <a href="/deletion">Data deletion</a>

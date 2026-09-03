@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=4" />
-  <script defer src="yusr.js?v=4"></script>
+  <link rel="stylesheet" href="yusr.css?v=5" />
+  <script defer src="yusr.js?v=5"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,9 +71,10 @@
       <a href="/analytics" aria-current="page">Analytics</a>
       <a href="/qr">QR Codes</a>
       <a href="/pricing">Pricing</a>
+      <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm" href="/">Home</a>
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
       <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
     </div>
@@ -88,7 +89,7 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">YUSR AI</a> <span class="o">/</span> Analytics &amp; Tags</p>
     <span class="eyebrow">Analytics &amp; custom tags</span>
-    <h1 class="display" style="font-size:clamp(40px,5.4vw,68px);">Know what is working on WhatsApp. <span class="u">Stop guessing.</span></h1>
+    <h1 class="display">Know what is working on WhatsApp. <span class="u">Stop guessing.</span></h1>
     <p class="lede">How many messages came in today? How much did the AI handle on its own? Which broadcast converted? Until now, the answer was a shrug. Now it's a dashboard that updates the moment a new message lands, no refresh needed.</p>
 
     <div class="stat-row rv" data-creep style="margin-top:48px;">
@@ -115,7 +116,7 @@
             <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone);">Messages per day</span>
             <span class="chip green"><i class="rec-dot sm" style="background:var(--green); margin-right:5px;" aria-hidden="true"></i>live</span>
           </div>
-          <div class="bars" aria-label="Messages per day, Monday to Sunday, peaking Friday and Saturday">
+          <div class="bars" role="img" aria-label="Messages per day, Monday to Sunday, peaking Friday and Saturday">
             <div class="bar" data-h="0.45"></div>
             <div class="bar" data-h="0.6"></div>
             <div class="bar" data-h="0.52"></div>
@@ -163,16 +164,16 @@
       <p class="lede">The last 48 hours, merged from five sources into one feed: inbound customer messages, human takeovers, completed broadcasts, manual contact tagging, and catalog sync results. You open the dashboard and know what happened without checking five different places.</p>
     </div>
     <div class="grid-2">
-      <div class="card lift rv" style="--i:0;"><span class="chip green">Message</span><h3 style="margin-top:14px;">Inbound customer messages</h3><p>New conversations and replies as they happen, so you're never surprised by what's waiting in the inbox.</p>
+      <div class="card lift rv" style="--i:0;"><span class="chip green">Message</span><h3>Inbound customer messages</h3><p>New conversations and replies as they happen, so you're never surprised by what's waiting in the inbox.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="New message · 40s ago|3 messages in the last hour|Priya S. just replied"></span></div>
       </div>
-      <div class="card lift rv" style="--i:1;"><span class="chip orange">Takeover</span><h3 style="margin-top:14px;">Human takeovers</h3><p>Every time an agent takes over from the bot, or hands a conversation back, shows up here with who and when.</p>
+      <div class="card lift rv" style="--i:1;"><span class="chip orange">Takeover</span><h3>Human takeovers</h3><p>Every time an agent takes over from the bot, or hands a conversation back, shows up here with who and when.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Ayesha took over · 4m ago|Rahul released back to bot|2 takeovers today"></span></div>
       </div>
-      <div class="card lift rv" style="--i:2;"><span class="chip">Broadcast</span><h3 style="margin-top:14px;">Completed broadcasts</h3><p>Know the moment a broadcast finishes sending, with the final sent/failed counts right there.</p>
+      <div class="card lift rv" style="--i:2;"><span class="chip">Broadcast</span><h3>Completed broadcasts</h3><p>Know the moment a broadcast finishes sending, with the final sent/failed counts right there.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="EOSS Sale · 2,487 sent|12 failed, logged and skipped|Last broadcast: 6:04 PM"></span></div>
       </div>
-      <div class="card lift rv" style="--i:3;"><span class="chip">Catalog sync</span><h3 style="margin-top:14px;">Catalog sync results</h3><p>Successes and failures both show up, so a silent sync failure never goes unnoticed for days.</p>
+      <div class="card lift rv" style="--i:3;"><span class="chip">Catalog sync</span><h3>Catalog sync results</h3><p>Successes and failures both show up, so a silent sync failure never goes unnoticed for days.</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="Synced 3:00 AM · 289 products|0 failures this week|Next sync: tomorrow 3 AM"></span></div>
       </div>
     </div>
@@ -250,7 +251,7 @@
     <div class="cta-band rv">
       <h2>Run your counter on numbers, not vibes</h2>
       <p>The dashboard fills itself from day one of your trial. See a full week of your real data before you pay a rupee.</p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div class="cta-actions">
         <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
         <a class="btn btn-ghost" href="/qr">See QR codes next</a>
       </div>
@@ -269,7 +270,7 @@
         <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="/features">Team Inbox</a>
         <a href="/broadcasts">Broadcasts</a>
         <a href="/memory">AI Memory</a>
@@ -277,14 +278,14 @@
         <a href="/qr">QR Codes</a>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <a href="/privacy">Privacy policy</a>
         <a href="/terms">Terms of service</a>
         <a href="/deletion">Data deletion</a>

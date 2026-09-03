@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=4" />
-  <script defer src="yusr.js?v=4"></script>
+  <link rel="stylesheet" href="yusr.css?v=5" />
+  <script defer src="yusr.js?v=5"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,9 +71,10 @@
       <a href="/analytics">Analytics</a>
       <a href="/qr">QR Codes</a>
       <a href="/pricing">Pricing</a>
+      <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm" href="/">Home</a>
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
       <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
     </div>
@@ -88,9 +89,9 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">YUSR AI</a> <span class="o">/</span> Privacy Policy</p>
     <span class="eyebrow">Legal</span>
-    <h1 class="display" style="font-size:clamp(40px,5.4vw,68px);">Privacy Policy</h1>
+    <h1 class="display">Privacy Policy</h1>
     <p class="lede">How YUSR AI collects, uses, stores, and protects information when you use our platform.</p>
-    <div style="display:flex; gap:10px; margin-top:22px; flex-wrap:wrap;">
+    <div class="chip-row">
       <span class="chip">Last updated · August 2026</span>
       <span class="chip">YUSR AI</span>
       <span class="chip orange">DPDP Act 2023 · GDPR aware</span>
@@ -126,14 +127,14 @@
     <div class="steps rv">
       <div class="step" id="c01">
         <div>
-          <h3>Who we are</h3>
+          <h2>Who we are</h2>
           <p>YUSR AI ("YUSR," "we," "our," or "us") is a multi tenant WhatsApp Business CRM platform. Our app lives at <a href="https://app.yusr.co.in" style="color:var(--orange-deep);">app.yusr.co.in</a> and our website at <a href="https://yusr.co.in" style="color:var(--orange-deep);">yusr.co.in</a>.</p>
           <p style="margin-top:8px;">This Privacy Policy explains how we collect, use, store, and protect information when you use our platform.</p>
         </div>
       </div>
       <div class="step" id="c02">
         <div>
-          <h3>Information we collect</h3>
+          <h2>Information we collect</h2>
           <ul style="margin-top:8px; padding-left:20px; color:var(--stone); font-size:15px; display:grid; gap:6px;">
             <li><strong style="color:var(--ink);">Account information:</strong> name, email address, and business details you provide during registration (business name, phone number, industry)</li>
             <li><strong style="color:var(--ink);">WhatsApp Business data:</strong> your WhatsApp Business Account credentials (Phone Number ID, WABA ID, access tokens) in encrypted form, and message history of conversations conducted through your connected number</li>
@@ -146,7 +147,7 @@
       </div>
       <div class="step" id="c03">
         <div>
-          <h3>How we use your information</h3>
+          <h2>How we use your information</h2>
           <ul style="margin-top:8px; padding-left:20px; color:var(--stone); font-size:15px; display:grid; gap:6px;">
             <li>To provide, maintain, and improve the YUSR AI platform</li>
             <li>To send messages on your behalf through the WhatsApp Business API</li>
@@ -159,14 +160,14 @@
       </div>
       <div class="step" id="c04">
         <div>
-          <h3>WhatsApp and Meta data</h3>
+          <h2>WhatsApp and Meta data</h2>
           <p>YUSR integrates with the WhatsApp Business Cloud API provided by Meta Platforms, Inc. By connecting your WhatsApp account, you authorize YUSR to access and manage messages, templates, and account settings on your behalf.</p>
           <p style="margin-top:8px;">Message content and contact data are stored solely to provide the inbox functionality. You retain ownership of your business data at all times. Our use of Meta's APIs is governed by the <a href="https://www.whatsapp.com/legal/business-terms" target="_blank" rel="noopener" style="color:var(--orange-deep);">WhatsApp Business Terms of Service</a> and <a href="https://developers.facebook.com/terms" target="_blank" rel="noopener" style="color:var(--orange-deep);">Meta Platform Terms</a>.</p>
         </div>
       </div>
       <div class="step" id="c05">
         <div>
-          <h3>Data storage and security</h3>
+          <h2>Data storage and security</h2>
           <p>Your data is stored using Supabase (PostgreSQL) with the following safeguards:</p>
           <ul style="margin-top:8px; padding-left:20px; color:var(--stone); font-size:15px; display:grid; gap:6px;">
             <li>Row Level Security (RLS) ensuring tenants cannot access each other's data</li>
@@ -179,7 +180,7 @@
       </div>
       <div class="step" id="c06">
         <div>
-          <h3>Third party services</h3>
+          <h2>Third party services</h2>
           <table class="tbl">
             <thead><tr><th>Service</th><th>Purpose</th></tr></thead>
             <tbody>
@@ -197,13 +198,13 @@
       </div>
       <div class="step" id="c07">
         <div>
-          <h3>Data retention</h3>
+          <h2>Data retention</h2>
           <p>We retain your data for as long as your account is active. If you cancel and do not request deletion, data is retained for 90 days before automated deletion. You may request immediate deletion at any time. See our <a href="/deletion" style="color:var(--orange-deep);">Data Deletion page</a>.</p>
         </div>
       </div>
       <div class="step" id="c08">
         <div>
-          <h3>Your rights</h3>
+          <h2>Your rights</h2>
           <ul style="margin-top:8px; padding-left:20px; color:var(--stone); font-size:15px; display:grid; gap:6px;">
             <li><strong style="color:var(--ink);">Access:</strong> request a copy of the data we hold about you</li>
             <li><strong style="color:var(--ink);">Correction:</strong> request correction of inaccurate data</li>
@@ -216,7 +217,7 @@
       </div>
       <div class="step" id="c09">
         <div>
-          <h3>Cookies</h3>
+          <h2>Cookies</h2>
           <p><strong>In the app (app.yusr.co.in).</strong> YUSR uses session cookies to maintain authenticated state. These are HTTP only, secure, and set by Supabase Auth. We set no advertising cookies anywhere, and we do not sell your data or use it to build advertising profiles.</p>
           <p><strong>On this marketing website (yusr.co.in).</strong> We use Google Analytics 4 to understand how visitors find and use the site, for example which pages get read and which buttons get clicked. Google Analytics sets its own cookies, typically named <code>_ga</code> and <code>_ga_&lt;id&gt;</code>, which hold a randomly generated identifier so returning visits can be counted as one visitor. They do not record your name, phone number, or email, and we do not use them for advertising. Data collected this way is processed by Google and may be stored outside India. We also use Cloudflare Web Analytics, which is cookieless and does not follow visitors across other websites.</p>
           <p><strong>Your choice comes first.</strong> Google Analytics is not loaded at all until you accept it. If you decline, or simply ignore the banner, no Google script is fetched, no analytics cookies are set, and nothing is sent to Google. Declining takes exactly one click, the same as accepting, and it does not limit anything on this site. We also honour the Global Privacy Control signal automatically, so if your browser sends one we treat it as a decline without asking again.</p>
@@ -225,13 +226,13 @@
       </div>
       <div class="step" id="c10">
         <div>
-          <h3>Changes to this policy</h3>
+          <h2>Changes to this policy</h2>
           <p>We may update this policy from time to time. When we make material changes, we will notify registered users via email and update the "Last updated" date on this page. Continued use after changes constitutes acceptance.</p>
         </div>
       </div>
       <div class="step" id="c11">
         <div>
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <p>For privacy questions, contact us at <a href="mailto:contact@yusr.co.in" style="color:var(--orange-deep);">contact@yusr.co.in</a> or visit <a href="https://yusr.co.in" style="color:var(--orange-deep);">yusr.co.in</a>.</p>
         </div>
       </div>
@@ -252,7 +253,7 @@
     <div class="cta-band rv">
       <h2>Put your WhatsApp on autopilot this week</h2>
       <p>Connect your number, upload your catalog, invite your team. Most businesses go live in a day.</p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div class="cta-actions">
         <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
         <a class="btn btn-ghost" href="/">Back to overview</a>
       </div>
@@ -271,7 +272,7 @@
         <p>The WhatsApp CRM built for India's business pace. Fast, direct, no fluff. For every niche that runs on WhatsApp.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="/features">Team Inbox</a>
         <a href="/broadcasts">Broadcasts</a>
         <a href="/memory">AI Memory</a>
@@ -279,14 +280,14 @@
         <a href="/qr">QR Codes</a>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <a href="/privacy">Privacy policy</a>
         <a href="/terms">Terms of service</a>
         <a href="/deletion">Data deletion</a>
