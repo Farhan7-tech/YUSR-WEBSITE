@@ -36,6 +36,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+img, svg { max-width: 100%; height: auto; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
 body {
@@ -350,6 +351,73 @@ p.muted { color: var(--stone); }
 /* sibling stagger for cards revealing inside a grid — set style="--i:0/1/2..." per card */
 .grid-2 .card.rv, .grid-3 .card.rv { transition-delay: calc(var(--i, 0) * 70ms); }
 
+/* ── Card grids on a phone: the real fix for "big blocks" ──
+   Every .grid-3/.grid-2 already collapses to one column below 900px,
+   which is correct, but each card kept full desktop padding and its
+   decorative .card-live footer, so six stacked cards (the homepage
+   product grid, worst case) ran to 2.8 screens of scroll. The footer
+   restates the card's own description in different words and drives a
+   setInterval text-cycle per card purely for desktop hover-browsing
+   ambience — cutting it on mobile removes real height without cutting
+   a single word of the actual content (title, chip, description, and
+   the "Open X ↗" link all stay). */
+@media (max-width: 720px) {
+  .card { padding: 20px; }
+  .card-live { display: none; }
+  .grid-2, .grid-3 { gap: 14px; }
+}
+
+/* ── Homepage secondary previews on a phone: this is the actual fix ──
+   Broadcasts/AI Memory/Analytics/QR each run a full split section on
+   the homepage: heading + lede + a heavy interactive mockup (a chat
+   replay, a bar chart, a QR card). That's ~4.5 screens of content that
+   duplicates what the 6-card grid just summarized above it, and what
+   each dedicated page builds out in full one tap away. On a phone,
+   drop the mockup and keep the text — nothing informational is lost
+   (title, description, and the link to the real thing all stay), only
+   the decorative replay UI comes out of the scroll. Desktop, and each
+   feature's own page, are untouched. This is the single biggest lever
+   on why the homepage was 19+ screens of scroll: not any one broken
+   component, but nine desktop split-sections stacking to their full
+   text-then-visual height on a screen that has no room for "beside." */
+.visual-center { display: flex; justify-content: center; }
+@media (max-width: 720px) {
+  #broadcasts .visual, #memory .visual, #analytics .visual, #qr .visual { display: none; }
+}
+
+/* ── The homepage's 6 product cards on a phone: swipe, don't stack ──
+   Six full-width cards stacked vertically ran to 1928px even after the
+   padding/footer trim above — nearly 2.4 screens for what is a "here's
+   everywhere else to go" index, not primary content. A horizontal
+   scroll-snap row is the actual mobile-native pattern for a browse
+   grid like this (the same one the App Store, most e-commerce category
+   pages, and this site's own QR/review carousel copy would reach for):
+   each card peeks the next one to signal "swipe for more," snaps into
+   place, and the whole index fits in under one screen instead of three.
+   Desktop keeps the untouched 3-column grid. */
+@media (max-width: 720px) {
+  #features .grid-3 {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    padding: 4px 0 10px;
+  }
+  #features .grid-3::-webkit-scrollbar { display: none; }
+  #features .grid-3 .card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+}
+@media (max-width: 560px) {
+  #features .grid-3 .card { flex-basis: 86%; }
+}
+
+
 /* ── live "recording" dot — used by any ledger that tallies live ── */
 .rec-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--orange-deep); margin-right: 8px; animation: recblink 1.4s infinite; vertical-align: middle; }
 .rec-dot.sm { width: 6px; height: 6px; }
@@ -452,6 +520,24 @@ p.muted { color: var(--stone); }
 .ledger-row .name { font-weight: 600; }
 .ledger-row .sub { font-size: 13px; color: var(--stone); }
 
+/* ── Ledger rows on a phone: stop centering a 3-way squeeze ──
+   Desktop keeps [avatar/time] [grow: name+sub] [status] on one centered
+   line, which is fine when the name fits in one line. On a phone the
+   name wraps to two lines and the timestamp/status end up vertically
+   centered against that whole block, reading as misaligned and cramped.
+   Below 720px the row becomes two lines instead: [avatar/time] ...
+   [status] pinned to the top (they're the only two order-0 items, so
+   justify-content:space-between puts them at opposite ends of line 1),
+   and .grow forced onto its own full-width line 2. This is pure ordering,
+   so it applies identically to every .ledger-row variant across every
+   page (mono timestamps, avatars, chips, ticks, mono stats) with zero
+   HTML changes. */
+@media (max-width: 720px) {
+  .ledger-row { flex-wrap: wrap; row-gap: 6px; align-items: center; }
+  .ledger-row .grow { order: 3; flex-basis: 100%; }
+  .ledger-row > *:last-child:not(.grow) { order: 2; }
+}
+
 .avatar {
   width: 34px; height: 34px; border-radius: 8px;
   background: var(--bone);
@@ -517,6 +603,22 @@ p.muted { color: var(--stone); }
   to { opacity: 1; transform: none; }
 }
 
+/* ── Counter tape on a phone: same stacking fix, plus a shorter window ──
+   Same [time] [message] [status] squeeze as .ledger-row, same fix: the
+   message span (the only unclassed child) wraps to its own full-width
+   line, time and status share the line above it (status already uses
+   margin-left:auto to sit at the right, which still works once it's
+   sharing a line with only .t). On top of that, the tape prints 7 lines
+   at once — fine on desktop, but at 52px a line that's 364px of just
+   this one visual inside an already-tall hero. Capping the visible
+   window to ~4 lines removes that without touching the JS: it still
+   prints all 7 into the DOM, the phone just shows a shorter slice. */
+@media (max-width: 720px) {
+  .tape-line { flex-wrap: wrap; row-gap: 2px; }
+  .tape-line > span:not(.t):not(.ok):not(.hot) { order: 3; flex-basis: 100%; }
+  .tape-lines { max-height: 230px; overflow: hidden; }
+}
+
 /* ── WhatsApp chat bubbles ──────────────────────────────────── */
 .chat {
   background: var(--paper);
@@ -560,6 +662,16 @@ p.muted { color: var(--stone); }
   border-radius: 4px;
   padding: 2px 6px;
   margin-top: 8px; margin-right: 6px;
+}
+
+/* ── Chat mockups on a phone ──
+   82% max-width was tuned for a wide desktop panel; on a narrow phone
+   column it leaves an oddly large gutter on the empty side of every
+   bubble. Widening it and tightening the surrounding padding brings the
+   mockup in line with the rest of the mobile type pass. */
+@media (max-width: 720px) {
+  .bubble { max-width: 92%; font-size: 14px; }
+  .chat-body { padding: 14px 12px; gap: 10px; }
 }
 
 /* ── Stats ──────────────────────────────────────────────────── */
@@ -624,6 +736,18 @@ p.muted { color: var(--stone); }
   box-shadow: 3px 3px 0 var(--ink);
 }
 
+/* ── Step lists on a small phone: the badge column stops being fixed ──
+   The 64px badge column plus its 20px gap permanently ate 84px of a
+   360px phone's width — over 20% of it — on every legal clause, every
+   founder/mechanics/trial-week step, on every page that uses .steps.
+   Below 560px the badge sits above its own heading instead of beside
+   it, so the text gets the full width back. */
+@media (max-width: 560px) {
+  .step { grid-template-columns: 1fr; gap: 10px; }
+  .step::before { width: 36px; height: 36px; font-size: 11px; }
+  .steps.facts .step::before { margin-left: 0; }
+}
+
 /* ── Marquee ────────────────────────────────────────────────── */
 .marquee {
   overflow: hidden;
@@ -674,6 +798,16 @@ p.muted { color: var(--stone); }
   text-transform: uppercase; letter-spacing: 0.08em;
 }
 .bar-lbls span { flex: 1; text-align: center; }
+
+/* ── Bar chart on a small phone: proportional, not just narrower ──
+   Height was fixed at 150px regardless of viewport, and the value
+   label's -20px offset was tuned for that height. Both scale down
+   together so the chart doesn't just get skinnier, it gets a size
+   that matches the rest of the mobile layout. */
+@media (max-width: 560px) {
+  .bars { height: 110px; }
+  .bar .v { top: -16px; font-size: 11px; }
+}
 
 /* ── Pricing ────────────────────────────────────────────────── */
 .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
@@ -1000,8 +1134,11 @@ footer {
   /* Body copy: 19px over a 327px measure gives ~30 characters a line. */
   .lede { font-size: 17.5px; line-height: 1.55; margin-top: 14px; }
 
-  /* Credential row: stack, and keep both badges on one tidy line. */
-  .hero-cred { gap: 14px; margin-bottom: 20px; }
+  /* Credential row: stack, and keep both badges on one tidy line.
+     10px (not 14px): a light text eyebrow sitting above a visually
+     heavy bordered badge reads as two disconnected blocks at the wider
+     gap — tightening it anchors the badges under the eyebrow instead. */
+  .hero-cred { gap: 10px; margin-bottom: 20px; }
   .cred-badges { flex-wrap: wrap; gap: 8px; }
 
   /* The stacked badge is a tall block on its own row; a pill reads as
@@ -1129,27 +1266,24 @@ footer {
   }
 }
 
-/* ── Pipeline diagram on small screens ───────────────────────
-   The SVG is drawn on a 1040 unit canvas with 10px labels. Squeezed
-   into a 350px phone those labels render around 3px and the whole
-   diagram becomes decoration. Give it a floor width and let the frame
-   scroll instead, so it stays readable. */
+/* ── Pipeline diagram on a phone: a different diagram, not a scaled one ──
+   The SVG is drawn on a 1040 unit canvas with 10px labels; scrolling it
+   sideways just meant reading a decoration instead of a diagram. Below
+   720px, index.html renders a second, HTML-only version of the same
+   content (Incoming → YUSR core → three outcomes) as a .steps list —
+   the one component here that genuinely needed a different mobile
+   representation rather than a resize. This swaps between them. */
 @media (max-width: 720px) {
-  .pipe-frame {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-  .pipe { min-width: 640px; }
-  .pipe-hud, .pipe-frame .stat-note { min-width: 0; }
+  .pipe-frame svg.pipe { display: none; }
+}
+@media (min-width: 721px) {
+  .pipe-mobile { display: none; }
 }
 
-/* ── Inbox mockup height on phones ───────────────────────────
-   The conversation list is hidden below 640px, so the fixed 480px body
-   left a large empty panel while the thread replayed. */
-@media (max-width: 640px) {
-  .floor-body { height: 400px; }
-}
+/* .floor-body's mobile height fix lives in index.html's own <style>
+   block, next to its base rule — .floor-* is homepage-only markup, and
+   a rule here loses the cascade to that later, unconditional base rule
+   at equal specificity regardless of which media query matches. */
 
 /* ── Stat attribution lines ──────────────────────────────────
    Was inline font-size, which no media query could override. */
@@ -1167,4 +1301,24 @@ footer {
   .btn { min-height: 44px; }
   .btn-sm { min-height: 44px; }
   .consent-btns .btn { min-height: 44px; }
+}
+
+/* ── Step/plan/stat padding on a phone ──
+   26-34px of padding per item is desktop rhythm; tightening it is what
+   actually shortens a list of 5 pipeline steps, 15 legal clauses, or a
+   4-box stat row (measured at 477px for four numbers on a phone before
+   this — the 40px display-font number was set for a desktop card twice
+   this width). These rules have to live after every other rule in this
+   file that touches the same selectors (.step, .plan, .stat all have
+   later, unconditional base rules of equal specificity elsewhere in
+   this stylesheet — an @media block earlier in the file loses the
+   cascade to a plain rule later in the file regardless of which one
+   currently matches the viewport). */
+@media (max-width: 720px) {
+  .step { padding: 18px 0; }
+  .plan { padding: 24px 20px; }
+  .stat { padding: 14px 15px; }
+  .stat .num { font-size: 28px; }
+  .stat .num small { font-size: 15px; }
+  .stat .lbl { margin-top: 5px; font-size: 10px; }
 }
