@@ -665,6 +665,15 @@
       send("Book demo click", props);
     } else if (href.indexOf("#contact") !== -1) {
       send("Contact click", props);
+    } else if (href.indexOf("https://app.yusr.co.in/signup") === 0) {
+      // These used to be /pricing#trial and reported as "Start trial click".
+      // They are absolute app URLs now, so without this branch every one of
+      // them falls through to "Outbound click" and the funnel looks like it
+      // lost all its trial conversions overnight. Must sit ABOVE the bare
+      // app.yusr.co.in check below, which is a prefix of this one.
+      send("Signup click", props);
+    } else if (href.indexOf("https://app.yusr.co.in") === 0) {
+      send("Log in click", props);
     } else if (/^https?:\/\//.test(href) && href.indexOf(location.host) === -1) {
       props.href = href.slice(0, 120);
       send("Outbound click", props);

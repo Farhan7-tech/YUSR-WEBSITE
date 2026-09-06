@@ -811,6 +811,13 @@ p.muted { color: var(--stone); }
 
 /* ── Pricing ────────────────────────────────────────────────── */
 .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+/* Three real tiers. Deliberately placed BEFORE the responsive rules further
+   down, which target .plans and so still collapse this to one column. */
+.plans.plans-3 { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.plans-3 .plan { padding: 28px 24px; }
+.plans-3 .plan .price { font-size: 40px; }
+.plans-3 .plan .plan-title { font-size: 22px; }
+.plans-3 .plan ul { font-size: 14.5px; }
 .plan {
   background: var(--paper);
   border: 1.5px solid var(--ink);
@@ -1321,4 +1328,18 @@ footer {
   .stat .num { font-size: 28px; }
   .stat .num small { font-size: 15px; }
   .stat .lbl { margin-top: 5px; font-size: 10px; }
+}
+
+/* ── Three tier plan grid, responsive ─────────────────────────
+   .plans.plans-3 is specificity (0,2,0), so it beats the plain
+   .plans collapse rules in the media queries above no matter
+   where they sit. Without these two overrides the three cards
+   stayed side by side at 100px wide on a phone. Kept at the end
+   of the file so the ordering is obvious.                      */
+@media (max-width: 1100px) {
+  .plans.plans-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .plans.plans-3 { grid-template-columns: minmax(0, 1fr); }
+  .plans-3 .plan .price { font-size: 46px; }
 }

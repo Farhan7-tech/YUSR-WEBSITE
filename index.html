@@ -129,7 +129,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=7" />
+  <link rel="stylesheet" href="yusr.css?v=8" />
   <style>
     /* ═══ Homepage additions · Switch · Pipeline · Floor ═══ */
     .adds-head { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:8px; }
@@ -345,7 +345,7 @@
       .rec-dot, .card-live .cdot, .ftyping i { animation:none; }
     }
   </style>
-  <script defer src="yusr.js?v=7"></script>
+  <script defer src="yusr.js?v=8"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -365,10 +365,12 @@
       <a href="/qr">QR Codes</a>
       <a href="/pricing">Pricing</a>
       <a class="nav-mobile-only" href="/book-demo">Book a demo</a>
+      <a class="nav-mobile-only" href="https://app.yusr.co.in" data-cta="nav-login-mobile">Log in</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
-      <a class="btn btn-ink btn-sm" href="/pricing#trial">Start free</a>
+      <a class="btn btn-ghost btn-sm" href="https://app.yusr.co.in" data-cta="nav-login">Log in</a>
+      <a class="btn btn-ink btn-sm" href="https://app.yusr.co.in/signup">Start free</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">≡</button>
     </div>
   </div>
@@ -397,7 +399,7 @@
         <h1 class="display">Every chat.<br>Every order.<br><span class="u">Nothing missed.</span></h1>
         <p class="lede">YUSR AI is the WhatsApp CRM for Indian business. A <b>shared team inbox</b>, <b>bulk broadcasts from Google Sheets</b>, and an <b>AI assistant trained on your catalog</b>. Every conversation entered, answered, and accounted for.</p>
         <div class="hero-actions">
-          <a class="btn btn-orange" href="/pricing#trial">Start free · 7 days</a>
+          <a class="btn btn-orange" href="https://app.yusr.co.in/signup">Start free · 7 days</a>
           <a class="btn btn-ghost" href="#features">See it work ↓</a>
         </div>
         <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); margin-top:20px;">No credit card · Cancel with one message</p>
@@ -950,7 +952,7 @@
       <a class="card lift rv" href="/pricing" style="text-decoration:none; color:inherit;">
         <span class="chip">06 · Plan</span>
         <h3>Pricing</h3>
-        <p>Try the full product free for 7 days. Then we shape a plan around your volume and team, not the other way around.</p>
+        <p>Try the full product free for 7 days. Then ₹1,999, ₹4,999 or ₹11,999 a month, whichever tier matches your volume.</p>
         <p class="card-open">Open Pricing ↗</p>
         <div class="card-live"><span class="cdot"></span><span class="txt" data-live data-lines="7 day trial · no card|Setup call in 24h|Cancel anytime"></span></div>
       </a>
@@ -1119,40 +1121,55 @@
     <div class="sec-head rv" style="text-align:center; margin-inline:auto;">
       <span class="eyebrow" style="justify-content:center; display:inline-flex;">Pricing</span>
       <h2 class="sec" style="margin-inline:auto;">Start free. Scale when ready.</h2>
-      <p class="lede" style="margin-inline:auto;">A shoe store and a coaching institute do not need the same setup. Try everything free, then we build a plan around you.</p>
+      <p class="lede" style="margin-inline:auto;">A shoe store and a coaching institute do not send the same volume. Try everything free, then pick the tier that matches your traffic.</p>
     </div>
-    <div class="plans">
+    <div class="plans plans-3">
       <div class="plan rv">
-        <span class="plan-name">Free Trial</span>
-        <span class="plan-title">Try everything</span>
-        <div class="price">₹0<small>for 7 days · no card</small></div>
-        <p class="desc">The full product, not a demo. Cancel with one message.</p>
+        <span class="plan-name">Starter</span>
+        <span class="plan-title">One shop, one number</span>
+        <div class="price">₹1,999<small>per month · ₹19,990 a year</small></div>
+        <p class="desc">A single storefront answering a few hundred customers a week.</p>
         <ul>
-          <li>Team inbox, up to 3 agents</li>
-          <li>500 broadcast messages</li>
-          <li>AI Memory on your catalog and FAQs</li>
-          <li>Analytics dashboard and tags</li>
-          <li>Guided setup on WhatsApp</li>
+          <li>2,000 AI replies a month</li>
+          <li>5,000 broadcast messages</li>
+          <li>3,000 contacts</li>
+          <li>Catalog synced daily</li>
+          <li>Unlimited team members</li>
         </ul>
-        <a class="btn btn-ghost" href="/pricing#trial">Start free trial</a>
+        <a class="btn btn-ghost" href="https://app.yusr.co.in/signup">Start free</a>
       </div>
       <div class="plan hero-plan rv">
         <span class="badge chip orange">Most businesses</span>
-        <span class="plan-name">For Business</span>
-        <span class="plan-title">Built around your business</span>
-        <div class="price">Custom<small>INR · monthly</small></div>
-        <p class="desc">We shape the plan to your volume and team, not the other way around.</p>
+        <span class="plan-name">Growth</span>
+        <span class="plan-title">Busy shop, real campaigns</span>
+        <div class="price">₹4,999<small>per month · ₹49,990 a year</small></div>
+        <p class="desc">Already running festival broadcasts and answering all day.</p>
         <ul>
-          <li>Unlimited agents and conversations</li>
-          <li>High volume broadcasts from Sheets</li>
-          <li>AI trained on your full knowledge base</li>
-          <li>Multi workspace for agencies</li>
-          <li>Priority support, IST hours</li>
+          <li>5,000 AI replies a month</li>
+          <li>25,000 broadcast messages</li>
+          <li>25,000 contacts</li>
+          <li>Catalog synced hourly</li>
+          <li>Unlimited team members</li>
         </ul>
-        <a class="btn btn-orange" href="/pricing#contact">Contact us</a>
+        <a class="btn btn-orange" href="https://app.yusr.co.in/signup">Start free</a>
+      </div>
+      <div class="plan rv">
+        <span class="plan-name">Scale</span>
+        <span class="plan-title">Many numbers, many stores</span>
+        <div class="price">₹11,999<small>per month · ₹119,990 a year</small></div>
+        <p class="desc">Multiple numbers and a catalog with no ceiling.</p>
+        <ul>
+          <li>12,000 AI replies a month</li>
+          <li>100,000 broadcast messages</li>
+          <li>Unlimited contacts</li>
+          <li>Catalog synced on demand</li>
+          <li>Unlimited WhatsApp numbers</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://app.yusr.co.in/signup">Start free</a>
       </div>
     </div>
-    <p class="rv" style="text-align:center; font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); margin-top:28px;">All plans run on the official WhatsApp Business API · Your data exports with you</p>
+    <p class="rv" style="text-align:center; color:var(--stone); font-size:15px; max-width:720px; margin:24px auto 0;">Every plan starts with the same 7 day free trial, no card. Past what your plan includes it is ₹1 per AI reply and 5 paise per broadcast message, the same at every tier.</p>
+    <p class="rv" style="text-align:center; font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); margin-top:24px;">All plans run on the official WhatsApp Business API · Your data exports with you</p>
     <p class="rv" style="text-align:center; margin-top:14px;"><a href="/pricing" style="color:var(--orange-deep); font-weight:600;">Full pricing details and FAQ ↗</a></p>
   </div>
 </section>
@@ -1165,7 +1182,7 @@
       <h2>Put your WhatsApp on autopilot this week</h2>
       <p>Connect your number, upload your catalog, invite your team. Most businesses go live in a day.</p>
       <div class="cta-actions">
-        <a class="btn btn-ink" href="/pricing#trial">Start your free trial</a>
+        <a class="btn btn-ink" href="https://app.yusr.co.in/signup">Start your free trial</a>
         <a class="btn btn-ghost" href="/features">See how it works</a>
       </div>
       <p class="fine">No credit card · Cancel anytime · Official WhatsApp Business API</p>
@@ -1199,6 +1216,7 @@
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
+        <a href="https://app.yusr.co.in" data-cta="footer-login">Log in</a>
       </div>
       <div>
         <h3>Legal</h3>
