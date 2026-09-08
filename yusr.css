@@ -266,6 +266,12 @@ p.muted { color: var(--stone); }
 .chip-row     { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
 .sec-actions  { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
 
+/* The "try our live bot" invitation under the hero actions. Was inline
+   styles; it is named now because the mobile layer promotes it from a
+   run of body copy into a bordered, tappable block. Desktop appearance
+   is byte-for-byte what the inline rule produced. */
+.hero-try { margin-top: 16px; font-size: 15px; color: var(--stone); }
+
 /* Chip sitting directly above a card heading. */
 .card .chip + h3 { margin-top: 14px; }
 

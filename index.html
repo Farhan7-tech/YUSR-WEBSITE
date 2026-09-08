@@ -129,7 +129,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="yusr.css?v=8" />
+  <link rel="stylesheet" href="yusr.css?v=9" />
   <style>
     /* ═══ Homepage additions · Switch · Pipeline · Floor ═══ */
     .adds-head { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:8px; }
@@ -345,7 +345,8 @@
       .rec-dot, .card-live .cdot, .ftyping i { animation:none; }
     }
   </style>
-  <script defer src="yusr.js?v=8"></script>
+  <link rel="stylesheet" href="yusr-mobile.css?v=9" />
+  <script defer src="yusr.js?v=9"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -380,7 +381,7 @@
 <main id="main">
 
 <!-- ═══ HERO ═══ -->
-<section id="top" style="padding-top:76px;">
+<section id="top">
   <span class="folio" aria-hidden="true"><b>FOLIO 01</b> · THE COUNTER</span>
   <div class="wrap">
     <div class="split" style="align-items:start; gap:56px;">
@@ -403,7 +404,7 @@
           <a class="btn btn-ghost" href="#features">See it work ↓</a>
         </div>
         <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-2); margin-top:20px;">No credit card · Cancel with one message</p>
-        <p style="margin-top:16px; font-size:15px; color:var(--stone);">Rather not take our word for it? <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20try%20the%20live%20demo" target="_blank" rel="noopener" data-cta="hero-live-demo" style="color:var(--orange-deep); font-weight:600;">Message our live bot on WhatsApp</a> and try to catch it out. Ask it prices, send a voice note in Hinglish. That is the same product you would be buying.</p>
+        <p class="hero-try">Rather not take our word for it? <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20try%20the%20live%20demo" target="_blank" rel="noopener" data-cta="hero-live-demo" style="color:var(--orange-deep); font-weight:600;">Message our live bot on WhatsApp</a> and try to catch it out. Ask it prices, send a voice note in Hinglish. That is the same product you would be buying.</p>
       </div>
       <div class="visual rv">
         <div class="tape" role="img" aria-label="A live feed of WhatsApp business events, printed like a receipt">

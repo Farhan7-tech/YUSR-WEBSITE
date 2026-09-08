@@ -2,18 +2,157 @@
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* mobile nav */
+  var MOBILE = "(max-width: 900px)";
+  var SIGNUP = "https://app.yusr.co.in/signup";
+  var WA_HREF =
+    "https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service";
+
+  /* ── Mobile menu sheet ──────────────────────────────────────────
+     The panel is a full-height sheet on a phone (see yusr-mobile.css),
+     so it needs the things a sheet needs and a dropdown does not: the
+     page behind it must stop scrolling, Escape must close it, and it
+     must not be left open when the viewport grows back to a desktop
+     nav. The .open class is still the single source of truth. */
   var burger = document.querySelector(".nav-burger");
   var links = document.querySelector(".nav-links");
+
   if (burger && links) {
+    /* Docked action at the foot of the sheet. Built here rather than
+       in the markup so all 13 pages pick it up from one place. */
+    var foot = document.createElement("div");
+    foot.className = "nav-sheet-foot";
+    foot.innerHTML =
+      '<a class="btn btn-orange" href="' + SIGNUP + '" data-cta="nav-sheet-signup">Start free · 7 days</a>' +
+      '<span class="fine">No credit card · Cancel with one message</span>';
+    links.appendChild(foot);
+
+    var setMenu = function (open) {
+      links.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("nav-open", open);
+    };
+
     burger.addEventListener("click", function () {
-      links.classList.toggle("open");
-      burger.setAttribute("aria-expanded", links.classList.contains("open"));
+      setMenu(!links.classList.contains("open"));
     });
     links.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") links.classList.remove("open");
+      if (e.target.closest && e.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        setMenu(false);
+        burger.focus();
+      }
+    });
+    /* Rotating a phone, or resizing a small window, would otherwise
+       leave body scroll locked under a nav that is no longer a sheet. */
+    window.matchMedia(MOBILE).addEventListener("change", function (mq) {
+      if (!mq.matches) setMenu(false);
     });
   }
+
+  /* ── Sticky mobile action bar ───────────────────────────────────
+     On a phone the primary action should never be more than a thumb
+     away. It reveals once the hero's own buttons have scrolled off,
+     and stands down whenever something else owns the bottom of the
+     screen: the closing CTA band, the consent banner, or the open
+     menu. Injected rather than added to every page's markup. */
+  (function stickyBar() {
+    var bar = document.createElement("div");
+    bar.className = "mobile-bar";
+    bar.innerHTML =
+      '<a class="btn btn-orange" href="' + SIGNUP + '" data-cta="mobile-bar-signup">Start free · 7 days</a>' +
+      '<a class="mobile-bar-wa" href="' + WA_HREF + '" target="_blank" rel="noopener"' +
+      ' data-cta="mobile-bar-whatsapp" aria-label="Chat with us on WhatsApp">' +
+      '<svg viewBox="0 0 24 24" fill="#0A0A0A" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.59.82 2.02.89 2.17.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.7.8 1.99.95.29.15.49.22.56.34.07.12.07.68-.17 1.37Z"/></svg>' +
+      "</a>";
+
+    var hero = document.querySelector(".hero-actions, .page-hero");
+    var band = document.querySelector(".cta-band");
+    var blockers = 0;
+
+    var sync = function () {
+      var past = hero
+        ? hero.getBoundingClientRect().bottom < 0
+        : window.scrollY > window.innerHeight * 0.6;
+      var menuOpen = document.body.classList.contains("nav-open");
+      bar.classList.toggle("show", past && blockers === 0 && !menuOpen);
+    };
+
+    var block = function (on) {
+      blockers += on ? 1 : -1;
+      if (blockers < 0) blockers = 0;
+      sync();
+    };
+
+    /* The closing band already is a full-width call to action; the bar
+       repeating it directly over the top reads as a mistake. */
+    if (band && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        block(entries[0].isIntersecting);
+      }).observe(band);
+    }
+
+    document.body.appendChild(bar);
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+
+    /* The consent banner docks to the same edge and is a decision the
+       visitor has to make, so it takes the space uncontested. It is
+       injected later in this file, hence the observer. */
+    var consentUp = false;
+    new MutationObserver(function () {
+      var now = !!document.querySelector(".consent");
+      if (now !== consentUp) { consentUp = now; block(now); }
+    }).observe(document.body, { childList: true });
+
+    /* body.nav-open is the sheet's state, so watching the class covers
+       every way it can close: the burger, a link tap, or Escape. */
+    new MutationObserver(sync).observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+
+    sync();
+  })();
+
+  /* ── Pricing rail position readout ──────────────────────────────
+     The plans become a horizontal snap rail on a phone. A rail with
+     no indicator gives no hint that there is a third tier past the
+     right edge, which is the whole reason for the pattern. */
+  (function planDots() {
+    var rail = document.querySelector(".plans");
+    if (!rail) return;
+    var plans = rail.querySelectorAll(".plan");
+    if (plans.length < 2) return;
+
+    var dots = document.createElement("div");
+    dots.className = "plans-dots";
+    dots.setAttribute("aria-hidden", "true");
+    for (var i = 0; i < plans.length; i++) dots.appendChild(document.createElement("i"));
+    rail.parentNode.insertBefore(dots, rail.nextSibling);
+
+    var mark = function () {
+      /* Measured in viewport space, and ranked by where the cards
+         actually sit rather than by DOM order — the recommended plan
+         is pulled to the front of the rail with `order`, so the dots
+         would otherwise light up out of sequence. */
+      var mid = rail.getBoundingClientRect().left + rail.clientWidth / 2;
+      var seen = [];
+      for (var i = 0; i < plans.length; i++) {
+        var r = plans[i].getBoundingClientRect();
+        seen.push({ left: r.left, dist: Math.abs(r.left + r.width / 2 - mid) });
+      }
+      var order = seen.slice().sort(function (a, b) { return a.left - b.left; });
+      var nearest = seen.reduce(function (a, b) { return b.dist < a.dist ? b : a; });
+      var at = order.indexOf(nearest);
+      var kids = dots.children;
+      for (var j = 0; j < kids.length; j++) kids[j].classList.toggle("on", j === at);
+    };
+    rail.addEventListener("scroll", mark, { passive: true });
+    window.addEventListener("resize", mark);
+    mark();
+  })();
 
   /* reveal on scroll */
   var rv = document.querySelectorAll(".rv");

@@ -1,0 +1,724 @@
+/* ═══════════════════════════════════════════════════════════════
+   YUSR · MOBILE LAYER
+   Loaded AFTER yusr.css and after each page's own <style> block, so
+   at equal specificity these rules win the cascade without !important.
+
+   yusr.css already carries a responsive pass: grids collapse, type
+   scales, touch targets clear 44px. This file is the layer above that
+   — it changes what the phone actually *is* rather than how wide the
+   desktop layout is allowed to get:
+
+     · an app-style top bar and a full-screen menu sheet, not a
+       dropdown list pinned under a shrunken desktop nav
+     · a persistent bottom action bar, so the primary action is always
+       under the thumb instead of scrolling away with the hero
+     · the vertical folio markers (a desktop margin ornament, hidden
+       outright on mobile until now) reborn as horizontal section tags,
+       so the ledger identity survives the format change
+     · browse-shaped content (plans, floor tabs, stats) turned into
+       snap rails and paired grids instead of long vertical stacks
+
+   Breakpoints match the ones already in yusr.css so nothing lands in
+   a half-applied state:
+     900px — where the nav already switches to a burger
+     720px — where the layout is already one column
+     560px — phone proper
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════
+   1 · FOUNDATIONS
+   ══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --bar-h: 68px;          /* sticky bottom action bar, without the inset */
+  --topbar-h: 68px;
+  --gut: 24px;            /* .wrap's own side gutter, as a value */
+}
+
+/* The page gutter had to become a variable. Three rules in yusr.css set
+   it at three widths, and it was asymmetric below 720px (24px left,
+   40px right — the desktop margin rule showing through), so content
+   read off-centre on every large phone. Naming it fixes the asymmetry
+   and, more usefully, lets the horizontal rails below bleed to exactly
+   the screen edge at every width instead of overshooting by 2px on the
+   narrowest phones. */
+@media (max-width: 720px) {
+  :root { --gut: 20px; }
+  .wrap { padding-inline: var(--gut); }
+}
+@media (max-width: 560px) { :root { --gut: 18px; } }
+@media (max-width: 360px) { :root { --gut: 16px; } }
+
+@media (max-width: 900px) {
+  :root { --topbar-h: 60px; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Anchor jumps have to clear the shorter mobile bar, not the 96px
+       desktop one, or every #section link lands with its heading tucked
+       behind the sticky header. */
+    scroll-padding-top: calc(var(--topbar-h) + 14px);
+  }
+
+  body {
+    -webkit-tap-highlight-color: rgba(216, 90, 48, 0.14);
+  }
+
+  /* The ruled-paper rhythm was set at 43px for 17px/1.6 desktop body
+     copy. Mobile body copy is 16px/1.55, so the rules drift out of
+     phase with the text and read as noise rather than as a ledger.
+     38px puts them back under the line. */
+  body {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 37px,
+      rgba(216, 208, 192, 0.30) 37px,
+      rgba(216, 208, 192, 0.30) 38px
+    );
+  }
+}
+
+/* Hover-lift is a mouse affordance. On a touch screen the transform
+   sticks after a tap and the element sits visibly offset until you
+   touch something else — the single most common "this is a desktop
+   site" tell on a phone. */
+@media (hover: none) {
+  .btn:hover,
+  .card.lift:hover,
+  .floor-tab:hover,
+  .fab-wa:hover,
+  .plan:hover {
+    transform: none;
+  }
+  .btn-ink:hover { box-shadow: none; }
+  .btn-orange:hover { box-shadow: none; }
+  .btn-ghost:hover { background: transparent; box-shadow: none; }
+  .card.lift:hover::before { opacity: 0; }
+
+  /* Give taps a real pressed state instead, which is what a native
+     control does. */
+  .btn:active { transform: translate(1px, 1px); }
+  .card.lift:active { background: var(--paper); }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   2 · TOP BAR
+   Shorter, symmetrical, and with a drawn burger instead of the "≡"
+   character — which rendered at whatever weight the fallback font
+   happened to have and sat visually off-centre in its box.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .nav {
+    /* Slightly more opaque than desktop: on a phone the ruled paper
+       scrolls right under the bar and 0.88 alpha let the lines through
+       hard enough to read as a rendering glitch. */
+    background: rgba(244, 238, 226, 0.94);
+  }
+  .nav-inner {
+    height: var(--topbar-h);
+    padding: 0 14px;
+    gap: 12px;
+  }
+  .logo { gap: 8px; }
+
+  .nav-cta { gap: 8px; }
+  .nav-cta .btn-ink { padding: 10px 16px; font-size: 14px; }
+
+  .nav-burger {
+    position: relative;
+    width: 44px; height: 44px;
+    border-color: var(--ink);
+    border-radius: 10px;
+    background: var(--paper);
+    font-size: 0;             /* hides the "≡" glyph in the markup */
+    flex: none;
+  }
+  /* Two bars, not three: fewer, longer strokes read as deliberate at
+     this size, and they fold cleanly into an X. */
+  .nav-burger::before,
+  .nav-burger::after {
+    content: "";
+    position: absolute;
+    left: 12px; right: 12px;
+    height: 2px;
+    background: var(--ink);
+    transition: transform .26s cubic-bezier(.2, .8, .2, 1), top .26s cubic-bezier(.2, .8, .2, 1);
+  }
+  .nav-burger::before { top: 16px; }
+  .nav-burger::after  { top: 24px; }
+
+  .nav-burger[aria-expanded="true"] {
+    background: var(--ink);
+    box-shadow: 3px 3px 0 var(--orange);
+  }
+  .nav-burger[aria-expanded="true"]::before,
+  .nav-burger[aria-expanded="true"]::after {
+    background: var(--sand);
+    top: 20px;
+  }
+  .nav-burger[aria-expanded="true"]::before { transform: rotate(45deg); }
+  .nav-burger[aria-expanded="true"]::after  { transform: rotate(-45deg); }
+}
+
+/* Below 420px the "BUILT FOR BUSINESS" wordmark, the divider rule, the
+   Start free button and the burger cannot all hold their proportions.
+   The mark and wordmark are the brand; the strapline is the part that
+   can go. */
+@media (max-width: 420px) {
+  .nav .logo svg:last-of-type { width: 52px; height: 21px; }
+  .nav-cta .btn-ink { padding: 10px 13px; font-size: 13.5px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   3 · MENU SHEET
+   The dropdown became a full-height sheet: numbered index rows under
+   the live top bar (whose burger folds into the close X), and the
+   account actions docked at the bottom where the thumb is. Numbering
+   is a CSS counter, so it needs no markup and stays correct on every
+   page, including ones with a different link count.
+
+   Every rule here uses the child combinator: the docked button is an
+   <a> too, and a descendant selector would number it as row 09.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .nav-links {
+    /* Always laid out; visibility is what animates. `display:none`
+       (yusr.css) cannot transition, so the old menu appeared and
+       vanished with a hard cut. */
+    display: flex;
+    position: fixed;
+    inset: 0;
+    top: 0;
+    height: 100dvh;
+    /* Layered inside .nav's stacking context, not the page's: the
+       sheet is a child of .nav-inner, so a page-level z-index here
+       would paint it over the bar's own logo and burger — which is
+       exactly what it did, leaving a blank strip where the header
+       should be and no visible way to close the menu. */
+    z-index: 1;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    /* Clears the sticky top bar, which stays live above the sheet so
+       the burger can fold into the close X. Exactly the bar height:
+       the sheet paints over the bar's own bottom border, so the first
+       row's top rule (below) is what draws that line instead. */
+    padding: var(--topbar-h) 0 0;
+
+    background: var(--sand);
+    background-image: repeating-linear-gradient(
+      to bottom, transparent 0px, transparent 37px,
+      rgba(216, 208, 192, 0.34) 37px, rgba(216, 208, 192, 0.34) 38px
+    );
+    border-bottom: none;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .24s ease, transform .28s cubic-bezier(.2, .8, .2, 1), visibility .28s;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    counter-reset: navidx;
+  }
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  /* The orange margin rule carries through the sheet, so it reads as
+     another page of the same ledger rather than a floating overlay. */
+  .nav-links::before {
+    content: "";
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--orange);
+    pointer-events: none;
+  }
+
+  .nav-links > a {
+    counter-increment: navidx;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    font-family: var(--font-body);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+
+    padding: 17px 18px 17px 16px;
+    border-radius: 0;
+    border-bottom: 1px dashed var(--bone-2);
+    background: transparent;
+  }
+  .nav-links > a:first-of-type { border-top: 1.5px solid var(--ink); }
+  .nav-links > a::before {
+    content: "0" counter(navidx);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--orange-deep);
+    min-width: 22px;
+  }
+  .nav-links > a::after {
+    content: "→";
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--bone-2);
+  }
+  .nav-links > a:hover { background: transparent; }
+  .nav-links > a:active { background: var(--orange-wash); }
+
+  .nav-links > a[aria-current="page"] {
+    background: var(--paper);
+    border: none;
+    border-bottom: 1px dashed var(--bone-2);
+    border-left: 3px solid var(--orange);
+    padding-left: 13px;
+    box-shadow: none;
+  }
+  .nav-links > a[aria-current="page"]::after { content: "●"; color: var(--orange); font-size: 10px; }
+
+  /* Book a demo / Log in: the same rows, grouped off as account
+     actions rather than dressed up as extra product links. They are
+     always the last two anchors in the list — :nth-last-of-type is
+     the only way to reach "the first one of this class", and it is
+     stable because the markup is identical on all 13 pages. */
+  .nav-links > a.nav-mobile-only {
+    /* yusr.css sets these two at (0,2,0) to surface the links at all
+       on a phone; matching that specificity is what lets them take the
+       same row shape as every other entry instead of staying blocks. */
+    display: flex;
+    margin-top: 0;
+    padding-top: 17px;
+    border-top: none;
+    color: var(--ink);
+  }
+  .nav-links > a:nth-last-of-type(2) {
+    margin-top: 16px;
+    border-top: 1.5px solid var(--ink);
+  }
+
+  /* Docked action, injected by yusr.js. */
+  .nav-sheet-foot {
+    display: block;
+    margin-top: auto;
+    padding: 18px 16px calc(18px + var(--safe-b));
+    border-top: 1.5px solid var(--ink);
+    background: var(--paper);
+    flex: none;
+  }
+  /* The docked button is an <a> inside .nav-links, so yusr.css's
+     `.nav-links a { color: var(--stone) }` — (0,1,1) — outranks
+     `.btn-orange` and would render the label muted grey on orange. */
+  .nav-sheet-foot .btn-orange { color: var(--sand); }
+  .nav-sheet-foot .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+    padding: 15px 22px;
+  }
+  .nav-sheet-foot .fine {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone-2);
+  }
+
+  /* .nav is the stacking context (sticky + z-index), so the bar's own
+     contents only have to out-rank the sheet's z-index:1 inside it —
+     that is what keeps the logo readable and the burger tappable as
+     the close control while the sheet is up. */
+  .nav { z-index: 130; }
+  .nav .logo,
+  .nav-cta { position: relative; z-index: 2; }
+  /* Locking body alone is not enough on iOS Safari, where the scroll
+     happens on the document element — the page keeps moving behind an
+     open sheet. Locking both, plus overscroll-behavior on the sheet
+     itself, holds it everywhere without resorting to position:fixed,
+     which would take the sticky top bar off screen with it. */
+  body.nav-open { overflow: hidden; }
+  html:has(body.nav-open) { overflow: hidden; }
+  /* The sheet docks its own Start free; two of them, one directly
+     above the other, is just noise. */
+  body.nav-open .nav-cta .btn-ink {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-links { transition: none; }
+  .nav-burger::before, .nav-burger::after { transition: none; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   4 · STICKY ACTION BAR
+   The one change that most separates a mobile site from a desktop
+   site squeezed narrow: the primary action never leaves the screen.
+   Injected by yusr.js; it reveals once the hero's own CTA has
+   scrolled away and stands down whenever another call to action owns
+   the screen (the closing band, the consent banner, the open menu).
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Both of these are injected into the markup on every page and belong
+   only to the phone layout — without a base rule they leak into the
+   desktop nav row and under the desktop pricing grid. */
+.nav-sheet-foot { display: none; }
+.mobile-bar { display: none; }
+
+@media (max-width: 900px) {
+  .mobile-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 70;
+
+    padding: 10px 14px calc(10px + var(--safe-b));
+    background: rgba(244, 238, 226, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-top: 1.5px solid var(--ink);
+
+    transform: translateY(120%);
+    transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+  }
+  .mobile-bar.show { transform: none; }
+
+  .mobile-bar .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 50px;
+    font-size: 15.5px;
+  }
+
+  /* WhatsApp, as a square sibling rather than a second floating
+     circle — two floating controls on one screen is clutter. */
+  .mobile-bar-wa {
+    flex: none;
+    width: 50px; height: 50px;
+    display: grid; place-items: center;
+    border: 1.5px solid var(--ink);
+    border-radius: 10px;
+    background: #25D366;
+  }
+  .mobile-bar-wa svg { width: 24px; height: 24px; display: block; }
+
+  /* The FAB's job moves into the bar. */
+  .fab-wa { display: none; }
+
+  /* Last thing on the page must clear the bar. */
+  footer { padding-bottom: calc(var(--bar-h) + var(--safe-b)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-bar { transition: none; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   5 · SECTION RHYTHM · the folio, rebuilt for a phone
+   .folio is a vertical marker hanging in the desktop margin, and that
+   margin does not exist on a phone, so yusr.css hides it. Rotating it
+   back is horizontal instead: the same words, set as a tag above the
+   section, keeping the ledger's numbered-page identity in a form the
+   format can actually hold.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  .folio {
+    display: block;
+    position: static;
+    width: auto;
+    transform: none;
+    writing-mode: horizontal-tb;
+    text-align: left;
+
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    color: var(--stone-2);
+
+    /* Lines up with .wrap's own gutter, which is 24px in this band and
+       18px on a phone — the tag has to sit on the same left edge as
+       the heading under it or it reads as a stray label. */
+    padding-inline: 24px;
+    margin-bottom: 22px;
+  }
+  .folio b {
+    color: var(--orange-deep);
+    font-weight: 400;
+  }
+  /* Ties the tag to the section's top hairline, the way the vertical
+     marker ties to the margin rule on desktop. */
+  .folio::before {
+    content: "";
+    display: inline-block;
+    width: 18px; height: 1px;
+    background: var(--orange);
+    vertical-align: middle;
+    margin-right: 9px;
+  }
+}
+
+@media (max-width: 560px) {
+  .folio { padding-inline: 18px; margin-bottom: 18px; }
+}
+
+@media (max-width: 720px) {
+  section { padding: 46px 0; }
+  .sec-head { margin-bottom: 28px; }
+
+  /* h2.sec's max-width of 15em is a desktop measure; on a 390px screen
+     it never binds, but the clamp's 4.4vw floor leaves section headings
+     barely larger than the lede under them. */
+  h2.sec { font-size: clamp(27px, 7.6vw, 36px); line-height: 1.06; }
+  .lede { font-size: 16.5px; line-height: 1.55; margin-top: 12px; }
+
+  .adds-head { margin-bottom: 4px; }
+  .adds-folio { font-size: 10px; }
+
+  .sec-actions { margin-top: 20px; }
+  .sec-actions .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   6 · HERO
+   The first screen was carrying 76px of inline top padding (a desktop
+   breathing gap), a full-measure lede, and a second paragraph of body
+   copy before the fold. Reordered so the phone gets: credential,
+   headline, one claim, one action.
+   ══════════════════════════════════════════════════════════════════ */
+
+#top { padding-top: 76px; }
+
+@media (max-width: 720px) {
+  #top { padding-top: 14px; }
+
+  .display { font-size: clamp(34px, 10.4vw, 46px); line-height: 1.0; }
+  .hero-cred { margin-bottom: 14px; gap: 10px; }
+  .hero-actions { margin-top: 22px; }
+
+  /* The "message our live bot" paragraph is the strongest proof on the
+     page and it was set as a run of body copy under the fine print,
+     where it reads as a footnote. As a bordered block it becomes a
+     thing you tap. */
+  .hero-try {
+    display: block;
+    margin-top: 20px;
+    padding: 15px 16px;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-left-width: 4px;
+    border-left-color: var(--orange);
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--stone);
+  }
+  .hero-try a { font-weight: 700; }
+
+  /* The receipt tape is the hero's whole visual. Give it room rather
+     than letting it sit tight under the actions. */
+  #top .visual { margin-top: 34px; }
+
+  .stat-row { margin-top: 40px !important; }
+}
+
+/* Four numbers, four full-width boxes, four scroll-lengths — for what
+   is one glance of information. Paired, they are one glance again. */
+@media (max-width: 560px) {
+  .stat-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat { padding: 13px 14px; }
+  .stat .num { font-size: 26px; }
+  .stat .lbl { font-size: 9.5px; line-height: 1.35; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   7 · THE FLOOR · tabs as a rail
+   Four tabs wrapped to two rows on a phone, which reads as two groups
+   rather than one control. A single non-wrapping snap rail is the
+   mobile pattern, and it scales to a fifth tab without re-flowing.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 720px) {
+  .floor-top { gap: 12px; margin: 18px 0 14px; }
+
+  .floor-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    /* Bleed to the screen edge so the rail reads as scrollable, then
+       pad the ends back to the text margin. */
+    margin-inline: calc(-1 * var(--gut));
+    padding: 2px var(--gut) 6px;
+    width: calc(100% + var(--gut) * 2);
+  }
+  .floor-tabs::-webkit-scrollbar { display: none; }
+  .floor-tab {
+    flex: none;
+    scroll-snap-align: start;
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+
+  .floor-stats { gap: 8px; }
+  .floor-stat { font-size: 10px; padding: 6px 9px; }
+
+  .floor-bar { padding: 10px 13px; font-size: 10px; }
+  .floor-window { box-shadow: var(--stamp-sm); }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   8 · PRICING · a rail, recommended plan first
+   Three plans stacked ran 2.7 screens — the longest single stretch on
+   the homepage, for a decision that is a comparison. A snap rail puts
+   the tiers side by side again the way the desktop grid does, opens on
+   the plan most businesses take, and peeks the next card so it is
+   obvious there are others.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 720px) {
+  .plans, .plans.plans-3 {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    margin-inline: calc(-1 * var(--gut));
+    /* A horizontal scroller clips on both axes, and the "Most
+       businesses" badge hangs above its card's top border — the top
+       padding is what keeps it from being sheared off. */
+    padding: 16px var(--gut) 12px;
+    width: calc(100% + var(--gut) * 2);
+    align-items: stretch;
+  }
+  .plans::-webkit-scrollbar { display: none; }
+
+  .plans .plan {
+    flex: 0 0 84%;
+    min-width: 0;
+    scroll-snap-align: center;
+    padding: 24px 20px;
+  }
+  /* Growth is the tier most businesses land on; on a rail the first
+     card is the default view, so it leads. Order is visual only —
+     the DOM, and therefore the reading order, is untouched. */
+  .plans .plan.hero-plan { order: -1; box-shadow: var(--stamp-sm); }
+
+  .plans-3 .plan .price { font-size: 38px; }
+  .plans-3 .plan .plan-title { font-size: 19px; }
+  .plans-3 .plan ul { font-size: 14.5px; }
+  .plan .btn { width: 100%; justify-content: center; margin-top: auto; }
+
+  /* Position readout under the rail. */
+  .plans-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 4px;
+  }
+  .plans-dots i {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--bone-2);
+    transition: background .2s ease, width .2s ease;
+  }
+  .plans-dots i.on { background: var(--orange); width: 20px; border-radius: 4px; }
+}
+
+.plans-dots { display: none; }
+@media (max-width: 720px) { .plans-dots { display: flex; } }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   9 · REMAINING PANELS
+   Everything still stacking a desktop-proportioned surface under its
+   heading: trim the chrome, not the content.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 720px) {
+  /* 5px offsets were drawn for a 1200px canvas; at 390px they read as
+     a misprint rather than a stamp. */
+  .tape, .ledger, .chat, .pipe-frame, .plan, .cta-band, .floor-window {
+    box-shadow: var(--stamp-sm);
+  }
+
+  .pipe-frame { padding: 16px 14px; margin-top: 22px; }
+  .pipe-hud { gap: 8px 16px; font-size: 10px; margin-top: 16px; }
+
+  .switch-grid { margin-top: 24px; gap: 16px; }
+  .switch-mid { padding: 2px 0; }
+
+  .ledger-head, .tape-head { font-size: 11px; }
+
+  /* The closing band's asymmetric 56px left padding is the desktop
+     margin rule showing through; there is no margin on a phone. */
+  .cta-band { padding: 32px 22px; text-align: center; }
+  .cta-actions { flex-direction: column; }
+  .cta-actions .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   10 · FOOTER
+   Four columns → two, but the link lists still had desktop line
+   spacing, which made the footer a screen and a half of its own.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 720px) {
+  .foot-grid { gap: 26px 18px; }
+  .foot-brand { grid-column: 1 / -1; }
+  .foot-grid h3 {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+  }
+  .foot-grid a { font-size: 14.5px; }
+  .foot-bottom { flex-direction: column; gap: 6px; align-items: flex-start; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   11 · CONSENT
+   Full-width buttons on the narrowest phones, and the banner clears
+   the home indicator on gesture-nav devices.
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 560px) {
+  .consent-copy { font-size: 13.5px; }
+  .consent-inner { border-radius: 12px; }
+}
