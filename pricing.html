@@ -63,7 +63,7 @@
         "name": "What do WhatsApp messages themselves cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Meta charges per message rates for template messages (marketing and utility), billed at Meta's India rates with no markup hidden inside. We show you the math before you send anything, and normal customer service replies within the 24 hour window are free."
+          "text": "Meta charges per message rates for template messages (marketing and utility), billed at Meta's India rates with no markup hidden inside. We show you the math before you send anything. From 1 October 2026 Meta also charges for service messages, which are your replies inside the 24 hour customer service window. Every business number gets 1,000 of those free each month, and Meta charges only from the 1,001st."
         }
       },
       {
@@ -111,6 +111,75 @@
         "item": "https://yusr.co.in/pricing"
       }
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://yusr.co.in/#software",
+    "name": "YUSR AI",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "CRM",
+    "operatingSystem": "Web",
+    "url": "https://yusr.co.in/",
+    "publisher": { "@id": "https://yusr.co.in/#organization" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "1999",
+      "highPrice": "11999",
+      "offerCount": 3,
+      "url": "https://yusr.co.in/pricing",
+      "description": "Three plans, billed monthly or yearly. Free for 7 days, no card required. Yearly billing costs ten months instead of twelve. Past the included volume it is 1 rupee per AI reply and 5 paise per broadcast message at every tier.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "price": "1999",
+          "priceCurrency": "INR",
+          "url": "https://yusr.co.in/pricing",
+          "availability": "https://schema.org/InStock",
+          "description": "2,000 AI replies a month.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1999",
+            "priceCurrency": "INR",
+            "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Growth",
+          "price": "4999",
+          "priceCurrency": "INR",
+          "url": "https://yusr.co.in/pricing",
+          "availability": "https://schema.org/InStock",
+          "description": "5,000 AI replies a month.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "4999",
+            "priceCurrency": "INR",
+            "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Scale",
+          "price": "11999",
+          "priceCurrency": "INR",
+          "url": "https://yusr.co.in/pricing",
+          "availability": "https://schema.org/InStock",
+          "description": "12,000 AI replies a month.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "11999",
+            "priceCurrency": "INR",
+            "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+          }
+        }
+      ]
+    }
   }
   </script>
 </head>
@@ -293,7 +362,7 @@
     <div>
       <details class="faq rv" style="--i:0; position:relative;" open><span class="chip orange" style="position:absolute; top:-11px; left:20px;">Most asked</span><summary>Do I need a new SIM or number?</summary><div class="faq-a"><p>You can use your existing business number or a fresh SIM you own. Either way, the number stays in your name and your control. If you ever leave, the number and your data go with you.</p></div></details>
       <details class="faq rv" style="--i:1;"><summary>Will my number get banned for broadcasts?</summary><div class="faq-a"><p>No grey market tricks here. Everything runs on the official WhatsApp Business API with Meta approved templates and built in opt out, which is exactly how WhatsApp wants bulk messaging done.</p></div></details>
-      <details class="faq rv" style="--i:2;"><summary>What do WhatsApp messages themselves cost?</summary><div class="faq-a"><p>Meta charges per message rates for template messages (marketing and utility), billed at Meta's India rates with no markup hidden inside. We show you the math before you send anything, and normal customer service replies within the 24 hour window are free.</p></div></details>
+      <details class="faq rv" style="--i:2;"><summary>What do WhatsApp messages themselves cost?</summary><div class="faq-a"><p>Meta charges per message rates for template messages (marketing and utility), billed at Meta's India rates with no markup hidden inside. We show you the math before you send anything. From 1 October 2026 Meta also charges for service messages, which are your replies inside the 24 hour customer service window. Every business number gets 1,000 of those free each month, and Meta charges only from the 1,001st.</p></div></details>
       <details class="faq rv" style="--i:3;"><summary>My team is not technical. Can they use it?</summary><div class="faq-a"><p>If they can use WhatsApp, they can use YUSR AI. Setup is guided over WhatsApp itself, and most teams are replying from the shared inbox within an hour.</p></div></details>
       <details class="faq rv" style="--i:4;"><summary>What happens after the 7 day trial?</summary><div class="faq-a"><p>You pick one of the three plans, Starter, Growth or Scale, and the price is the price. Nothing is charged during the trial and nothing renews on its own until you subscribe. If it is not worth it, you walk away, and your contacts export with you. No lock in, no drama.</p></div></details>
       <details class="faq rv" style="--i:5;"><summary>Can the AI really handle Hindi and Hinglish?</summary><div class="faq-a"><p>Yes. It detects the customer's language, replies in kind, remembers the preference, and even transcribes voice notes. A quick voice note just asking for the price gets a proper, typed out answer.</p></div></details>
@@ -360,6 +429,7 @@
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
+        <a href="/support">Support</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
         <a href="https://app.yusr.co.in" data-cta="footer-login">Log in</a>
       </div>

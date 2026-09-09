@@ -108,12 +108,72 @@
           "QR entry points"
         ],
         "offers": {
-          "@type": "Offer",
-          "price": "0",
+          "@type": "AggregateOffer",
           "priceCurrency": "INR",
-          "name": "Free trial, 7 days",
-          "description": "The full product free for 7 days, no card required. Paid plans are quoted to your volume and team.",
-          "url": "https://yusr.co.in/pricing"
+          "lowPrice": "1999",
+          "highPrice": "11999",
+          "offerCount": 3,
+          "url": "https://yusr.co.in/pricing",
+          "description": "Three plans, billed monthly or yearly. Free for 7 days, no card required. Yearly billing costs ten months instead of twelve.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Starter",
+              "price": "1999",
+              "priceCurrency": "INR",
+              "url": "https://yusr.co.in/pricing",
+              "availability": "https://schema.org/InStock",
+              "description": "2,000 AI replies a month.",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "1999",
+                "priceCurrency": "INR",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": 1,
+                  "unitCode": "MON"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Growth",
+              "price": "4999",
+              "priceCurrency": "INR",
+              "url": "https://yusr.co.in/pricing",
+              "availability": "https://schema.org/InStock",
+              "description": "5,000 AI replies a month.",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "4999",
+                "priceCurrency": "INR",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": 1,
+                  "unitCode": "MON"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Scale",
+              "price": "11999",
+              "priceCurrency": "INR",
+              "url": "https://yusr.co.in/pricing",
+              "availability": "https://schema.org/InStock",
+              "description": "12,000 AI replies a month.",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "11999",
+                "priceCurrency": "INR",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": 1,
+                  "unitCode": "MON"
+                }
+              }
+            }
+          ]
         }
       }
     ]
@@ -1216,6 +1276,7 @@
         <a href="/about">About</a>
         <a href="/pricing">Pricing</a>
         <a href="/book-demo">Book a demo</a>
+        <a href="/support">Support</a>
         <a href="https://wa.me/919286046420?text=Hi%2C%20I%20want%20to%20know%20about%20your%20service" target="_blank" rel="noopener" data-cta="footer-whatsapp">Contact on WhatsApp</a>
         <a href="https://app.yusr.co.in" data-cta="footer-login">Log in</a>
       </div>
