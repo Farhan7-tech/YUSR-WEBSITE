@@ -233,28 +233,36 @@
     var i = 0, MAX = 7;
     var tapeCount = document.querySelector("[data-tape-count]");
     var printed = 0;
-    function addLine() {
+    function addLine(quiet) {
       var L = LINES[i % LINES.length]; i++;
       var div = document.createElement("div");
-      div.className = "tape-line fresh";
+      div.className = quiet ? "tape-line seed" : "tape-line fresh";
       div.innerHTML = '<span class="t">' + L[0] + "</span><span>" + L[1] +
         '</span><span class="' + L[3] + '">' + L[2] + "</span>";
       tape.appendChild(div);
       while (tape.children.length > MAX) tape.removeChild(tape.firstChild);
-      if (!reduced) setTimeout(function (el) { return function () { el.classList.remove("fresh"); }; }(div), 650);
+      if (!reduced && !quiet) setTimeout(function (el) { return function () { el.classList.remove("fresh"); }; }(div), 650);
       printed++;
       if (tapeCount) {
         tapeCount.textContent = printed.toLocaleString("en-IN");
-        tapeCount.classList.remove("pulse");
-        void tapeCount.offsetWidth;
-        tapeCount.classList.add("pulse");
+        if (!quiet) {
+          tapeCount.classList.remove("pulse");
+          void tapeCount.offsetWidth;
+          tapeCount.classList.add("pulse");
+        }
       }
     }
-    for (var k = 0; k < 5; k++) addLine();
+    for (var k = 0; k < 5; k++) addLine(true);
+    /* Hold the printer until the hero headline has had a beat to land.
+       Motion beats size preattentively, so a ticker running at t=0 wins
+       the eye over an 84px H1 no matter how large the H1 is. */
     if (!reduced) {
-      (function loop() {
-        setTimeout(function () { addLine(); loop(); }, 1700 + Math.random() * 1200);
-      })();
+      setTimeout(function () {
+        addLine();
+        (function loop() {
+          setTimeout(function () { addLine(); loop(); }, 1700 + Math.random() * 1200);
+        })();
+      }, 1200);
     }
   }
 
@@ -859,4 +867,27 @@
       check();
     }, { passive: true });
   })();
+
+  /* ── ambient loops idle off-screen ────────────────────────────────
+     beat, recblink, ftbounce, msgsBreathe, scanSweep, slide and
+     badgePulse all run infinitely. Pause each one while it is out of
+     view and resume just before it scrolls back in, so the page is
+     only ever animating what someone is actually looking at.
+     msgsBreathe and scanSweep live on pseudo-elements, so the class
+     goes on the host and the CSS covers ::before / ::after. */
+  var loopReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!loopReduced && "IntersectionObserver" in window) {
+    var loops = document.querySelectorAll(
+      ".card-live .cdot, .rec-dot, .ftyping i, .floor-msgs, .chat-body," +
+      " .scan-sweep, .marquee-track, .plan .badge"
+    );
+    if (loops.length) {
+      var loopIdle = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          e.target.classList.toggle("loop-idle", !e.isIntersecting);
+        });
+      }, { rootMargin: "120px" });
+      Array.prototype.forEach.call(loops, function (el) { loopIdle.observe(el); });
+    }
+  }
 })();
